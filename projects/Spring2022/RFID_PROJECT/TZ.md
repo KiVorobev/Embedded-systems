@@ -56,9 +56,9 @@
 --- | --- | --- | ---
 1 | Сканер RFID/NFC 13,56 МГц (Troyka-модуль) | 2 | 2 290
 2 | Электронная карта RFID 125кГц с кодом | 1 | 30
-3 | Raspberry Pi 3 Model B | 2 | 23 961
-4 | Блок питания | 2 | 2 170
- | | |Итоговая стоимость: | 56 872 руб.
+3 | Raspberry Pi 3 Model B | 1 | 23 961
+4 | Блок питания | 1 | 2 170
+ | | |Итоговая стоимость: | 30 741 руб.
 
 При серийном производстве товары будут закупаться оптом, вследствие этого стоимость разрабатываемого нами продукта будет снижена.
 
@@ -68,9 +68,9 @@
 --- | --- | --- | ---
 1 | Сканер RFID/NFC 13,56 МГц (Troyka-модуль) | 2 | 1 788
 2 | Электронная карта RFID 125кГц с кодом | 1 | 24
-3 | Raspberry Pi 3 Model B | 2 | 20 109
-4 | Блок питания | 2 | 1 710
- | | |Итоговая стоимость: | 47 238 руб.
+3 | Raspberry Pi 3 Model B | 1 | 20 109
+4 | Блок питания | 1 | 1 710
+ | | |Итоговая стоимость: | 25 419 руб.
 
 ## Cтадии и этапы разработки
 
@@ -111,25 +111,15 @@
 
 1. ГОСТ 19.201-78 Техническое задание. Требования к содержанию и оформлению 
 
-###### Links that include information about products of our project:
-2. [Shop "Amperkin" of electrical products](https://www.amperkin.ru/)
-3. [About RFID system](https://habr.com/ru/company/flipperdevices/blog/571838/)
-4. [RFID in 3DiY shop](https://3d-diy.ru/catalog/?q=rfid&s=%D0%9D%D0%B0%D0%B9%D1%82%D0%B8)
-5. [Example of simple interaction with RFID](https://3d-diy.ru/wiki/arduino-moduli/rfid-modul-rc522/)
-6. [RFID deployment costs](http://asupro.com/gps-gsm/system/costs-deploying-rfid-systems.html)
-7. [Cost of modern RFID equipment](http://asupro.com/gps-gsm/rfid/cost-modern-equipment-rfid.html)
-8. [Example of RFID system (in money)](http://elibrary.sgu.ru/VKR/2016/27-03-05_006.pdf)
-9. [How we can testing our RFID system](https://ru.hopelandrfid.com/blog/how-to-test-rfid-system-deployment_b93)
-10. [RFID cards for wholesale buying](https://rfid-cards.ru/katalog/rfid-karty/rfid-karty-smarttag-1k?utm_campaign=RFID_Brelok_Poisk&utm_medium=cpc&utm_source=yadirect&utm_term=rfid%20карты%20купить&utm_content=search/none/premium/4&cm_id=68847097_4772199560_11512000441_35422684841__none_search_type1_no_desktop_premium_2&roistat=direct36_search_11512000441_rfid%20карты%20купить&roistat_referrer=none&roistat_pos=premium_4&yclid=7752952815083061247)
-11. [RFID module for wholesale buying](https://linuxcenter.shop/product/skaner-rfidnfc-1356-mgts-troyka-modul)
+###### Ссылки с информацией о продуктах нашего проекта:
+2. [О RFID системе](https://habr.com/ru/company/flipperdevices/blog/571838/)
+3. [Пример простого взаимодействия с RFID](https://3d-diy.ru/wiki/arduino-moduli/rfid-modul-rc522/)
+4. [Как мы можем тестировать нашу RFID систему](https://ru.hopelandrfid.com/blog/how-to-test-rfid-system-deployment_b93)
+5. [RFID карты для покупки оптом](https://rfid-cards.ru/katalog/rfid-karty/rfid-karty-smarttag-1k?utm_campaign=RFID_Brelok_Poisk&utm_medium=cpc&utm_source=yadirect&utm_term=rfid%20карты%20купить&utm_content=search/none/premium/4&cm_id=68847097_4772199560_11512000441_35422684841__none_search_type1_no_desktop_premium_2&roistat=direct36_search_11512000441_rfid%20карты%20купить&roistat_referrer=none&roistat_pos=premium_4&yclid=7752952815083061247)
+6. [RFID модуль для покупки оптом](https://linuxcenter.shop/product/skaner-rfidnfc-1356-mgts-troyka-modul)
 
-###### How we can choose our variant of reader:
-12. [Yandex zen](https://zen.yandex.ru/media/id/5bfe591affec8a00aa7a6fba/kak-vybrat-rfid-schityvatel-5d3ee01914f98000ad739d7a)
-13. [Online-kassa](https://online-kassa.ru/blog/kak-vybrat-schityvatel-dalnego-dejstviya-rfid/)
-14. [Go-rfid](https://go-rfid.ru/novosti-i-statiy/novosti-oborudovaniya/kak-kupit-rfid-schitivatel)
-
-###### Our components:
-15. [RFID card](https://shop.reallifeonline.ru/rfid-karty/karty-rfid-125-khz/rfid-karta-125-kgc-em-em4100-4102-pvh.html)
-16. [RFID module](https://amperka.ru/product/troyka-rfid-nfc-1356)
-17. [Raspberry pi 3 controller](https://ru.dhgate.com/product/freeshiping-rs-raspberry-pi-3-model-b-arm/401995487.html?d1_page_num=1&dspm=pcru.sp.list.3.RoPIJnCdX0wfUIiKtm51&resource_id=401995487&scm_id=search.LIST...BPRU%7C0%7Cnewes.pcru_sp_searclick_1_xVhx2oJGTUhtJFXpP6G8&resource_id=#s1-2-1;searl%7C3269776838:3)
-18. [Power unit](https://www.promelec.ru/product/357085/)
+###### Наши компоненты:
+7. [RFID карта](https://shop.reallifeonline.ru/rfid-karty/karty-rfid-125-khz/rfid-karta-125-kgc-em-em4100-4102-pvh.html)
+8. [RFID модуль](https://amperka.ru/product/troyka-rfid-nfc-1356)
+9. [Raspberry pi 3 контроллер](https://ru.dhgate.com/product/freeshiping-rs-raspberry-pi-3-model-b-arm/401995487.html?d1_page_num=1&dspm=pcru.sp.list.3.RoPIJnCdX0wfUIiKtm51&resource_id=401995487&scm_id=search.LIST...BPRU%7C0%7Cnewes.pcru_sp_searclick_1_xVhx2oJGTUhtJFXpP6G8&resource_id=#s1-2-1;searl%7C3269776838:3)
+10. [Блок питания](https://www.promelec.ru/product/357085/)
