@@ -1,0 +1,22 @@
+* {
+    background-color: lightgray;
+}
+
+header {
+    height: 15vh;
+    background: peachpuff;
+    z-index: 1000;
+    transition: 300ms;
+    font: 4vmin monospace;
+    border: 1px solid black
+}
+
+header:hover {
+    box-shadow: 0 0 3px 3px rgba(16, 18, 30, 0.55);
+}
+
+main {
+    margin-top: 1vh;
+    height: 81vh;
+    transition: 300ms;
+}

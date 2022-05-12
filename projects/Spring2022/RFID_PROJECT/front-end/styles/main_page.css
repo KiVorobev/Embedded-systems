@@ -1,0 +1,26 @@
+table {
+    width: 81%;
+    margin-left: 9.5%;
+    text-align: center;
+    font-family: monospace;
+}
+
+thead {
+    font-size: 4vmin;
+}
+
+tbody {
+    font-size: 3vmin;
+}
+
+td {
+    width: 27%;
+    min-width: 27%;
+    max-width: 27%;
+}
+
+caption {
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    font-size: 5vmin;
+}
