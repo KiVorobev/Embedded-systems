@@ -1,0 +1,55 @@
+table {
+    width: 81%;
+    margin-left: 9.5%;
+    text-align: center;
+    font-family: monospace;
+}
+
+thead {
+    font-size: 4vmin;
+}
+
+tbody {
+    font-size: 3vmin;
+}
+
+td {
+    width: 27%;
+    min-width: 27%;
+    max-width: 27%;
+}
+
+caption {
+    margin-top: 1vh;
+    margin-bottom: 2vh;
+    font-size: 5vmin;
+}
+
+button {
+    width:44%;
+    height: 7vh;
+    background-color: whitesmoke;
+    font: 3.8vmin monospace;
+    transition: 300ms;
+}
+
+button:hover {
+    transition: 300ms;
+    box-shadow: 0 0 5px 3px whitesmoke;
+    transform: scale(1.05);
+}
+
+button:active {
+    transition: 300ms;
+    box-shadow: 0 0 5px 3px greenyellow;
+}
+
+#delete_reader {
+    margin-left: 10%;
+}
+
+#reader_buttons {
+    margin-top: 2vh;
+    width: 70%;
+    margin-left: 15%;
+}

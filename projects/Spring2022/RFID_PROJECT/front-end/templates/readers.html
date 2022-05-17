@@ -8,6 +8,8 @@
     <title>RFID System</title>
     <link rel="stylesheet" type="text/css" href="../styles/index.css">
     <link rel="stylesheet" type="text/css" href="../styles/header.css">
+    <link rel="stylesheet" type="text/css" href="../styles/readers.css">
+    <script src="../scripts/navigator.js"></script>
 </head>
 <body>
 <header>
@@ -19,7 +21,30 @@
     </nav>
 </header>
 <main>
-
+    <table>
+        <caption>Считыватели:</caption>
+        <thead>
+        <th>№ считывателя</th>
+        <th>ID</th>
+        <th>Требуемая роль</th>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>1234567890</td>
+            <td>Пользователь</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>133722869</td>
+            <td>Администратор</td>
+        </tr>
+        </tbody>
+    </table>
+    <div id="reader_buttons">
+        <button id="add_reader" onclick="goTo('add_reader.html')">Добавить считыватель</button>
+        <button id="delete_reader" onclick="goTo('delete_reader.html')">Удалить считыватель</button>
+    </div>
 </main>
 </body>
 </html>
