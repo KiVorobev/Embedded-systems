@@ -1,7 +1,8 @@
 main span {
-    display:block;
+    display: inline-block;
     text-align:center;
     margin-top: 30vh;
-    font: 10vmin monospace;
-
+    font: 8vmin monospace;
+    width: 70%;
+    margin-left: 15%;
 }
