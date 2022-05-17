@@ -1,0 +1,83 @@
+main {
+    display: flex;
+}
+
+#left {
+    display: inline-block;
+    width: 30%;
+}
+
+#right {
+    display: inline-block;
+    margin-left: 5%;
+    width: 60%;
+}
+
+#name {
+    margin-top: 5vh;
+    margin-left: 15%;
+    background-color: whitesmoke;
+    width: 80%;
+    height: 18vh;
+    text-align: center;
+    border: black solid 1px;
+}
+
+#role {
+    margin-top: 3vh;
+    margin-left: 15%;
+    background-color: whitesmoke;
+    width: 80%;
+    height: 9vh;
+    border: black solid 1px;
+}
+
+#role text {
+    background-color: whitesmoke;
+    font-weight: bold;
+    margin-left: 5%;
+}
+
+#name text {
+    background-color: whitesmoke;
+    font-weight: bold;
+}
+
+button {
+    margin-top: 3vh;
+    margin-left: 15%;
+    background-color: whitesmoke;
+    width: 80%;
+    height: 9vh;
+    font: 3vmin monospace;
+    border: black solid 1px;
+    transition: 300ms;
+}
+
+button:hover {
+    transition: 300ms;
+    box-shadow: 0 0 5px 3px whitesmoke;
+}
+
+button:active {
+    transition: 300ms;
+    box-shadow: 0 0 5px 3px greenyellow;
+}
+
+table {
+    margin-top: 5vh;
+    width: 96%;
+    text-align: center;
+}
+
+caption {
+    font: 4vmin monospace;
+}
+
+thead {
+    font-size: 3.5vmin;
+}
+
+tbody {
+    font-size: 2.75vmin;
+}
