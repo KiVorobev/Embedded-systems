@@ -1,0 +1,49 @@
+main span {
+    width: 80%;
+    margin-left: 10%;
+    display:block;
+    text-align:center;
+    margin-top: 15vh;
+    font: 6vmin monospace;
+}
+
+main input[type=text] {
+    margin-top: 2vh;
+    width: 60%;
+    margin-left: 10%;
+    border-radius: 10px 10px 10px 10px;
+    height: 10vh;
+    font: 6vmin monospace;
+    background-color: whitesmoke;
+    text-align: center;
+    transition: 300ms;
+}
+
+main input[type=text]:hover, main input[type=text]:focus {
+    transition: 300ms;
+    box-shadow: 0 0 5px 10px whitesmoke;
+    transform: scale(1.05);
+}
+
+main button[type=submit] {
+    margin-left: 2%;
+    width: 15%;
+    height: 10vh;
+    border-radius: 10px 10px 10px 10px;
+    font: 6vmin monospace;
+    background-color: whitesmoke;
+    text-align: center;
+    transition: 300ms;
+}
+
+main button[type=submit]:hover {
+    transition: 300ms;
+    box-shadow: 0 0 5px 10px whitesmoke;
+    transform: scale(1.1);
+}
+
+main button[type=submit]:active {
+    transition: 300ms;
+    box-shadow: 0 0 5px 10px greenyellow;
+    transform: scale(1.1);
+}

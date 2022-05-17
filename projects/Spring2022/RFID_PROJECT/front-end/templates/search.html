@@ -8,6 +8,7 @@
     <title>RFID System</title>
     <link rel="stylesheet" type="text/css" href="../styles/index.css">
     <link rel="stylesheet" type="text/css" href="../styles/header.css">
+    <link rel="stylesheet" type="text/css" href="../styles/search.css">
 </head>
 <body>
 <header>
@@ -19,7 +20,11 @@
     </nav>
 </header>
 <main>
-
+    <form method="post">
+        <span>Приложите пропуск к считывателю или введите ID или ФИО ниже:</span>
+        <input type="text" id="search_input" placeholder="Введите ID или ФИО"/>
+        <button id="search_button" onclick="console.log(1)" type="submit">Поиск</button>
+    </form>
 </main>
 </body>
 </html>
