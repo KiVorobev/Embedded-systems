@@ -1,0 +1,58 @@
+main input[type=text], main select {
+    margin-top: 10vh;
+    width: 60%;
+    border-radius: 10px 10px 10px 10px;
+    height: 10vh;
+    font: 6vmin monospace;
+    background-color: whitesmoke;
+    text-align: center;
+    transition: 300ms;
+}
+
+main input[type=text]:hover, main input[type=text]:focus, main select:hover, main select:active {
+    transition: 300ms;
+    box-shadow: 0 0 5px 8px whitesmoke;
+}
+
+option {
+    background-color: whitesmoke;
+}
+
+#id_label {
+    margin-left: 18%;
+    font: 6vmin monospace;
+}
+
+#role_label {
+    margin-left: 15%;
+    font: 6vmin monospace;
+}
+
+#add_reader_buttons {
+    width: 62%;
+    margin-top: 10vh;
+    margin-left: 23%;
+}
+
+button {
+    width: 44%;
+    height: 10vh;
+    border-radius: 10px 10px 10px 10px;
+    background-color: whitesmoke;
+    transition: 300ms;
+}
+
+button:hover {
+    transition: 300ms;
+    box-shadow: 0 0 5px 3px whitesmoke;
+    transform: scale(1.2);
+}
+
+button:active {
+    transition: 300ms;
+    box-shadow: 0 0 5px 3px greenyellow;
+}
+
+#add_reader_button {
+    margin-left: 10%;
+}
