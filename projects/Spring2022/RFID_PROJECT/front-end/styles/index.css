@@ -16,7 +16,8 @@ header:hover {
 }
 
 main {
+    display: inline-block;
+    width: 100%;
     margin-top: 1vh;
-    height: 81vh;
     transition: 300ms;
 }
