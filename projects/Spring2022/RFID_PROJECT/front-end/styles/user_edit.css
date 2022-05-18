@@ -1,0 +1,85 @@
+main {
+    display: flex;
+}
+
+#left {
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+    font: 3vmin monospace;
+    margin-top: 10vh;
+}
+
+#right {
+    display: inline-block;
+    margin-left: 2%;
+    width: 70%;
+}
+
+label {
+    margin-left: 2.8%;
+}
+
+#name_label {
+    margin-left: 6.5%;
+}
+
+#right input[type=text] {
+    margin-top: 5vh;
+    width: 60%;
+    height: 7vh;
+    font: 3vmin monospace;
+    background-color: whitesmoke;
+    text-align: center;
+    transition: 300ms;
+}
+
+#right input[type=text]:hover, #right input[type=text]:focus {
+    transition: 300ms;
+    box-shadow: 0 0 5px 8px whitesmoke;
+}
+
+#left select {
+    width: 90%;
+    height: 10vh;
+    font: 3vmin monospace;
+    background-color: whitesmoke;
+    text-align: center;
+    transition: 300ms;
+}
+
+button {
+    margin-top: 3vh;
+    background-color: whitesmoke;
+    width: 80%;
+    height: 8vh;
+    font: 3vmin monospace;
+    border: black solid 1px;
+    transition: 300ms;
+}
+
+button:hover {
+    transition: 300ms;
+    box-shadow: 0 0 4px 1px black;
+}
+
+button:active {
+    transition: 300ms;
+    box-shadow: 0 0 5px 3px greenyellow;
+}
+
+#edit_user_buttons button {
+    width: 38.4%;
+}
+
+#edit_user_button {
+    margin-left: 2.9%;
+}
+
+#delete_user {
+    background-color: red;
+}
+
+#clear_history_button {
+    margin-top: 6vh;
+}
