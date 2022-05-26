@@ -13,10 +13,10 @@
 <body>
 <header>
     <nav style="width: 100%">
-        <p style="margin-left: 2.3%"><a href="main_page.html"><span>Главная страница</span></a></p>
-        <p><a href="add_user.html"><span>Добавить пользователя</span></a></p>
-        <p><a href="readers.html"><span>Считыватели</span></a></p>
-        <p><a href="search.html"><span>Поиск</span></a></p>
+        <p style="margin-left: 2.3%"><a href="main_page.ftl"><span>Главная страница</span></a></p>
+        <p><a href="add_user.ftl"><span>Добавить пользователя</span></a></p>
+        <p><a href="scanners.ftl"><span>Считыватели</span></a></p>
+        <p><a href="search.ftl"><span>Поиск</span></a></p>
     </nav>
 </header>
 <main>
