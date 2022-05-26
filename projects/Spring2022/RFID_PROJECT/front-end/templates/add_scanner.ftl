@@ -8,21 +8,21 @@
     <title>RFID System</title>
     <link rel="stylesheet" type="text/css" href="../styles/index.css">
     <link rel="stylesheet" type="text/css" href="../styles/header.css">
-    <link rel="stylesheet" type="text/css" href="../styles/add_reader.css">
+    <link rel="stylesheet" type="text/css" href="../styles/add_scanner.css">
     <script src="../scripts/navigator.js"></script>
 </head>
 <body>
 <header>
     <nav style="width: 100%">
-        <p style="margin-left: 2.3%"><a href="main_page.html"><span>Главная страница</span></a></p>
-        <p><a href="add_user.html"><span>Добавить пользователя</span></a></p>
-        <p><a href="readers.html"><span>Считыватели</span></a></p>
-        <p><a href="search.html"><span>Поиск</span></a></p>
+        <p style="margin-left: 2.3%"><a href="main_page.ftl"><span>Главная страница</span></a></p>
+        <p><a href="add_user.ftl"><span>Добавить пользователя</span></a></p>
+        <p><a href="scanners.ftl"><span>Считыватели</span></a></p>
+        <p><a href="search.ftl"><span>Поиск</span></a></p>
     </nav>
 </header>
 <main>
-    <label id="id_label" for="add_reader_input">ID:</label>
-    <input id="add_reader_input" type="text"/>
+    <label id="id_label" for="add_scanner_input">ID:</label>
+    <input id="add_scanner_input" type="text"/>
 
     <label id="role_label" for="role_select">Роль:</label>
     <select id="role_select">
@@ -31,9 +31,9 @@
         <option>Администратор</option>
     </select>
 
-    <div id="add_reader_buttons">
-        <button onclick="goTo('readers.html')">Отмена</button>
-        <button id="add_reader_button">Добавить</button>
+    <div id="add_scanner_buttons">
+        <button onclick="goTo('scanners.ftl')">Отмена</button>
+        <button id="add_scanner_button">Добавить</button>
     </div>
 </main>
 </body>
