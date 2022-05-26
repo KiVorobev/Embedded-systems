@@ -1,0 +1,92 @@
+button {
+    width:44%;
+    height: 7vh;
+    background-color: whitesmoke;
+    font: 3.8vmin monospace;
+    transition: 300ms;
+}
+
+button:hover {
+    transition: 300ms;
+    box-shadow: 0 0 5px 3px whitesmoke;
+    transform: scale(1.05);
+}
+
+button:active {
+    transition: 300ms;
+    box-shadow: 0 0 5px 3px greenyellow;
+}
+
+#delete_scanner {
+    margin-left: 10%;
+}
+
+#scanner_buttons {
+    margin-top: 2vh;
+    width: 70%;
+    margin-left: 15%;
+}
+
+caption {
+    font: 4vmin monospace;
+    margin-bottom: 2vh;
+}
+
+#main_activity_table {
+    margin-top: 3vh;
+    width: 90%;
+    margin-left: 5%;
+}
+
+#scroll-table table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+#scroll-table thead th {
+    min-width: 33.33%;
+    max-width: 33.33%;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid black;
+    height: 5vh;
+    background: whitesmoke;
+    font: 4vmin monospace;
+}
+
+#scroll-table-body tbody td {
+    text-align: center;
+    height: 5vh;
+    font: 3vmin monospace;
+    vertical-align: center;
+    width: 30vw;
+}
+
+#scroll-table-body {
+    width: 100%;
+    height: 45vh;
+    overflow-x: auto;
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
+#scroll-table-body tbody tr:nth-child(even) td {
+    background: whitesmoke;
+}
+
+#scroll-table-body tbody tr:nth-child(odd) td {
+    background: bisque;
+}
+
+/* Стили для скролла */
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}

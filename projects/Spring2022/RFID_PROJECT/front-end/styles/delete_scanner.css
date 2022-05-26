@@ -19,7 +19,7 @@ label {
     font: 6vmin monospace;
 }
 
-#delete_reader_buttons {
+#delete_scanner_buttons {
     width: 65%;
     margin-top: 20vh;
     margin-left: 20%;
@@ -44,6 +44,6 @@ button:active {
     box-shadow: 0 0 5px 3px greenyellow;
 }
 
-#delete_reader_button {
+#delete_scanner_button {
     margin-left: 10%;
 }

@@ -28,7 +28,7 @@ option {
     font: 6vmin monospace;
 }
 
-#add_reader_buttons {
+#add_scanner_buttons {
     width: 62%;
     margin-top: 10vh;
     margin-left: 23%;
@@ -53,6 +53,6 @@ button:active {
     box-shadow: 0 0 5px 3px greenyellow;
 }
 
-#add_reader_button {
+#add_scanner_button {
     margin-left: 10%;
 }
