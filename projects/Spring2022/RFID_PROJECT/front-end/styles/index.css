@@ -7,7 +7,7 @@ header {
     background: peachpuff;
     z-index: 1000;
     transition: 300ms;
-    font: 4vmin monospace;
+    font: 3vmin monospace;
     border: 1px solid black
 }
 
