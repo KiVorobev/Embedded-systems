@@ -1,7 +1,10 @@
+import controller.EnterHistoryController;
 import controller.MCUController;
 import controller.ScannerController;
 import controller.UserController;
 import io.javalin.Javalin;
+
+import static io.javalin.plugin.rendering.template.TemplateUtil.model;
 
 public class Application {
 
@@ -30,6 +33,12 @@ public class Application {
         app.ws("/websocket", ws -> {
             ws.onConnect(ctx -> System.out.println("Connected"));
         });
+
+        app.get("/model", ctx -> {
+            ctx.render("test.ftl", model("user", "Kirill", "name", "Lol", "surname", "Vorobyov"));
+        });
+
+        app.get("/start", EnterHistoryController::getAllLastActivities);
 //        app.post("/input", ctx -> {
 //            // some code
 //            ctx.status(201);

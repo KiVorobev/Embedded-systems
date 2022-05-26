@@ -3,8 +3,11 @@ package dao;
 import entity.EnterHistory;
 import entity.Scanner;
 import entity.User;
+import jakarta.persistence.Query;
 import org.hibernate.Session;
 import util.HibernateUtil;
+
+import java.util.List;
 
 public class EntityHistoryDAOImpl implements EnterHistoryDAO {
 
@@ -25,5 +28,16 @@ public class EntityHistoryDAOImpl implements EnterHistoryDAO {
         session.persist(enterHistory);
         session.getTransaction().commit();
         session.close();
+    }
+
+    @Override
+    public List<EnterHistory> getLastTenRows() {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.getTransaction().begin();
+        Query query = session.createQuery("from EnterHistory");
+        query.setFirstResult(0);
+        query.setMaxResults(10);
+        List<EnterHistory> activitiesList = query.getResultList();
+        return activitiesList;
     }
 }
