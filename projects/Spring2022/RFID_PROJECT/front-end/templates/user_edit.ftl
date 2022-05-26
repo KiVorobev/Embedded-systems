@@ -14,10 +14,10 @@
 <body>
 <header>
     <nav style="width: 100%">
-        <p style="margin-left: 2.3%"><a href="main_page.html"><span>Главная страница</span></a></p>
-        <p><a href="add_user.html"><span>Добавить пользователя</span></a></p>
-        <p><a href="readers.html"><span>Считыватели</span></a></p>
-        <p><a href="search.html"><span>Поиск</span></a></p>
+        <p style="margin-left: 2.3%"><a href="main_page.ftl"><span>Главная страница</span></a></p>
+        <p><a href="add_user.ftl"><span>Добавить пользователя</span></a></p>
+        <p><a href="scanners.ftl"><span>Считыватели</span></a></p>
+        <p><a href="search.ftl"><span>Поиск</span></a></p>
     </nav>
 </header>
 <main>
@@ -32,13 +32,13 @@
 
     <div id="right">
         <label id="surname_label" for="surname">Фамилия:</label>
-        <input id="surname" type="text" placeholder="Введите фамилию"/>
+        <input id="surname" type="text" placeholder="Введите фамилию" value="${surname}"/>
         <br/>
         <label id="name_label" for="name">Имя:</label>
-        <input id="name" type="text" placeholder="Введите имя"/>
+        <input id="name" type="text" placeholder="Введите имя" value="${name}"/>
         <br/>
         <label id="patronymic_label" for="patronymic">Отчество:</label>
-        <input id="patronymic" type="text" placeholder="Введите отчество"/>
+        <input id="patronymic" type="text" placeholder="Введите отчество" value="${patronymic}"/>
 
         <button id="clear_history_button">Очистить историю активности</button>
 

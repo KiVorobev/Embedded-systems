@@ -32,13 +32,13 @@ main {
     border: black solid 1px;
 }
 
-#role text {
+#role text:first-child {
     background-color: whitesmoke;
     font-weight: bold;
     margin-left: 5%;
 }
 
-#name text {
+#name text:first-child {
     background-color: whitesmoke;
     font-weight: bold;
 }
