@@ -1,26 +1,67 @@
-table {
-    width: 81%;
-    margin-left: 9.5%;
+main {
     text-align: center;
-    font-family: monospace;
-}
-
-thead {
-    font-size: 4vmin;
-}
-
-tbody {
-    font-size: 3vmin;
-}
-
-td {
-    width: 27%;
-    min-width: 27%;
-    max-width: 27%;
 }
 
 caption {
-    margin-top: 1vh;
+    font: 4vmin monospace;
     margin-bottom: 2vh;
-    font-size: 5vmin;
+}
+
+#main_activity_table {
+    margin-top: 3vh;
+    width: 90%;
+    margin-left: 5%;
+}
+
+#scroll-table table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+#scroll-table thead th {
+    min-width: 33.33%;
+    max-width: 33.33%;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid black;
+    height: 5vh;
+    background: whitesmoke;
+    font: 4vmin monospace;
+}
+
+#scroll-table-body tbody td {
+    text-align: center;
+    height: 5vh;
+    font: 3vmin monospace;
+    vertical-align: center;
+    width: 30vw;
+}
+
+#scroll-table-body {
+    width: 100%;
+    height: 60vh;
+    overflow-x: auto;
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
+#scroll-table-body tbody tr:nth-child(even) td {
+    background: whitesmoke;
+}
+
+#scroll-table-body tbody tr:nth-child(odd) td {
+    background: bisque;
+}
+
+/* Стили для скролла */
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
