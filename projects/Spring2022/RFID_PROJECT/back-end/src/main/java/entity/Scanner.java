@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Table(name = "scanners")
 @Getter
@@ -27,4 +29,7 @@ public class Scanner {
 
     @Column(name = "inner_id", unique = true, nullable = false)
     private Long innerId;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "scanner", fetch = FetchType.EAGER)
+    private List<EnterHistory> activities;
 }

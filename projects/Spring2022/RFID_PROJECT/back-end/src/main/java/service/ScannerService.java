@@ -49,7 +49,7 @@ public class ScannerService {
         Scanner scanner = scannerDAO.findScannerByNumber(hardwareNumber);
         User user = userService.getById(personId);
         if (user.getRole().priority >= scanner.getRole().priority) {
-            enterHistoryDAO.addActivity(new EnterHistory(LocalDateTime.now()), user.getId());
+            enterHistoryDAO.addActivity(new EnterHistory(LocalDateTime.now()), user.getId(), scanner);
             return true;
         } else return false;
     }

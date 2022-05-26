@@ -28,6 +28,10 @@ public class EnterHistory {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "scanner_id")
+    private Scanner scanner;
+
     public EnterHistory(LocalDateTime enterActivity) {
         this.enterActivity = enterActivity;
     }
