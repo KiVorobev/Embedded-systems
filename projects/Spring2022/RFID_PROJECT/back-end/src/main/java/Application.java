@@ -41,6 +41,10 @@ public class Application {
         app.get("/start", EnterHistoryController::getAllLastActivities);
 
         app.get("/scanners", ScannerController::renderScannerPage);
+        app.get("/*", context -> {
+            context.redirect("/start");
+        });
+
 
     }
 }
