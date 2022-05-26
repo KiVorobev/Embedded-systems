@@ -51,6 +51,12 @@
             <artifactId>jackson-datatype-jsr310</artifactId>
             <version>2.13.2</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.30</version>
+        </dependency>
     </dependencies>
     <properties>
         <maven.compiler.source>16</maven.compiler.source>

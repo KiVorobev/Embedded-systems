@@ -5,9 +5,13 @@ import io.javalin.http.Context;
 import model.EnterHistoryModel;
 import model.UserModel;
 import service.EnterHistoryService;
+import util.ViewUtil;
 
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
+
+import static io.javalin.plugin.rendering.template.TemplateUtil.model;
 
 public class EnterHistoryController {
 
@@ -18,7 +22,9 @@ public class EnterHistoryController {
         List<EnterHistoryModel> activitiesModelList = activitiesList.stream()
                 .map(EnterHistoryModel::toModel)
                 .collect(Collectors.toList());
-        context.json(activitiesModelList);
+        Map<String, Object> model = ViewUtil.getBaseModel();
+        model.put("activities", activitiesModelList);
+        context.render("start_page.ftl", model);
     }
 
 
