@@ -6,6 +6,8 @@ import jakarta.persistence.Query;
 import org.hibernate.Session;
 import util.HibernateUtil;
 
+import java.util.List;
+
 public class ScannerDAOImpl implements ScannerDAO {
 
     @Override
@@ -52,9 +54,18 @@ public class ScannerDAOImpl implements ScannerDAO {
     public Scanner findScannerByNumber(String hardwareNumber) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.getTransaction().begin();
-        Query query = session.createQuery("from Scanner  where hardwareNumber=:hardwareNumberParam");
+        Query query = session.createQuery("from Scanner where hardwareNumber=:hardwareNumberParam");
         query.setParameter("hardwareNumberParam", hardwareNumber);
         Scanner scanner = (Scanner) query.getSingleResult();
         return scanner;
+    }
+
+    @Override
+    public List<Scanner> getAllScanners() {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.getTransaction().begin();
+        Query query = session.createQuery("from Scanner");
+        List<Scanner> scannersList = query.getResultList();
+        return scannersList;
     }
 }

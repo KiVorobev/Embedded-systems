@@ -11,6 +11,7 @@ import enums.Role;
 import exception.DoesntExistException;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 
 public class ScannerService {
@@ -52,5 +53,9 @@ public class ScannerService {
             enterHistoryDAO.addActivity(new EnterHistory(LocalDateTime.now()), user.getId(), scanner);
             return true;
         } else return false;
+    }
+
+    public List<Scanner> getAllScanners() {
+        return scannerDAO.getAllScanners();
     }
 }

@@ -39,52 +39,8 @@ public class Application {
         });
 
         app.get("/start", EnterHistoryController::getAllLastActivities);
-//        app.post("/input", ctx -> {
-//            // some code
-//            ctx.status(201);
-//        });
-//
-//        app.post("/add", ctx -> {
-//            UserDAOImpl userDAOImpl = new UserDAOImpl();
-//            User user = new User();
-//            user.setName("mat");
-//            user.setSurname("ch");
-//            user.setPatronymic("rom");
-//            user.setRole(Role.USER);
-//            userDAOImpl.addUser(user);
-//            ctx.json(user);
-//        });
-//
-//        app.post("/enter", ctx -> {
-//            UserDAOImpl userDAOImpl = new UserDAOImpl();
-//            User user = userDAOImpl.findUserById(1L);
-//            EnterHistory enterHistory = new EnterHistory();
-//            enterHistory.setUser(user);
-//            enterHistory.setLocalDateTime(LocalDateTime.now());
-//            ctx.json(enterHistory);
-//        });
-////        app.get("/user", ctx -> {
-//            ctx.json(new User());
-//        });
-//
-//        app.post("/create", ctx -> {
-//            User user = ctx.bodyAsClass(User.class);
-//            System.out.println(user.getAge());
-//            System.out.println(user.getName());
-//            ctx.result("Privet");
-//        });
 
+        app.get("/scanners", ScannerController::renderScannerPage);
 
-//        app.ws("/websocket/{path}", ws -> {
-//            ws.onConnect(ctx -> System.out.println("Connected"));
-//            ws.onMessage(ctx -> {
-//                User user = ctx.messageAsClass(User.class); // convert from json
-//                System.out.println(user.getAge());
-//                ctx.send(user); // convert to json and send back
-//            });
-//            ws.onBinaryMessage(ctx -> System.out.println("Message"));
-//            ws.onClose(ctx -> System.out.println("Closed"));
-//            ws.onError(ctx -> System.out.println("Errored"));
-//        });
     }
 }

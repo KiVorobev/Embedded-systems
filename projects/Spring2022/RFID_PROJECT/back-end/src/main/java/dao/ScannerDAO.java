@@ -3,6 +3,8 @@ package dao;
 import entity.Scanner;
 import enums.Role;
 
+import java.util.List;
+
 public interface ScannerDAO {
 
     void addScanner(Scanner scanner);
@@ -14,5 +16,7 @@ public interface ScannerDAO {
     void updateScanner(Role newRole, Long innerId);
 
     Scanner findScannerByNumber(String hardwareNumber);
+
+    List<Scanner> getAllScanners();
 
 }

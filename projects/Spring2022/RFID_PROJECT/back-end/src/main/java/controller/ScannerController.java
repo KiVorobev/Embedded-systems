@@ -1,9 +1,16 @@
 package controller;
 
+import entity.EnterHistory;
 import entity.Scanner;
 import extraclasses.RequestToEnter;
 import io.javalin.http.Context;
+import model.EnterHistoryModel;
 import service.ScannerService;
+import util.ViewUtil;
+
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class ScannerController {
     private static final ScannerService scannerService = new ScannerService();
@@ -47,6 +54,13 @@ public class ScannerController {
         } catch (Exception e) {
             context.result(e.getMessage());
         }
+    }
+
+    public static void renderScannerPage(Context context) {
+        Map<String, Object> model = ViewUtil.getBaseModel();
+        List<Scanner> scannerList = scannerService.getAllScanners();
+        model.put("scanners", scannerList);
+        context.render("scanners_page.ftl", model);
     }
 
 
