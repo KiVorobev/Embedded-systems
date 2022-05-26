@@ -1,5 +1,6 @@
 package entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import enums.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -30,6 +31,7 @@ public class Scanner {
     @Column(name = "inner_id", unique = true, nullable = false)
     private Long innerId;
 
+    @JsonIgnoreProperties("scanner")
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "scanner", fetch = FetchType.EAGER)
     private List<EnterHistory> activities;
 }
