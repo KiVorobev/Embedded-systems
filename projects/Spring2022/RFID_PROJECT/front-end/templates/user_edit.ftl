@@ -10,6 +10,9 @@
     <link rel="stylesheet" type="text/css" href="../styles/header.css">
     <link rel="stylesheet" type="text/css" href="../styles/user_edit.css">
     <script src="../scripts/navigator.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../scripts/sender.js"></script>
+    <script src="../scripts/data_collector.js"></script>
 </head>
 <body>
 <header>

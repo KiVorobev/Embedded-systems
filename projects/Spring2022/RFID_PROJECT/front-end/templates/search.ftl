@@ -9,6 +9,9 @@
     <link rel="stylesheet" type="text/css" href="../styles/index.css">
     <link rel="stylesheet" type="text/css" href="../styles/header.css">
     <link rel="stylesheet" type="text/css" href="../styles/search.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../scripts/sender.js"></script>
+    <script src="../scripts/data_collector.js"></script>
 </head>
 <body>
 <header>
@@ -23,7 +26,7 @@
     <form method="post">
         <span>Приложите пропуск к считывателю или введите ID или ФИО ниже:</span>
         <input type="text" id="search_input" placeholder="Введите ID или ФИО"/>
-        <button id="search_button" onclick="console.log(1)" type="submit">Поиск</button>
+        <button id="search_button" type="submit">Поиск</button>
     </form>
 </main>
 </body>

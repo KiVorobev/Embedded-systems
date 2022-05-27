@@ -10,6 +10,9 @@
     <link rel="stylesheet" type="text/css" href="../styles/header.css">
     <link rel="stylesheet" type="text/css" href="../styles/add_scanner.css">
     <script src="../scripts/navigator.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../scripts/sender.js"></script>
+    <script src="../scripts/data_collector.js"></script>
 </head>
 <body>
 <header>
@@ -24,8 +27,8 @@
     <label id="id_label" for="add_scanner_input">ID:</label>
     <input id="add_scanner_input" type="text"/>
 
-    <label id="role_label" for="role_select">Роль:</label>
-    <select id="role_select">
+    <label id="role_label" for="scanner_role_select">Роль:</label>
+    <select id="scanner_role_select">
         <option selected disabled>Выберите роль</option>
         <option>Пользователь</option>
         <option>Администратор</option>
