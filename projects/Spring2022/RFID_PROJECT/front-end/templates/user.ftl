@@ -24,10 +24,13 @@
     <div id="left">
         <div id="name">
             <text>ФИО:</text>
-            <text>${name}</text>
+            <text>${user.name}</text>
         </div>
         <div id="role">
-            <text>Роль: ${role}</text>
+            <text>Роль: ${user.role}</text>
+        </div>
+        <div id="user_id">
+            <text>ID: ${user.id}</text>
         </div>
         <button onclick="goTo('user_edit.ftl')">Редактировать профиль</button>
     </div>

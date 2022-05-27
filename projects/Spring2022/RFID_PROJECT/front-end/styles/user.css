@@ -23,7 +23,7 @@ main {
     border: black solid 1px;
 }
 
-#role {
+#role, #user_id {
     margin-top: 3vh;
     margin-left: 15%;
     background-color: whitesmoke;
@@ -32,7 +32,7 @@ main {
     border: black solid 1px;
 }
 
-#role text:first-child {
+#role text:first-child, #user_id text:first-child {
     background-color: whitesmoke;
     font-weight: bold;
     margin-left: 5%;
