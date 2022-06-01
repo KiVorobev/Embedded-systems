@@ -42,7 +42,7 @@
                     <#list activities as activity>
                     <tr>
                         <td>${activity.scannerId}</td>
-                        <td>${activity.enterActivity}</td>
+                        <td>${activity.date}</td>
                         <td>${activity.user.surname} ${activity.user.name} ${activity.user.patronymic}</td>
                     </tr>
                     </#list>
