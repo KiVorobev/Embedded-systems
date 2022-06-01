@@ -9,7 +9,7 @@ main {
 
 #right {
     display: inline-block;
-    margin-left: 5%;
+    /*margin-left: 5%;*/
     width: 60%;
 }
 
@@ -28,19 +28,25 @@ main {
     margin-left: 15%;
     background-color: whitesmoke;
     width: 80%;
-    height: 9vh;
+    height: 7vh;
     border: black solid 1px;
+    text-align: center;
 }
 
-#role text:first-child, #user_id text:first-child {
+#left div.topic {
     background-color: whitesmoke;
+    font: 3vmin monospace;
     font-weight: bold;
-    margin-left: 5%;
 }
 
-#name text:first-child {
+#left div:not(:first-child) > div:first-child {
+    margin-top: 3%;
+}
+
+#left text.content {
     background-color: whitesmoke;
-    font-weight: bold;
+    font: 3vmin monospace;
+    font-weight: initial;
 }
 
 button {
@@ -64,20 +70,55 @@ button:active {
     box-shadow: 0 0 5px 3px greenyellow;
 }
 
-table {
-    margin-top: 5vh;
-    width: 96%;
-    text-align: center;
-}
-
 caption {
     font: 4vmin monospace;
 }
 
-thead {
-    font-size: 3.5vmin;
+#scroll-table table, #scroll-table-body table {
+    width: 100%;
+    table-layout: fixed;
+    text-align: center;
 }
 
-tbody {
-    font-size: 2.75vmin;
+#scroll-table thead th {
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid black;
+    height: 5vh;
+    background: whitesmoke;
+    font: 4vmin monospace;
+}
+
+#scroll-table-body {
+    width: 100%;
+    height: 60vh;
+    overflow-x: auto;
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
+#scroll-table-body tbody td {
+    height: 5vh;
+    font: 3vmin monospace;
+}
+
+#scroll-table-body tbody tr:nth-child(even) td {
+    background: whitesmoke;
+}
+
+#scroll-table-body tbody tr:nth-child(odd) td {
+    background: bisque;
+}
+
+/* Стили для скролла */
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }

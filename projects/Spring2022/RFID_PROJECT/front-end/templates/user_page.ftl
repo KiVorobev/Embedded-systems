@@ -6,11 +6,11 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>RFID System</title>
-    <style type="text/css">
-        <#include "../styles/index.css">
-        <#include "../styles/header.css">
-        <#include "../styles/user_page.css">
-    </style>
+        <style type="text/css">
+            <#include "../styles/index.css">
+            <#include "../styles/header.css">
+            <#include "../styles/user_page.css">
+        </style>
     <script src="../scripts/navigator.js"></script>
 </head>
 <body>
@@ -25,25 +25,38 @@
 <main>
     <div id="left">
         <div id="name">
-            <text>ФИО:</text>
-            <text>${user.surname} ${user.name} ${user.patronymic}</text>
+            <div class="topic">ФИО:
+                </br>
+                <text class="content">${user.surname} ${user.name} ${user.patronymic}</text>
+            </div>
         </div>
         <div id="role">
-            <text>Роль: ${user.role}</text>
+            <div class="topic">Роль:
+                <text class="content">${user.role}</text>
+            </div>
         </div>
         <div id="user_id">
-            <text>ID: ${user.userId}</text>
+            <div class="topic">ID:
+                <text class="content">${user.userId}</text>
+            </div>
         </div>
         <button onclick="goTo('user_edit.ftl')">Редактировать профиль</button>
     </div>
     <div id="right">
         <ul>
+            <div id="scroll-table">
                 <table>
                     <caption>Последняя активность:</caption>
                     <thead>
-                    <th>№ считывателя</th>
-                    <th>Дата и время</th>
+                    <tr>
+                        <th>№ считывателя</th>
+                        <th>Дата и время</th>
+                    </tr>
                     </thead>
+                </table>
+            </div>
+            <div id="scroll-table-body">
+                <table>
                     <tbody>
                     <#list activities as activity>
                     <tr>
@@ -53,6 +66,7 @@
                     </#list>
                     </tbody>
                 </table>
+            </div>
         </ul>
     </div>
 </main>
