@@ -29,6 +29,11 @@
 </header>
 <main>
     <div id="left">
+        <div id="user_id">
+            <div class="topic">ID:
+                <text class="content">${user.userId}</text>
+            </div>
+        </div>
         <label id="role_label" for="role_select">Роль:</label>
         <select id="role_select">
             <option selected disabled>Выберите роль ${user.role}</option>
