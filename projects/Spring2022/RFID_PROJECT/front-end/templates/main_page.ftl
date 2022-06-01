@@ -6,9 +6,11 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>RFID System</title>
-    <link rel="stylesheet" type="text/css" href="../styles/index.css">
-    <link rel="stylesheet" type="text/css" href="../styles/header.css">
-    <link rel="stylesheet" type="text/css" href="../styles/main_page.css">
+    <style type="text/css">
+        <#include "../styles/index.css">
+        <#include "../styles/header.css">
+        <#include "../styles/main_page.css">
+    </style>
 </head>
 <body>
 <header>
@@ -21,7 +23,6 @@
 </header>
 <main>
     <ul>
-        <#list activities as activity>
         <div id="main_activity_table">
             <div id="scroll-table">
                 <table>
@@ -38,16 +39,17 @@
             <div id="scroll-table-body">
                 <table>
                     <tbody>
+                    <#list activities as activity>
                     <tr>
-                        <td>${activity.scanner}</td>
-                        <td>${activity.date}</td>
-                        <td>${activity.user.surname} #{activity.user.name} #{activity.user.patronymic}</td>
+                        <td>${activity.scannerId}</td>
+                        <td>${activity.enterActivity}</td>
+                        <td>${activity.user.surname} ${activity.user.name} ${activity.user.patronymic}</td>
                     </tr>
+                    </#list>
                     </tbody>
                 </table>
             </div>
         </div>
-        </#list>
     </ul>
 </main>
 </body>
