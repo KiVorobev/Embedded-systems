@@ -6,10 +6,14 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>RFID System</title>
-    <link rel="stylesheet" type="text/css" href="../styles/index.css">
-    <link rel="stylesheet" type="text/css" href="../styles/header.css">
-    <link rel="stylesheet" type="text/css" href="../styles/scanners.css">
-    <script src="../scripts/navigator.js"></script>
+    <style type="text/css">
+        <#include "../styles/index.css">
+        <#include "../styles/header.css">
+        <#include "../styles/scanners.css">
+    </style>
+    <script>
+        <#include "../scripts/navigator.js">
+    </script>
 </head>
 <body>
 <header>
@@ -22,7 +26,6 @@
 </header>
 <main>
     <ul>
-        <#list scanners as scanner>
             <div id="main_activity_table">
                 <div id="scroll-table">
                     <table>
@@ -39,11 +42,13 @@
                 <div id="scroll-table-body">
                     <table>
                         <tbody>
+                        <#list scanners as scanner>
                         <tr>
                             <td>${scanner.id}</td>
                             <td>${scanner.innerId}</td>
                             <td>${scanner.role}</td>
                         </tr>
+                        </#list>
                         </tbody>
                     </table>
                 </div>
@@ -52,7 +57,6 @@
                 <button id="add_scanner" onclick="goTo('add_scanner.html')">Добавить считыватель</button>
                 <button id="delete_scanner" onclick="goTo('delete_scanner.html')">Удалить считыватель</button>
             </div>
-        </#list>
     </ul>
 </main>
 </body>
