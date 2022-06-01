@@ -26,7 +26,7 @@
 </header>
 <main>
     <ul>
-            <div id="main_activity_table">
+        <div id="main_activity_table">
                 <div id="scroll-table">
                     <table>
                         <caption>Считыватели:</caption>
@@ -52,11 +52,11 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
-            <div id="scanner_buttons">
-                <button id="add_scanner" onclick="goTo('add_scanner.html')">Добавить считыватель</button>
-                <button id="delete_scanner" onclick="goTo('delete_scanner.html')">Удалить считыватель</button>
-            </div>
+        </div>
+        <div id="scanner_buttons">
+            <button id="add_scanner" onclick="goTo('add_scanner.html')">Добавить считыватель</button>
+            <button id="delete_scanner" onclick="goTo('delete_scanner.html')">Удалить считыватель</button>
+        </div>
     </ul>
 </main>
 </body>
