@@ -17,6 +17,7 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 public class UserModel {
 
+    private Long userId;
     private String name;
     private String surname;
     private String patronymic;
@@ -25,6 +26,7 @@ public class UserModel {
 
     public static UserModel toModel(User user) {
         UserModel userModel = new UserModel();
+        userModel.setUserId(user.getId());
         userModel.setName(user.getName());
         userModel.setSurname(user.getSurname());
         userModel.setPatronymic(user.getPatronymic());

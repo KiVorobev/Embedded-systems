@@ -12,6 +12,7 @@ public class Application {
         Javalin app = Javalin.create().start(7000);
 
         app.get("/user/get/{id}", UserController::getUser);
+        app.get("/user/edit/{id}", UserController::editUser);
         app.before("/user/get/{id}", ctx -> {
             System.out.println("before");
         });

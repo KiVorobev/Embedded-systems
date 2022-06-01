@@ -31,12 +31,12 @@ public class EntityHistoryDAOImpl implements EnterHistoryDAO {
     }
 
     @Override
-    public List<EnterHistory> getLastTenRows() {
+    public List<EnterHistory> getLastTwentyRows() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.getTransaction().begin();
-        Query query = session.createQuery("from EnterHistory");
+        Query query = session.createQuery("from EnterHistory order by enterActivity desc");
         query.setFirstResult(0);
-        query.setMaxResults(10);
+        query.setMaxResults(20);
         List<EnterHistory> activitiesList = query.getResultList();
         return activitiesList;
     }

@@ -60,7 +60,7 @@ public class ScannerController {
         Map<String, Object> model = ViewUtil.getBaseModel();
         List<Scanner> scannerList = scannerService.getAllScanners();
         model.put("scanners", scannerList);
-        context.render("scanners_page.ftl", model);
+        context.render("templates/scanners.ftl", model);
     }
 
 

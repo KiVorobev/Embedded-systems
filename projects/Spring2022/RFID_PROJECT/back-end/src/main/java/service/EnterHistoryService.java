@@ -15,7 +15,7 @@ public class EnterHistoryService {
     }
 
     public List<EnterHistory> getAllLastActivities() {
-        return enterHistoryDAO.getLastTenRows();
+        return enterHistoryDAO.getLastTwentyRows();
     }
 
 }

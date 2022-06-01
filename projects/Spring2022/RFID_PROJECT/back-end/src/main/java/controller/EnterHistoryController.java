@@ -24,7 +24,7 @@ public class EnterHistoryController {
                 .collect(Collectors.toList());
         Map<String, Object> model = ViewUtil.getBaseModel();
         model.put("activities", activitiesModelList);
-        context.render("start_page.ftl", model);
+        context.render("templates/main_page.ftl", model);
     }
 
 
