@@ -12,10 +12,10 @@
         <#include "../styles/user_edit.css">
     </style>
     <script>
+        <#include "../scripts/jquery-3.6.0.js">
         <#include "../scripts/navigator.js">
         <#include "../scripts/sender.js">
         <#include "../scripts/data_collector.js">
-        <#include "../scripts/jquery-3.6.0.js">
     </script>
 </head>
 <body>

@@ -6,12 +6,14 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>RFID System</title>
-        <style type="text/css">
-            <#include "../styles/index.css">
-            <#include "../styles/header.css">
-            <#include "../styles/user_page.css">
-        </style>
-    <script src="../scripts/navigator.js"></script>
+    <style type="text/css">
+        <#include "../styles/index.css">
+        <#include "../styles/header.css">
+        <#include "../styles/user_page.css">
+    </style>
+    <script>
+        <#include "../scripts/navigator.js">
+    </script>
 </head>
 <body>
 <header>
@@ -59,10 +61,10 @@
                 <table>
                     <tbody>
                     <#list activities as activity>
-                    <tr>
-                        <td>${activity.scanner.innerId}</td>
-                        <td>${activity.enterActivity}</td>
-                    </tr>
+                        <tr>
+                            <td>${activity.scanner.innerId}</td>
+                            <td>${activity.enterActivity}</td>
+                        </tr>
                     </#list>
                     </tbody>
                 </table>

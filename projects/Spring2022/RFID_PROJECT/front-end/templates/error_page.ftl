@@ -20,7 +20,7 @@
     </nav>
 </header>
 <main>
-<img src="../img/404.png" alt="error"/>
+    <img src="../img/404.png" alt="error"/>
 </main>
 </body>
 </html>

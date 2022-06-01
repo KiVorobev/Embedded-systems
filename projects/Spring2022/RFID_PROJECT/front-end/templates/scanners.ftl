@@ -14,6 +14,7 @@
     <script>
         <#include "../scripts/navigator.js">
     </script>
+
 </head>
 <body>
 <header>

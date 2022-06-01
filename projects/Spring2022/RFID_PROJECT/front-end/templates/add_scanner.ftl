@@ -6,13 +6,17 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>RFID System</title>
-    <link rel="stylesheet" type="text/css" href="../styles/index.css">
-    <link rel="stylesheet" type="text/css" href="../styles/header.css">
-    <link rel="stylesheet" type="text/css" href="../styles/add_scanner.css">
-    <script src="../scripts/navigator.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../scripts/sender.js"></script>
-    <script src="../scripts/data_collector.js"></script>
+    <style type="text/css">
+        <#include "../styles/index.css">
+        <#include "../styles/header.css">
+        <#include "../styles/add_scanner.css">
+    </style>
+    <script>
+        <#include "../scripts/jquery-3.6.0.js">
+        <#include "../scripts/navigator.js">
+        <#include "../scripts/sender.js">
+        <#include "../scripts/data_collector.js">
+    </script>
 </head>
 <body>
 <header>
