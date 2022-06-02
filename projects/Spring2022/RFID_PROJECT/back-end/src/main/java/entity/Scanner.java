@@ -28,10 +28,7 @@ public class Scanner {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    @Column(name = "inner_id", unique = true, nullable = false)
-    private Long innerId;
-
     @JsonIgnoreProperties("scanner")
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "scanner", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "scanner", fetch = FetchType.EAGER , cascade = CascadeType.ALL)
     private List<EnterHistory> activities;
 }

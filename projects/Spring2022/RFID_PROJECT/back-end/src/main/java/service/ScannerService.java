@@ -30,16 +30,12 @@ public class ScannerService {
         scannerDAO.addScanner(scanner);
     }
 
-    public void removeByInnerId(Long id) {
-        scannerDAO.removeScannerByInnerId(id);
-    }
-
     public void removeByHardwareNumber(String hardwareNumber) {
         scannerDAO.removeScannerByNumber(hardwareNumber);
     }
 
-    public void update(Role newRole, Long innerId) {
-        scannerDAO.updateScanner(newRole, innerId);
+    public void update(Role newRole, String hardwareNumber) {
+        scannerDAO.updateScanner(newRole, hardwareNumber);
     }
 
     public Scanner findByHardwareNumber(String hardwareNumber) {

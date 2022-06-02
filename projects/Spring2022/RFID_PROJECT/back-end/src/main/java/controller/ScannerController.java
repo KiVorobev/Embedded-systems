@@ -1,16 +1,13 @@
 package controller;
 
-import entity.EnterHistory;
 import entity.Scanner;
 import extraclasses.RequestToEnter;
 import io.javalin.http.Context;
-import model.EnterHistoryModel;
 import service.ScannerService;
 import util.ViewUtil;
 
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class ScannerController {
     private static final ScannerService scannerService = new ScannerService();
@@ -19,13 +16,9 @@ public class ScannerController {
         Scanner scanner = context.bodyAsClass(Scanner.class);
         scannerService.add(scanner);
         context.json(scanner);
-    }
-
-    public static void removeScannerByInnerId(Context context) {
-        Long id = Long.parseLong(context.pathParam("innerId"));
-        scannerService.removeByInnerId(id);
         context.status(200);
     }
+
 
     public static void removeScannerByHardwareNumber(Context context) {
         String hardwareNumber = context.pathParam("hardwareNumber");
@@ -35,7 +28,7 @@ public class ScannerController {
 
     public static void update(Context context) {
         Scanner scanner = context.bodyAsClass(Scanner.class);
-        scannerService.update(scanner.getRole(), scanner.getInnerId());
+        scannerService.update(scanner.getRole(), scanner.getHardwareNumber());
     }
 
     public static Scanner findScannerByHardwareNumber(Context context) {
@@ -61,6 +54,17 @@ public class ScannerController {
         List<Scanner> scannerList = scannerService.getAllScanners();
         model.put("scanners", scannerList);
         context.render("templates/scanners.ftl", model);
+    }
+
+    public static void renderAddScannerPage(Context context) {
+        Map<String, Object> model = ViewUtil.getBaseModel();
+        List<Scanner> scannerList = scannerService.getAllScanners();
+        model.put("scanners", scannerList);
+        context.render("templates/add_scanner.ftl", model);
+    }
+
+    public static void renderRemovePage(Context context) {
+        context.render("templates/delete_scanner.ftl");
     }
 
 

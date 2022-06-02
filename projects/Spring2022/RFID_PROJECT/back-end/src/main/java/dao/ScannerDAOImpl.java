@@ -19,34 +19,26 @@ public class ScannerDAOImpl implements ScannerDAO {
         session.close();
     }
 
-    @Override
-    public void removeScannerByInnerId(Long innerId) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        session.getTransaction().begin();
-        Query query = session.createQuery("delete Scanner where innerId= :ID");
-        query.setParameter("ID", innerId);
-        query.executeUpdate();
-        session.close();
-    }
 
     @Override
     public void removeScannerByNumber(String hardwareNumber) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.getTransaction().begin();
-        Query query = session.createQuery("delete Scanner where hardwareNumber= :number");
-        query.setParameter("number", hardwareNumber);
-        query.executeUpdate();
+        Scanner scanner = findScannerByNumber(hardwareNumber);
+        session.remove(scanner);
+        session.getTransaction().commit();
         session.close();
     }
 
     @Override
-    public void updateScanner(Role newRole, Long innerId) {
+    public void updateScanner(Role newRole, String hardwareNumber) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.getTransaction().begin();
-        Query query = session.createQuery("update Scanner set role=:roleParam where innerId=:innerIdParam");
+        Query query = session.createQuery("update Scanner set role=:roleParam where hardwareNumber=:hardwareNumParam");
         query.setParameter("roleParam", newRole);
-        query.setParameter("innerIdParam", innerId);
+        query.setParameter("hardwareNumParam", hardwareNumber);
         query.executeUpdate();
+        session.getTransaction().commit();
         session.close();
     }
 
@@ -57,6 +49,8 @@ public class ScannerDAOImpl implements ScannerDAO {
         Query query = session.createQuery("from Scanner where hardwareNumber=:hardwareNumberParam");
         query.setParameter("hardwareNumberParam", hardwareNumber);
         Scanner scanner = (Scanner) query.getSingleResult();
+        session.getTransaction().commit();
+        session.close();
         return scanner;
     }
 
@@ -66,6 +60,8 @@ public class ScannerDAOImpl implements ScannerDAO {
         session.getTransaction().begin();
         Query query = session.createQuery("from Scanner");
         List<Scanner> scannersList = query.getResultList();
+        session.getTransaction().commit();
+        session.close();
         return scannersList;
     }
 }
