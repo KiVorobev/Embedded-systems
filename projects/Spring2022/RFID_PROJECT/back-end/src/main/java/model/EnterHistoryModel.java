@@ -15,14 +15,14 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class EnterHistoryModel {
 
-    private Long scannerId;
+    private String scannerHardwareNum;
     private LocalDateTime enterActivity;
     private UserModel user;
 
     public static EnterHistoryModel toModel(EnterHistory enterHistory) {
         EnterHistoryModel enterHistoryModel = new EnterHistoryModel();
         enterHistoryModel.setUser(UserModel.toModel(enterHistory.getUser()));
-        enterHistoryModel.setScannerId(enterHistory.getScanner().getInnerId());
+        enterHistoryModel.setScannerHardwareNum(enterHistory.getScanner().getHardwareNumber());
         enterHistoryModel.setEnterActivity(enterHistory.getEnterActivity());
         return enterHistoryModel;
     }
