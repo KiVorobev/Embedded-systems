@@ -40,4 +40,14 @@ public class EntityHistoryDAOImpl implements EnterHistoryDAO {
         List<EnterHistory> activitiesList = query.getResultList();
         return activitiesList;
     }
+
+    @Override
+    public void deleteActivityList(Long userId) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.getTransaction().begin();
+        Query query = session.createQuery("delete EnterHistory where user.id =: userID");
+        query.setParameter("userID", userId);
+        query.executeUpdate();
+        session.close();
+    }
 }

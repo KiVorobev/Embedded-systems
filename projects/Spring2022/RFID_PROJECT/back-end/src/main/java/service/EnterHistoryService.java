@@ -18,4 +18,8 @@ public class EnterHistoryService {
         return enterHistoryDAO.getLastTwentyRows();
     }
 
+    public void deleteActivityList(Long userId){
+        enterHistoryDAO.deleteActivityList(userId);
+    }
+
 }
