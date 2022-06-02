@@ -20,9 +20,11 @@ public class Application {
         app.delete("/user/delete/{id}", UserController::deleteUser);
         app.post("/user/update", UserController::updateUser);
 
+        app.get("/scanner/put" , ScannerController::renderAddScannerPage);
+        app.get("/scanner/remove" , ScannerController::renderRemovePage);
         app.post("/scanner/add", ScannerController::addScanner);
         app.get("/scanner/get/{hardwareNumber}", ScannerController::findScannerByHardwareNumber);
-        app.delete("/scanner/delete/{innerId}", ScannerController::removeScannerByInnerId);
+        app.delete("/scanner/delete/{hardwareNumber}", ScannerController::removeScannerByHardwareNumber);
         app.post("/scanner/update", ScannerController::update);
 
         app.post("/mcu/add", MCUController::addMCU);
@@ -35,11 +37,8 @@ public class Application {
             ws.onConnect(ctx -> System.out.println("Connected"));
         });
 
-        app.get("/model", ctx -> {
-            ctx.render("test.ftl", model("user", "Kirill", "name", "Lol", "surname", "Vorobyov"));
-        });
-
         app.get("/start", EnterHistoryController::getAllLastActivities);
+        app.delete("/user/delete/activities/{id}", EnterHistoryController::deleteActivityList);
 
         app.get("/scanners", ScannerController::renderScannerPage);
         app.get("/*", context -> {
