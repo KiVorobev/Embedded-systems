@@ -21,9 +21,9 @@ public class UserDAOImpl implements UserDAO {
     public void removeUser(Long id) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.getTransaction().begin();
-        Query query = session.createQuery("delete User where id= :ID");
-        query.setParameter("ID", id);
-        query.executeUpdate();
+        User user = findUserById(id);
+        session.remove(user);
+        session.getTransaction().commit();
         session.close();
     }
 

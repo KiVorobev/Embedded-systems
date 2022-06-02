@@ -2,14 +2,11 @@ package controller;
 
 import entity.User;
 import io.javalin.http.Context;
-import io.javalin.http.Handler;
 import model.UserModel;
 import service.UserService;
 import util.ViewUtil;
 
 import java.util.Map;
-
-import static io.javalin.plugin.rendering.template.TemplateUtil.model;
 
 
 public class UserController {
@@ -29,7 +26,20 @@ public class UserController {
             Map<String, Object> model = ViewUtil.getBaseModel();
             model.put("user", userModel);
             model.put("activities", userModel.getEnterHistory());
-            context.render("user_page.ftl", model);
+            context.render("templates/user_page.ftl", model);
+        } catch (Exception e) {
+            context.render("templates/error_page.ftl");
+        }
+    }
+
+    public static void editUser(Context context) {
+        try {
+            User user = userService.getById(Long.parseLong(context.pathParam("id")));
+            UserModel userModel = UserModel.toModel(user);
+            Map<String, Object> model = ViewUtil.getBaseModel();
+            model.put("user", userModel);
+            model.put("activities", userModel.getEnterHistory());
+            context.render("templates/user_edit.ftl", model);
         } catch (Exception e) {
             context.result(e.getMessage());
         }
@@ -42,9 +52,15 @@ public class UserController {
     }
 
     public static void updateUser(Context context) {
-        User user = context.bodyAsClass(User.class);
-        userService.updateUser(user.getId(), user);
-        context.json(user);
+        try {
+            User user = context.bodyAsClass(User.class);
+            UserModel userModel = UserModel.toModel(user);
+            userService.updateUser(user.getId(), user);
+            context.status(200);
+            context.json(user);
+        } catch (Exception e) {
+            context.result(e.getMessage());
+        }
     }
 
 

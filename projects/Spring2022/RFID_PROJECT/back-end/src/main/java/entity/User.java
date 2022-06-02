@@ -37,7 +37,7 @@ public class User {
     private Role role;
 
     @JsonIgnoreProperties("user")
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.EAGER )
     private List<EnterHistory> enterHistory;
 
 }
