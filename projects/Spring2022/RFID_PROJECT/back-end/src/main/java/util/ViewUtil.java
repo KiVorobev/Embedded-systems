@@ -7,9 +7,11 @@ public class ViewUtil {
 
     private static Map<String, Object> baseModel;
 
+    public static final Integer port = Integer.parseInt(PropertiesUtil.get("port"));
+
     public static Map<String, Object> getBaseModel() {
         baseModel = new HashMap<>();
-        baseModel.put("port", Integer.parseInt(PropertiesUtil.get("port")));
+        baseModel.put("port", port);
         return baseModel;
     }
 }

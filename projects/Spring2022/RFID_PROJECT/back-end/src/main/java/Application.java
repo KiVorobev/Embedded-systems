@@ -8,7 +8,10 @@ import util.PropertiesUtil;
 public class Application {
 
     public static void main(String[] args) {
-        Javalin app = Javalin.create().start(Integer.parseInt(PropertiesUtil.get("port")));
+        Javalin app = Javalin.create( config ->{
+            config.contextPath = "/";
+            config.enableDevLogging();
+        }).start(Integer.parseInt(PropertiesUtil.get("port")));
 
         app.get("/start", EnterHistoryController::getAllLastActivities);
         app.get("/scanners", ScannerController::renderScannerPage);
@@ -29,6 +32,7 @@ public class Application {
 
         app.post("/mcu/add", MCUController::addMCU);
         app.get("/mcu/get/{address}", MCUController::findByAddress);
+
 
         app.post("/mcu/enter", ScannerController::verifyEnter);
 

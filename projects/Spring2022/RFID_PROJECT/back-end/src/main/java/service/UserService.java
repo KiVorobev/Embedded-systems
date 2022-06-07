@@ -1,12 +1,13 @@
 package service;
 
+import dao.UserDAO;
 import dao.UserDAOImpl;
 import entity.User;
 import exception.DoesntExistException;
 
 public class UserService {
 
-    private UserDAOImpl userDAO;
+    private UserDAO userDAO;
 
     public UserService() {
         userDAO = new UserDAOImpl();

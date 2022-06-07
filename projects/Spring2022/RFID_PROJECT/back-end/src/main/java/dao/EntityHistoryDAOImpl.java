@@ -38,6 +38,8 @@ public class EntityHistoryDAOImpl implements EnterHistoryDAO {
         query.setFirstResult(0);
         query.setMaxResults(20);
         List<EnterHistory> activitiesList = query.getResultList();
+        session.getTransaction().commit();
+        session.close();
         return activitiesList;
     }
 

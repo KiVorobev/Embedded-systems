@@ -64,7 +64,8 @@ public class ScannerController {
     }
 
     public static void renderRemovePage(Context context) {
-        context.render("templates/delete_scanner.ftl");
+        Map<String, Object> model = ViewUtil.getBaseModel();
+        context.render("templates/delete_scanner.ftl" , model);
     }
 
 
