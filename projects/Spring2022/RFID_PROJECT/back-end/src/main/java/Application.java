@@ -3,13 +3,14 @@ import controller.MCUController;
 import controller.ScannerController;
 import controller.UserController;
 import io.javalin.Javalin;
+import util.PropertiesUtil;
 
 import static io.javalin.plugin.rendering.template.TemplateUtil.model;
 
 public class Application {
 
     public static void main(String[] args) {
-        Javalin app = Javalin.create().start(7000);
+        Javalin app = Javalin.create().start(Integer.parseInt(PropertiesUtil.get("port")));
 
         app.get("/user/get/{id}", UserController::getUser);
         app.get("/user/edit/{id}", UserController::editUser);

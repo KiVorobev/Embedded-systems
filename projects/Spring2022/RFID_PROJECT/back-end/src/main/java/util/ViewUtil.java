@@ -9,6 +9,7 @@ public class ViewUtil {
 
     public static Map<String, Object> getBaseModel() {
         baseModel = new HashMap<>();
+        baseModel.put("port", Integer.parseInt(PropertiesUtil.get("port")));
         return baseModel;
     }
 }
