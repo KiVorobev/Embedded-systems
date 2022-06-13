@@ -70,7 +70,7 @@ function addUser() {
     let name = document.getElementById('name').value;
     let patronymic = document.getElementById('patronymic').value;
     let role = document.getElementById('role_select').value;
-    sendUserEdit(cardId, surname, name, patronymic, role);
+    sendAddUser(cardId, surname, name, patronymic, role);
 }
 
 function search() {

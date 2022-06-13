@@ -39,7 +39,7 @@ function sendAddScanner(id, role) {
     });
 }
 
-function sendUserEdit(cardId, surname, name, patronymic, role) {
+function sendAddUser(cardId, surname, name, patronymic, role) {
     $.ajax({
         url: "http://localhost:" + getPort() + "/user/add",
         type: "POST",
