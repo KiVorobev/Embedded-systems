@@ -21,9 +21,9 @@
 <body>
 <header>
     <nav style="width: 100%">
-        <p style="margin-left: 2.3%"><a href="main_page.ftl"><span>Главная страница</span></a></p>
+        <p style="margin-left: 2.3%"><a onclick=goTo('start')><span>Главная страница</span></a></p>
         <p><a href="add_user.ftl"><span>Добавить пользователя</span></a></p>
-        <p><a href="scanners.ftl"><span>Считыватели</span></a></p>
+        <p><a onclick=goTo('scanners')><span>Считыватели</span></a></p>
         <p><a href="search.ftl"><span>Поиск</span></a></p>
     </nav>
 </header>
@@ -34,13 +34,13 @@
     <label id="role_label" for="scanner_role_select">Роль:</label>
     <select id="scanner_role_select">
         <option selected disabled>Выберите роль</option>
-        <option>Пользователь</option>
-        <option>Администратор</option>
+        <option>USER</option>
+        <option>ADMIN</option>
     </select>
 
     <div id="add_scanner_buttons">
-        <button onclick="goTo('scanners.ftl')">Отмена</button>
-        <button id="add_scanner_button">Добавить</button>
+        <button onclick=goTo('scanners')>Отмена</button>
+        <button id="add_scanner_button" onclick="addScanner()">Добавить</button>
     </div>
 </main>
 </body>

@@ -21,9 +21,9 @@
 <body>
 <header>
     <nav style="width: 100%">
-        <p style="margin-left: 2.3%"><a href="main_page.ftl"><span>Главная страница</span></a></p>
+        <p style="margin-left: 2.3%"><a onclick=goTo('start')><span>Главная страница</span></a></p>
         <p><a href="add_user.ftl"><span>Добавить пользователя</span></a></p>
-        <p><a href="scanners.ftl"><span>Считыватели</span></a></p>
+        <p><a onclick=goTo('scanners')><span>Считыватели</span></a></p>
         <p><a href="search.ftl"><span>Поиск</span></a></p>
     </nav>
 </header>
@@ -31,14 +31,14 @@
     <div id="left">
         <div id="user_id">
             <div class="topic">ID:
-                <text class="content">${user.userId}</text>
+                <text class="content" id="idText">${user.userId}</text>
             </div>
         </div>
         <label id="role_label" for="role_select">Роль:</label>
         <select id="role_select">
-            <option selected disabled>Выберите роль ${user.role}</option>
-            <option>Пользователь</option>
-            <option>Администратор</option>
+            <option selected disabled>Выберите роль: ${user.role}</option>
+            <option>USER</option>
+            <option>ADMIN</option>
         </select>
     </div>
 
@@ -52,13 +52,13 @@
         <label id="patronymic_label" for="patronymic">Отчество:</label>
         <input id="patronymic" type="text" placeholder="Введите отчество" value="${user.patronymic}"/>
 
-        <button id="clear_history_button">Очистить историю активности</button>
+        <button id="clear_history_button" onclick=clearActivityHistory()>Очистить историю активности</button>
 
-        <button id="delete_user">Удалить пользователя</button>
+        <button id="delete_user" onclick="deleteUser()">Удалить пользователя</button>
 
         <div id="edit_user_buttons">
             <button onclick="goTo('start')">Отмена</button>
-            <button id="edit_user_button">Сохранить</button>
+            <button id="edit_user_button" onclick="userEdit()">Сохранить</button>
         </div>
     </div>
 </main>

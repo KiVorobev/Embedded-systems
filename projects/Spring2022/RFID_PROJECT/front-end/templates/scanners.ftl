@@ -19,44 +19,44 @@
 <body>
 <header>
     <nav style="width: 100%">
-        <p style="margin-left: 2.3%"><a href="main_page.ftl"><span>Главная страница</span></a></p>
+        <p style="margin-left: 2.3%"><a onclick=goTo('start')><span>Главная страница</span></a></p>
         <p><a href="add_user.ftl"><span>Добавить пользователя</span></a></p>
-        <p><a href="scanners.ftl"><span>Считыватели</span></a></p>
+        <p><a onclick=goTo('scanners')><span>Считыватели</span></a></p>
         <p><a href="search.ftl"><span>Поиск</span></a></p>
     </nav>
 </header>
 <main>
     <ul>
         <div id="main_activity_table">
-                <div id="scroll-table">
-                    <table>
-                        <caption>Считыватели:</caption>
-                        <thead>
-                        <tr>
-                            <th>№ считывателя</th>
-                            <th>ID</th>
-                            <th>Требуемая роль</th>
-                        </tr>
-                        </thead>
-                    </table>
-                </div>
-                <div id="scroll-table-body">
-                    <table>
-                        <tbody>
-                        <#list scanners as scanner>
+            <div id="scroll-table">
+                <table>
+                    <caption>Считыватели:</caption>
+                    <thead>
+                    <tr>
+                        <th>№ считывателя</th>
+                        <th>ID</th>
+                        <th>Требуемая роль</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+            <div id="scroll-table-body">
+                <table>
+                    <tbody>
+                    <#list scanners as scanner>
                         <tr>
                             <td>${scanner.id}</td>
-                            <td>${scanner.innerId}</td>
+                            <td>${scanner.hardwareNumber}</td>
                             <td>${scanner.role}</td>
                         </tr>
-                        </#list>
-                        </tbody>
-                    </table>
-                </div>
+                    </#list>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <div id="scanner_buttons">
-            <button id="add_scanner" onclick="goTo('add_scanner.html')">Добавить считыватель</button>
-            <button id="delete_scanner" onclick="goTo('delete_scanner.html')">Удалить считыватель</button>
+            <button id="add_scanner" onclick="goTo('scanner/put')">Добавить считыватель</button>
+            <button id="delete_scanner" onclick="goTo('scanner/remove')">Удалить считыватель</button>
         </div>
     </ul>
 </main>

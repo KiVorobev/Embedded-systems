@@ -11,14 +11,18 @@
         <#include "../styles/header.css">
         <#include "../styles/main_page.css">
     </style>
+    <script>
+        <#include "../scripts/jquery-3.6.0.js">
+        <#include "../scripts/navigator.js">
+    </script>
 </head>
 <body>
 <header>
     <nav style="width: 100%">
-        <p style="margin-left: 2.3%"><a href="main_page.ftl"><span>Главная страница</span></a></p>
-        <p><a href="add_user.ftl"><span>Добавить пользователя</span></a></p>
-        <p><a href="scanners.ftl"><span>Считыватели</span></a></p>
-        <p><a href="search.ftl"><span>Поиск</span></a></p>
+        <p style="margin-left: 2.3%"><a onclick=goTo('start')><span>Главная страница</span></a></p>
+        <p><a onclick=goTo('add')><span>Добавить пользователя</span></a></p>
+        <p><a onclick=goTo('scanners')><span>Считыватели</span></a></p>
+        <p><a onclick=goTo('search')><span>Поиск</span></a></p>
     </nav>
 </header>
 <main>
@@ -40,11 +44,11 @@
                 <table>
                     <tbody>
                     <#list activities as activity>
-                    <tr>
-                        <td>${activity.scannerId}</td>
-                        <td>${activity.date}</td>
-                        <td>${activity.user.surname} ${activity.user.name} ${activity.user.patronymic}</td>
-                    </tr>
+                        <tr>
+                            <td>${activity.scannerHardwareNum}</td>
+                            <td>${activity.enterActivity}</td>
+                            <td>${activity.user.surname} ${activity.user.name} ${activity.user.patronymic}</td>
+                        </tr>
                     </#list>
                     </tbody>
                 </table>

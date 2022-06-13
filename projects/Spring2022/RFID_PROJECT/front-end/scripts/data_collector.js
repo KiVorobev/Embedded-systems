@@ -22,6 +22,17 @@ document.getElementById('search_button').addEventListener('click', function () {
     search();
 });
 
+function setRole(role) {
+    if (role === "USER") {
+        document.getElementById('user').setAttribute('selected', true);
+    } else {
+        if (role === "ADMIN") {
+            document.getElementById('admin').setAttribute('selected', true);
+        } else {
+            document.getElementById('choose').setAttribute('selected', true);
+        }
+    }
+}
 
 function userEdit() {
     let id = document.getElementById('user_id').value;

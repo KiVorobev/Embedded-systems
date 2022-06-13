@@ -1,6 +1,6 @@
 function sendUserEdit(id, surname, name, patronymic, role) {
     $.ajax({
-        url: "file.java",
+        url: "http://localhost:" + getPort() + "/user/update",
         type: "POST",
         dataType: "json",
         contentType: "application/json;charset=utf-8",
@@ -12,7 +12,7 @@ function sendUserEdit(id, surname, name, patronymic, role) {
             role: role,
         }),
         success: function () {
-            console.log('OK');
+            alert("Пользователь обновлен!");
         },
         error: function (response) {
             alert(response);
@@ -22,12 +22,12 @@ function sendUserEdit(id, surname, name, patronymic, role) {
 
 function sendAddScanner(id, role) {
     $.ajax({
-        url: "file.java",
+        url: "http://localhost:" + getPort() + "/scanner/add",
         type: "POST",
         dataType: "json",
         contentType: "application/json;charset=utf-8",
         data: JSON.stringify({
-            id: id,
+            hardwareNumber: id,
             role: role,
         }),
         success: function () {
@@ -41,13 +41,8 @@ function sendAddScanner(id, role) {
 
 function sendDeleteScanner(id) {
     $.ajax({
-        url: "file.java",
-        type: "POST",
-        dataType: "json",
-        contentType: "application/json;charset=utf-8",
-        data: JSON.stringify({
-            id: id,
-        }),
+        url: "http://localhost:" + getPort() + "/scanner/delete/" + id,
+        type: "DELETE",
         success: function () {
             console.log('OK');
         },
@@ -59,13 +54,8 @@ function sendDeleteScanner(id) {
 
 function sendClearActivityHistory(id) {
     $.ajax({
-        url: "file.java",
-        type: "POST",
-        dataType: "json",
-        contentType: "application/json;charset=utf-8",
-        data: JSON.stringify({
-            id: id,
-        }),
+        url: "http://localhost:" + getPort() + "/user/delete/activities/" + id,
+        type: "DELETE",
         success: function () {
             console.log('OK');
         },
@@ -77,17 +67,13 @@ function sendClearActivityHistory(id) {
 
 function sendDeleteUser(id) {
     $.ajax({
-        url: "file.java",
-        type: "POST",
-        dataType: "json",
-        contentType: "application/json;charset=utf-8",
-        data: JSON.stringify({
-            id: id,
-        }),
+        url: "http://localhost:" + getPort() + "/user/delete/" + id,
+        type: "DELETE",
         success: function () {
             console.log('OK');
         },
         error: function (response) {
+            console.log(this.url)
             alert(response);
         }
     });
