@@ -1,8 +1,95 @@
-main span {
+main {
+    display: flex;
+}
+
+#left {
     display: inline-block;
-    text-align:center;
-    margin-top: 30vh;
-    font: 8vmin monospace;
+    width: 20%;
+    text-align: center;
+    font: 3vmin monospace;
+    margin-top: 2vh;
+}
+
+#right {
+    display: inline-block;
+    margin-left: 2%;
     width: 70%;
-    margin-left: 15%;
+}
+
+div.topic {
+    background-color: whitesmoke;
+    font: 3vmin monospace;
+    font-weight: bold;
+    margin-top: 1.5vh;
+}
+
+text.content {
+    background-color: whitesmoke;
+    font: 3vmin monospace;
+    font-weight: initial;
+}
+
+label {
+    margin-left: 2.8%;
+}
+
+#id_label {
+    margin-left: 7.7%;
+}
+
+#name_label {
+    margin-left: 6.5%;
+}
+
+#right input[type=text] {
+    margin-top: 6vh;
+    width: 60%;
+    height: 7vh;
+    font: 3vmin monospace;
+    background-color: whitesmoke;
+    text-align: center;
+    transition: 300ms;
+}
+
+#right input[type=text]:hover, #right input[type=text]:focus {
+    transition: 300ms;
+    box-shadow: 0 0 5px 8px whitesmoke;
+}
+
+#left select {
+    width: 90%;
+    height: 10vh;
+    font: 3vmin monospace;
+    background-color: whitesmoke;
+    text-align: center;
+    transition: 300ms;
+}
+
+button {
+    margin-top: 3vh;
+    background-color: whitesmoke;
+    width: 80%;
+    height: 8vh;
+    font: 3vmin monospace;
+    border: black solid 1px;
+    transition: 300ms;
+}
+
+button:hover {
+    transition: 300ms;
+    box-shadow: 0 0 4px 1px black;
+}
+
+button:active {
+    transition: 300ms;
+    box-shadow: 0 0 5px 3px greenyellow;
+}
+
+#add_user_buttons button {
+    width: 38.4%;
+    margin-top: 5vh;
+}
+
+#add_user_button {
+    margin-left: 2.9%;
 }
