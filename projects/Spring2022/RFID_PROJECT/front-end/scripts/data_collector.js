@@ -64,6 +64,15 @@ function deleteUser() {
     sendDeleteUser(id);
 }
 
+function addUser() {
+    let cardId = document.getElementById('card_id').value;
+    let surname = document.getElementById('surname').value;
+    let name = document.getElementById('name').value;
+    let patronymic = document.getElementById('patronymic').value;
+    let role = document.getElementById('role_select').value;
+    sendUserEdit(cardId, surname, name, patronymic, role);
+}
+
 function search() {
     let text = document.getElementById('search_input').value;
     sendSearch(text);

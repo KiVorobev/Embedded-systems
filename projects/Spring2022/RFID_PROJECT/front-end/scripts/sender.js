@@ -39,6 +39,28 @@ function sendAddScanner(id, role) {
     });
 }
 
+function sendUserEdit(cardId, surname, name, patronymic, role) {
+    $.ajax({
+        url: "http://localhost:" + getPort() + "/user/add",
+        type: "POST",
+        dataType: "json",
+        contentType: "application/json;charset=utf-8",
+        data: JSON.stringify({
+            cardId: cardId,
+            surname: surname,
+            name: name,
+            patronymic: patronymic,
+            role: role,
+        }),
+        success: function () {
+            alert("Пользователь добавлен!");
+        },
+        error: function (response) {
+            alert(response);
+        }
+    });
+}
+
 function sendDeleteScanner(id) {
     $.ajax({
         url: "http://localhost:" + getPort() + "/scanner/delete/" + id,
