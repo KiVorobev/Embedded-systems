@@ -42,13 +42,13 @@
         <input id="card_id" type="text" placeholder="Введите ID карты"/>
         <br/>
         <label id="surname_label" for="surname">Фамилия:</label>
-        <input id="surname" type="text" placeholder="Введите фамилию" value="${user.surname}"/>
+        <input id="surname" type="text" placeholder="Введите фамилию"/>
         <br/>
         <label id="name_label" for="name">Имя:</label>
-        <input id="name" type="text" placeholder="Введите имя" value="${user.name}"/>
+        <input id="name" type="text" placeholder="Введите имя"/>
         <br/>
         <label id="patronymic_label" for="patronymic">Отчество:</label>
-        <input id="patronymic" type="text" placeholder="Введите отчество" value="${user.patronymic}"/>
+        <input id="patronymic" type="text" placeholder="Введите отчество"/>
         <div id="add_user_buttons">
             <button onclick="goTo('start')">Отмена</button>
             <button id="add_user_button" onclick="addUser()">Сохранить</button>
