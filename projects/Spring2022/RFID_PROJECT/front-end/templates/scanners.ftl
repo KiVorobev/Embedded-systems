@@ -20,9 +20,9 @@
 <header>
     <nav style="width: 100%">
         <p style="margin-left: 2.3%"><a onclick=goTo('start')><span>Главная страница</span></a></p>
-        <p><a href="add_user.ftl"><span>Добавить пользователя</span></a></p>
+        <p><a onclick=goTo('user/put')><span>Добавить пользователя</span></a></p>
         <p><a onclick=goTo('scanners')><span>Считыватели</span></a></p>
-        <p><a href="search.ftl"><span>Поиск</span></a></p>
+        <p><a onclick=goTo('user/search')><span>Поиск</span></a></p>
     </nav>
 </header>
 <main>
