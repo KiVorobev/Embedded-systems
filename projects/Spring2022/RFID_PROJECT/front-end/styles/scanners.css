@@ -6,7 +6,7 @@ button {
     width:44%;
     height: 7vh;
     background-color: whitesmoke;
-    font: 3.8vmin monospace;
+    font-size: 3.8vmin;
     transition: 300ms;
 }
 
@@ -32,7 +32,7 @@ button:active {
 }
 
 caption {
-    font: 4vmin monospace;
+    font-size: 4vmin;
     margin-bottom: 2vh;
 }
 
@@ -52,7 +52,7 @@ caption {
     border: 1px solid black;
     height: 5vh;
     background: whitesmoke;
-    font: 4vmin monospace;
+    font-size: 4vmin;
 }
 
 #scroll-table-body {
@@ -64,7 +64,7 @@ caption {
 
 #scroll-table-body tbody td {
     height: 5vh;
-    font: 3vmin monospace;
+    font-size: 3vmin;
 }
 
 #scroll-table-body tbody tr:nth-child(even) td {

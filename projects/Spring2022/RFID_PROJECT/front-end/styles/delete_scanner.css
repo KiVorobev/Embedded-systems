@@ -3,7 +3,7 @@ main input[type=text] {
     width: 60%;
     border-radius: 10px 10px 10px 10px;
     height: 10vh;
-    font: 6vmin monospace;
+    font-size: 6vmin;
     background-color: whitesmoke;
     text-align: center;
     transition: 300ms;
@@ -16,7 +16,7 @@ main input[type=text]:hover, main input[type=text]:focus {
 
 label {
     margin-left: 18%;
-    font: 6vmin monospace;
+    font-size: 6vmin;
 }
 
 #delete_scanner_buttons {

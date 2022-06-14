@@ -17,7 +17,7 @@ header div {
     text-align: center;
     vertical-align: middle;
     border: none;
-    font: 1.7vw monospace;
+    font-size: 1.8vw;
 }
 
 header div:nth-child(1) {

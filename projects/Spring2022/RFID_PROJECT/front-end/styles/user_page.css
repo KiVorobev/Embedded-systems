@@ -35,7 +35,7 @@ main {
 
 #left div.topic {
     background-color: whitesmoke;
-    font: 3vmin monospace;
+    font-size: 3vmin;
     font-weight: bold;
 }
 
@@ -45,7 +45,7 @@ main {
 
 #left text.content {
     background-color: whitesmoke;
-    font: 3vmin monospace;
+    font-size: 3vmin;
     font-weight: initial;
 }
 
@@ -55,7 +55,7 @@ button {
     background-color: whitesmoke;
     width: 80%;
     height: 9vh;
-    font: 3vmin monospace;
+    font-size: 3vmin;
     border: black solid 1px;
     transition: 300ms;
 }
@@ -71,7 +71,7 @@ button:active {
 }
 
 caption {
-    font: 4vmin monospace;
+    font-size: 4vmin;
 }
 
 #scroll-table table, #scroll-table-body table {
@@ -86,7 +86,7 @@ caption {
     border: 1px solid black;
     height: 5vh;
     background: whitesmoke;
-    font: 4vmin monospace;
+    font-size: 4vmin;
 }
 
 #scroll-table-body {
@@ -99,7 +99,7 @@ caption {
 
 #scroll-table-body tbody td {
     height: 5vh;
-    font: 3vmin monospace;
+    font-size: 3vmin;
 }
 
 #scroll-table-body tbody tr:nth-child(even) td {

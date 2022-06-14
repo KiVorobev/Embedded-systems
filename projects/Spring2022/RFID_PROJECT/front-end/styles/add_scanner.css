@@ -3,7 +3,7 @@ main input[type=text], main select {
     width: 60%;
     border-radius: 10px 10px 10px 10px;
     height: 10vh;
-    font: 6vmin monospace;
+    font-size: 6vmin;
     background-color: whitesmoke;
     text-align: center;
     transition: 300ms;
@@ -20,12 +20,12 @@ option {
 
 #id_label {
     margin-left: 18%;
-    font: 6vmin monospace;
+    font-size: 6vmin;
 }
 
 #role_label {
     margin-left: 15%;
-    font: 6vmin monospace;
+    font-size: 6vmin;
 }
 
 #add_scanner_buttons {

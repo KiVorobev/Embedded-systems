@@ -3,7 +3,7 @@ main {
 }
 
 caption {
-    font: 4vmin monospace;
+    font-size: 4vmin;
     margin-bottom: 2vh;
 }
 
@@ -26,13 +26,13 @@ caption {
     border: 1px solid black;
     height: 5vh;
     background: whitesmoke;
-    font: 4vmin monospace;
+    font-size: 4vmin;
 }
 
 #scroll-table-body tbody td {
     text-align: center;
     height: 5vh;
-    font: 3vmin monospace;
+    font-size: 3vmin;
     vertical-align: center;
     width: 30vw;
 }
@@ -51,6 +51,10 @@ caption {
 
 #scroll-table-body tbody tr:nth-child(odd) td {
     background: bisque;
+}
+
+#scroll-table-body tbody tr td:nth-child(3):hover {
+    color: deeppink;
 }
 
 /* Стили для скролла */

@@ -6,7 +6,7 @@ main {
     display: inline-block;
     width: 20%;
     text-align: center;
-    font: 3vmin monospace;
+    font-size: 3vmin;
     margin-top: 2vh;
 }
 
@@ -18,14 +18,14 @@ main {
 
 div.topic {
     background-color: whitesmoke;
-    font: 3vmin monospace;
+    font-size: 3vmin;
     font-weight: bold;
     margin-top: 1.5vh;
 }
 
 text.content {
     background-color: whitesmoke;
-    font: 3vmin monospace;
+    font-size: 3vmin;
     font-weight: initial;
 }
 
@@ -45,7 +45,7 @@ label {
     margin-top: 6vh;
     width: 60%;
     height: 7vh;
-    font: 3vmin monospace;
+    font-size: 3vmin;
     background-color: whitesmoke;
     text-align: center;
     transition: 300ms;
@@ -59,7 +59,7 @@ label {
 #left select {
     width: 90%;
     height: 10vh;
-    font: 3vmin monospace;
+    font-size: 3vmin;
     background-color: whitesmoke;
     text-align: center;
     transition: 300ms;
@@ -70,7 +70,7 @@ button {
     background-color: whitesmoke;
     width: 80%;
     height: 8vh;
-    font: 3vmin monospace;
+    font-size: 3vmin;
     border: black solid 1px;
     transition: 300ms;
 }
