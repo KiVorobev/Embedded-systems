@@ -38,6 +38,6 @@ function addUser() {
 }
 
 function search() {
-    let text = document.getElementById('search_input').value;
-    sendSearch(text);
+    let cardId = document.getElementById('search_input').value;
+    sendSearch(cardId);
 }

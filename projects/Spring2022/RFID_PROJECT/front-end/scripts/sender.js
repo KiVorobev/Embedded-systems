@@ -101,14 +101,14 @@ function sendDeleteUser(id) {
     });
 }
 
-function sendSearch(text) {
+function sendSearch(cardId) {
     $.ajax({
-        url: "file.java",
+        url: "http://localhost:" + getPort() + "/user/search/",
         type: "POST",
         dataType: "json",
         contentType: "application/json;charset=utf-8",
         data: JSON.stringify({
-            text: text,
+            cardId: cardId,
         }),
         success: function () {
             console.log('OK');
