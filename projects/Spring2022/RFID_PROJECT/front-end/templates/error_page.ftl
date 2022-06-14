@@ -9,6 +9,9 @@
     <style type="text/css">
         <#include "../styles/error_page.css">
     </style>
+    <script>
+        <#include "../scripts/navigator.js">
+    </script>
 </head>
 <body>
 <header>

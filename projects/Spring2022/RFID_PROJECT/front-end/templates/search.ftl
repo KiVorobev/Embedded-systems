@@ -15,6 +15,7 @@
         <#include "../scripts/jquery-3.6.0.js">
         <#include "../scripts/sender.js">
         <#include "../scripts/data_collector.js">
+        <#include "../scripts/navigator.js">
     </script>
 </head>
 <body>
