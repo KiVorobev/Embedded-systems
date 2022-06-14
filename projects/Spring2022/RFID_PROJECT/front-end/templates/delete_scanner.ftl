@@ -14,6 +14,8 @@
     <script>
         <#include "../scripts/jquery-3.6.0.js">
         <#include "../scripts/navigator.js">
+        <#include "../scripts/role_converter.js">
+        <#include "../scripts/validator.js">
         <#include "../scripts/sender.js">
         <#include "../scripts/data_collector.js">
     </script>
@@ -26,7 +28,10 @@
     <div onclick=goTo('user/search')>Поиск</div>
 </header>
 <main>
-    <label for="delete_scanner_input">ID:</label><input id="delete_scanner_input" type="text"/>
+    <div id="input-block">
+        <label for="delete_scanner_input">ID:</label><input id="delete_scanner_input" type="text"/>
+    </div>
+
     <div id="delete_scanner_buttons">
         <button onclick=goTo('scanners')>Отмена</button>
         <button id="delete_scanner_button" onclick=deleteScanner()>Удалить</button>

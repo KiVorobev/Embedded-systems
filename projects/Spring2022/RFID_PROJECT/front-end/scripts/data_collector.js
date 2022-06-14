@@ -19,7 +19,9 @@ function addScanner() {
 
 function deleteScanner() {
     let id = document.getElementById('delete_scanner_input').value
-    sendDeleteScanner(id)
+    if (deleteScannerValidation(id)) {
+        sendDeleteScanner(id)
+    }
 }
 
 function clearActivityHistory() {

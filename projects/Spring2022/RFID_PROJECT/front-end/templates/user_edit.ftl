@@ -6,32 +6,32 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>RFID System</title>
-        <style type="text/css">
-            <#include "../styles/index.css">
-            <#include "../styles/header.css">
-            <#include "../styles/user_edit.css">
-        </style>
-        <script>
-            <#include "../scripts/jquery-3.6.0.js">
-            <#include "../scripts/navigator.js">
-            <#include "../scripts/role_converter.js">
-            <#include "../scripts/validator.js">
-            <#include "../scripts/sender.js">
-            <#include "../scripts/data_collector.js">
-            window.onload = function () {
-                let role = "${user.role}"
-                if (role === "USER") {
-                    document.getElementById('user').setAttribute('selected', true);
-                    console.log(role)
+    <style type="text/css">
+        <#include "../styles/index.css">
+        <#include "../styles/header.css">
+        <#include "../styles/user_edit.css">
+    </style>
+    <script>
+        <#include "../scripts/jquery-3.6.0.js">
+        <#include "../scripts/navigator.js">
+        <#include "../scripts/role_converter.js">
+        <#include "../scripts/validator.js">
+        <#include "../scripts/sender.js">
+        <#include "../scripts/data_collector.js">
+        window.onload = function () {
+            let role = "${user.role}"
+            if (role === "USER") {
+                document.getElementById('user').setAttribute('selected', true);
+                console.log(role)
+            } else {
+                if (role === "ADMIN") {
+                    document.getElementById('admin').setAttribute('selected', true);
                 } else {
-                    if (role === "ADMIN") {
-                        document.getElementById('admin').setAttribute('selected', true);
-                    } else {
-                        document.getElementById('choose').setAttribute('selected', true);
-                    }
+                    document.getElementById('choose').setAttribute('selected', true);
                 }
             }
-        </script>
+        }
+    </script>
 </head>
 <body>
 <header>

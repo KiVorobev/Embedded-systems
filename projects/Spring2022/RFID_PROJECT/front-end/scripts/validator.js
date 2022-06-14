@@ -28,6 +28,12 @@ function userEditValidation(surname, name, role) {
     return surnameValid && nameValid && roleValid
 }
 
+function deleteScannerValidation(id) {
+    let idValid = lengthValidation(id)
+    addRedShadowIfInvalid(idValid, 'delete_scanner_input')
+    return idValid
+}
+
 function addRedShadowIfInvalid(valid, elementId) {
     if (valid) {
         document.getElementById(elementId).style.boxShadow = ''
