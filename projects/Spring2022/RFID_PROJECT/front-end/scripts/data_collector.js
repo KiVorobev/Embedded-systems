@@ -47,5 +47,7 @@ function addUser() {
 
 function search() {
     let cardId = document.getElementById('search_input').value
-    sendSearch(cardId)
+    if (searchValidation(cardId)) {
+        sendSearch(cardId)
+    }
 }

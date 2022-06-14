@@ -34,6 +34,12 @@ function deleteScannerValidation(id) {
     return idValid
 }
 
+function searchValidation(cardId) {
+    let cardIdValid = lengthValidation(cardId)
+    addRedShadowIfInvalid(cardId, 'search_input')
+    return cardIdValid
+}
+
 function addRedShadowIfInvalid(valid, elementId) {
     if (valid) {
         document.getElementById(elementId).style.boxShadow = ''

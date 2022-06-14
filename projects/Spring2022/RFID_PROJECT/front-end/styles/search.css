@@ -1,7 +1,10 @@
+main {
+    text-align: center;
+}
+
 main input[type=text] {
     margin-top: 27vh;
     width: 80%;
-    margin-left: 10%;
     border-radius: 10px 10px 10px 10px;
     height: 10vh;
     font-size: 6vmin;
@@ -18,7 +21,6 @@ main input[type=text]:hover, main input[type=text]:focus {
 
 main button {
     margin-top: 5vh;
-    margin-left: 30%;
     width: 40%;
     height: 10vh;
     border-radius: 10px 10px 10px 10px;

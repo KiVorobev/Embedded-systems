@@ -13,9 +13,11 @@
     </style>
     <script>
         <#include "../scripts/jquery-3.6.0.js">
+        <#include "../scripts/navigator.js">
+        <#include "../scripts/role_converter.js">
+        <#include "../scripts/validator.js">
         <#include "../scripts/sender.js">
         <#include "../scripts/data_collector.js">
-        <#include "../scripts/navigator.js">
     </script>
 </head>
 <body>
@@ -27,7 +29,6 @@
 </header>
 <main>
     <input type="text" id="search_input" placeholder="Введите ID карты"/>
-    <br/>
     <button id="search_button" onclick="search()">Поиск</button>
 </main>
 </body>
