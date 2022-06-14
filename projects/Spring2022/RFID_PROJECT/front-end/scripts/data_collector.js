@@ -4,7 +4,9 @@ function userEdit() {
     let name = document.getElementById('name').value
     let patronymic = document.getElementById('patronymic').value
     let role = convertRole(document.getElementById('role_select').value)
-    sendUserEdit(id, surname, name, patronymic, role)
+    if (userEditValidation(surname, name, role)) {
+        sendUserEdit(id, surname, name, patronymic, role)
+    }
 }
 
 function addScanner() {

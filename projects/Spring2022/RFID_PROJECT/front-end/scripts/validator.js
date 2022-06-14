@@ -18,6 +18,16 @@ function addUserValidation(cardId, surname, name, role) {
     return cardIdValid && surnameValid && nameValid && roleValid
 }
 
+function userEditValidation(surname, name, role) {
+    let surnameValid = lengthValidation(surname)
+    let nameValid = lengthValidation(name)
+    let roleValid = roleValidation(role)
+    addRedShadowIfInvalid(surnameValid, 'surname')
+    addRedShadowIfInvalid(nameValid, 'name')
+    addRedShadowIfInvalid(roleValid, 'role_select')
+    return surnameValid && nameValid && roleValid
+}
+
 function addRedShadowIfInvalid(valid, elementId) {
     if (valid) {
         document.getElementById(elementId).style.boxShadow = ''
