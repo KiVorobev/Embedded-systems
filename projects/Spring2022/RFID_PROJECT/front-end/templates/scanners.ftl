@@ -18,10 +18,10 @@
 </head>
 <body>
 <header>
-    <button onclick=goTo('start')>Главная страница</button>
-    <button onclick=goTo('user/put')>Добавить пользователя</button>
-    <button onclick=goTo('scanners')>Считыватели</button>
-    <button onclick=goTo('user/search')>Поиск</button>
+    <div onclick=goTo('start')>Главная страница</div>
+    <div onclick=goTo('user/put')>Добавить пользователя</div>
+    <div onclick=goTo('scanners')>Считыватели</div>
+    <div onclick=goTo('user/search')>Поиск</div>
 </header>
 <main>
     <ul>
