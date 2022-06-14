@@ -31,7 +31,12 @@ public class Server implements Runnable {
                 InetAddress inetAddress = inputPacket.getAddress();
                 int port = inputPacket.getPort();
                 String requestFromCard = new String(inputPacket.getData(), 0, inputPacket.getLength());
-                scannerService.verifyEnter(requestFromCard, 1l);
+                /*
+                Распарсить две строки снищу
+                 */
+                String hardwareNumber = "hardwareNumber";
+                String cardId = "cardId";
+                boolean isAllowedToEnter = scannerService.verifyEnter(hardwareNumber, cardId);
                 outputStream.write(requestFromCard.getBytes());
                 outputStream.write(System.lineSeparator().getBytes());
                 String messageToCard = "Message";

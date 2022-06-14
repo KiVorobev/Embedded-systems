@@ -42,9 +42,9 @@ public class ScannerService {
         return scannerDAO.findScannerByNumber(hardwareNumber);
     }
 
-    public boolean verifyEnter(String hardwareNumber, Long personId) throws DoesntExistException {
+    public boolean verifyEnter(String hardwareNumber, String cardId) throws DoesntExistException {
         Scanner scanner = scannerDAO.findScannerByNumber(hardwareNumber);
-        User user = userService.getById(personId);
+        User user = userService.getByCardId(cardId);
         if (user.getRole().priority >= scanner.getRole().priority) {
             enterHistoryDAO.addActivity(new EnterHistory(LocalDateTime.now()), user.getId(), scanner);
             return true;

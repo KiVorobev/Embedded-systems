@@ -45,7 +45,6 @@ public class Application {
         app.get("/mcu/get/{address}", MCUController::findByAddress);
 
 
-        app.post("/mcu/enter", ScannerController::verifyEnter);
 
         app.get("/*", context -> {
             context.redirect("/start");

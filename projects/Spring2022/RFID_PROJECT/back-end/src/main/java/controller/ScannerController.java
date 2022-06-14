@@ -38,17 +38,6 @@ public class ScannerController {
         return scanner;
     }
 
-    public static void verifyEnter(Context context) {
-        try {
-            RequestToEnter requestToEnter = context.bodyAsClass(RequestToEnter.class);
-            boolean result = scannerService.verifyEnter(requestToEnter.getHardwareNumber(), requestToEnter.getPersonId());
-            if (result) context.result("Allowed");
-            else context.result("Not allowed");
-        } catch (Exception e) {
-            context.result(e.getMessage());
-        }
-    }
-
     public static void renderScannerPage(Context context) {
         Map<String, Object> model = ViewUtil.getBaseModel();
         List<Scanner> scannerList = scannerService.getAllScanners();

@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static io.javalin.plugin.rendering.template.TemplateUtil.model;
 
 public class EnterHistoryController {
 
