@@ -16,38 +16,23 @@ main {
     width: 70%;
 }
 
-div.topic {
-    background-color: whitesmoke;
-    font-size: 3vmin;
-    font-weight: bold;
-    margin-top: 1.5vh;
-}
-
-text.content {
-    background-color: whitesmoke;
-    font-size: 3vmin;
-    font-weight: initial;
+.inputs {
+    text-align: right;
+    width: 80%;
 }
 
 label {
-    margin-left: 2.8%;
-}
-
-#id_label {
-    margin-left: 3%;
-}
-
-#name_label {
-    margin-left: 6.5%;
+    font-size: 3.3vmin;
 }
 
 #right input[type=text] {
     margin-top: 6vh;
-    width: 60%;
+    width: 85%;
     height: 7vh;
     font-size: 3vmin;
     background-color: whitesmoke;
     text-align: center;
+    border-radius: 10px 10px 10px 10px;
     transition: 300ms;
 }
 
@@ -61,6 +46,7 @@ label {
     height: 10vh;
     font-size: 3vmin;
     background-color: whitesmoke;
+    border-radius: 10px 10px 10px 10px;
     text-align: center;
     transition: 300ms;
 }
@@ -68,6 +54,7 @@ label {
 button {
     margin-top: 3vh;
     background-color: whitesmoke;
+    border-radius: 10px 10px 10px 10px;
     width: 80%;
     height: 8vh;
     font-size: 3vmin;
@@ -91,5 +78,5 @@ button:active {
 }
 
 #add_user_button {
-    margin-left: 2.9%;
+    margin-left: 10%;
 }

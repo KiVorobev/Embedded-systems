@@ -1,20 +1,32 @@
 function addScannerValidation(id, role) {
-    let idValid = idValidation(id)
+    let idValid = lengthValidation(id)
     let roleValid = roleValidation(role)
-    if (idValid) {
-        document.getElementById('add_scanner_input').style.boxShadow = ''
-    } else {
-        document.getElementById('add_scanner_input').style.boxShadow = '0 0 5px 1px red'
-    }
-    if (roleValid) {
-        document.getElementById('scanner_role_select').style.boxShadow = ''
-    } else {
-        document.getElementById('scanner_role_select').style.boxShadow = '0 0 5px 1px red'
-    }
+    addRedShadowIfInvalid(idValid, 'add_scanner_input')
+    addRedShadowIfInvalid(roleValid, 'scanner_role_select')
     return idValid && roleValid
 }
 
-function idValidation(id) {
+function addUserValidation(cardId, surname, name, role) {
+    let cardIdValid = lengthValidation(cardId)
+    let surnameValid = lengthValidation(surname)
+    let nameValid = lengthValidation(name)
+    let roleValid = roleValidation(role)
+    addRedShadowIfInvalid(cardIdValid, 'card_id')
+    addRedShadowIfInvalid(surnameValid, 'surname')
+    addRedShadowIfInvalid(nameValid, 'name')
+    addRedShadowIfInvalid(roleValid, 'role_select')
+    return cardIdValid && surnameValid && nameValid && roleValid
+}
+
+function addRedShadowIfInvalid(valid, elementId) {
+    if (valid) {
+        document.getElementById(elementId).style.boxShadow = ''
+    } else {
+        document.getElementById(elementId).style.boxShadow = '0 0 5px 1px red'
+    }
+}
+
+function lengthValidation(id) {
     if (id.length > 0) {
         return true
     } else {

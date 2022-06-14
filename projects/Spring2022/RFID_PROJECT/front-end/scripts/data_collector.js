@@ -36,7 +36,9 @@ function addUser() {
     let name = document.getElementById('name').value
     let patronymic = document.getElementById('patronymic').value
     let role = convertRole(document.getElementById('role_select').value)
-    sendAddUser(cardId, surname, name, patronymic, role)
+    if (addUserValidation(cardId, surname, name, role)) {
+        sendAddUser(cardId, surname, name, patronymic, role)
+    }
 }
 
 function search() {
