@@ -6,19 +6,6 @@ ul {
     padding: 0;
 }
 
-header {
-    height: 15vh;
-    background: peachpuff;
-    z-index: 1000;
-    transition: 300ms;
-    font: 3vmin monospace;
-    border: 1px solid black
-}
-
-header:hover {
-    box-shadow: 0 0 3px 3px rgba(16, 18, 30, 0.55);
-}
-
 main {
     display: inline-block;
     width: 100%;

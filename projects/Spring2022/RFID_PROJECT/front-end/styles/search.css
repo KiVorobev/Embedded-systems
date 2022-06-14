@@ -16,7 +16,7 @@ main input[type=text]:hover, main input[type=text]:focus {
     transform: scale(1.05);
 }
 
-main button[type=submit] {
+main button {
     margin-top: 5vh;
     margin-left: 30%;
     width: 40%;
@@ -28,13 +28,13 @@ main button[type=submit] {
     transition: 300ms;
 }
 
-main button[type=submit]:hover {
+main button:hover {
     transition: 300ms;
     box-shadow: 0 0 5px 10px whitesmoke;
     transform: scale(1.1);
 }
 
-main button[type=submit]:active {
+main button:active {
     transition: 300ms;
     box-shadow: 0 0 5px 10px greenyellow;
     transform: scale(1.1);

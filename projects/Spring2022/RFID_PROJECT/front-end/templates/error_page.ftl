@@ -15,12 +15,10 @@
 </head>
 <body>
 <header>
-    <nav style="width: 100%">
-        <p style="margin-left: 2.3%"><a onclick=goTo('start')><span>Главная страница</span></a></p>
-        <p><a onclick=goTo('user/put')><span>Добавить пользователя</span></a></p>
-        <p><a onclick=goTo('scanners')><span>Считыватели</span></a></p>
-        <p><a onclick=goTo('user/search')><span>Поиск</span></a></p>
-    </nav>
+    <button onclick=goTo('start')>Главная страница</button>
+    <button onclick=goTo('user/put')>Добавить пользователя</button>
+    <button onclick=goTo('scanners')>Считыватели</button>
+    <button onclick=goTo('user/search')>Поиск</button>
 </header>
 <main>
     <img src="../img/404.png" alt="error"/>
