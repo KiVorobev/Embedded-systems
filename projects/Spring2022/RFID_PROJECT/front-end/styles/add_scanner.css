@@ -1,6 +1,6 @@
 main input[type=text], main select {
+    display: inline-block;
     margin-top: 10vh;
-    width: 60%;
     border-radius: 10px 10px 10px 10px;
     height: 10vh;
     font-size: 6vmin;
@@ -9,9 +9,22 @@ main input[type=text], main select {
     transition: 300ms;
 }
 
+main input[type=text] {
+    width: 74.5%;
+}
+
+main select {
+    width: 75.2%;
+}
+
 main input[type=text]:hover, main input[type=text]:focus, main select:hover, main select:active {
     transition: 300ms;
     box-shadow: 0 0 5px 8px whitesmoke;
+}
+
+#id-block, #role-block {
+    width: 80%;
+    text-align: right;
 }
 
 option {
@@ -24,18 +37,18 @@ option {
 }
 
 #role_label {
-    margin-left: 15%;
+    margin-left: 14.3%;
     font-size: 6vmin;
 }
 
 #add_scanner_buttons {
-    width: 62%;
+    width: 100%;
     margin-top: 10vh;
-    margin-left: 23%;
+    text-align: center;
 }
 
 button {
-    width: 44%;
+    width: 27.5%;
     height: 10vh;
     border-radius: 10px 10px 10px 10px;
     background-color: whitesmoke;
@@ -54,5 +67,5 @@ button:active {
 }
 
 #add_scanner_button {
-    margin-left: 10%;
+    margin-left: 5%;
 }
