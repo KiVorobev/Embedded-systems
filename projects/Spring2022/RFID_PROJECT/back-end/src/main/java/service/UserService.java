@@ -31,4 +31,10 @@ public class UserService {
         userDAO.updateUser(id, user);
     }
 
+    public User getByCardId(String cardId) throws DoesntExistException {
+        User user = userDAO.findByCardId(cardId);
+        if (user==null) throw new DoesntExistException("There is no such user");
+        return user;
+    }
+
 }

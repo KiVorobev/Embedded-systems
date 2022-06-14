@@ -1,7 +1,6 @@
 package entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonValue;
 import enums.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -36,8 +35,11 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    @Column(name = "card_id", unique = true)
+    private String cardId;
+
     @JsonIgnoreProperties("user")
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.EAGER )
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.EAGER)
     private List<EnterHistory> enterHistory;
 
 }

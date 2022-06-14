@@ -4,6 +4,7 @@ import entity.User;
 import io.javalin.http.Context;
 import model.UserModel;
 import service.UserService;
+import util.PropertiesUtil;
 import util.ViewUtil;
 
 import java.util.Map;
@@ -14,9 +15,13 @@ public class UserController {
     private static final UserService userService = new UserService();
 
     public static void addUser(Context context) {
-        User user = context.bodyAsClass(User.class);
-        userService.add(user);
-        context.json(user);
+        try {
+            User user = context.bodyAsClass(User.class);
+            userService.add(user);
+            context.json(user);
+        } catch (Exception e) {
+            context.result("Номер карты один для каждого пользователя!");
+        }
     }
 
     public static void getUser(Context context) {
@@ -28,7 +33,19 @@ public class UserController {
             model.put("activities", userModel.getEnterHistory());
             context.render("templates/user_page.ftl", model);
         } catch (Exception e) {
-            context.render("templates/error_page.ftl");
+            context.render("templates/error_page.ftl", ViewUtil.getBaseModel());
+        }
+    }
+
+    public static void getUserByCardId(Context context) {
+        try {
+            String cardId = context.formParam("cardId");
+            User user = userService.getByCardId(cardId);
+            UserModel userModel = UserModel.toModel(user);
+            context.status(200);
+            context.result(user.getId().toString());
+        } catch (Exception e) {
+            context.render("templates/error_page.ftl", ViewUtil.getBaseModel());
         }
     }
 
@@ -43,6 +60,16 @@ public class UserController {
         } catch (Exception e) {
             context.result(e.getMessage());
         }
+    }
+
+    public static void renderAddUserPage(Context context) {
+        Map<String, Object> model = ViewUtil.getBaseModel();
+        context.render("templates/add_user.ftl", model);
+    }
+
+    public static void renderSearchUserPage(Context context) {
+        Map<String, Object> model = ViewUtil.getBaseModel();
+        context.render("templates/search.ftl", model);
     }
 
     public static void deleteUser(Context context) {

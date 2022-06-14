@@ -51,4 +51,15 @@ public class UserDAOImpl implements UserDAO {
         return user;
     }
 
+    @Override
+    public User findByCardId(String cardId) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.getTransaction().begin();
+        Query query = session.createQuery("from User where cardId=:CardIdParam");
+        query.setParameter("CardIdParam", cardId);
+        User user = (User) query.getSingleResult();
+        session.getTransaction().commit();
+        session.close();
+        return user;
+    }
 }
