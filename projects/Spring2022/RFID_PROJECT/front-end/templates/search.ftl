@@ -28,8 +28,8 @@
 </header>
 <main>
     <form method="post">
-        <span>Приложите пропуск к считывателю или введите ID или ФИО ниже:</span>
-        <input type="text" id="search_input" placeholder="Введите ID или ФИО"/>
+        <input type="text" id="search_input" placeholder="Введите ID карты"/>
+        <br/>
         <button id="search_button" type="submit">Поиск</button>
     </form>
 </main>
