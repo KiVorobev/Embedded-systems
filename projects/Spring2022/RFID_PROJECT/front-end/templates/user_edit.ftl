@@ -16,15 +16,28 @@
         <#include "../scripts/navigator.js">
         <#include "../scripts/sender.js">
         <#include "../scripts/data_collector.js">
+        window.onload = function () {
+            let role = "${user.role}"
+            if (role === "USER") {
+                document.getElementById('user').setAttribute('selected', true);
+                console.log(role)
+            } else {
+                if (role === "ADMIN") {
+                    document.getElementById('admin').setAttribute('selected', true);
+                } else {
+                    document.getElementById('choose').setAttribute('selected', true);
+                }
+            }
+        }
     </script>
 </head>
 <body>
 <header>
     <nav style="width: 100%">
         <p style="margin-left: 2.3%"><a onclick=goTo('start')><span>Главная страница</span></a></p>
-        <p><a href="add_user.ftl"><span>Добавить пользователя</span></a></p>
+        <p><a onclick=goTo('user/put')><span>Добавить пользователя</span></a></p>
         <p><a onclick=goTo('scanners')><span>Считыватели</span></a></p>
-        <p><a href="search.ftl"><span>Поиск</span></a></p>
+        <p><a onclick=goTo('user/search')><span>Поиск</span></a></p>
     </nav>
 </header>
 <main>
@@ -36,9 +49,9 @@
         </div>
         <label id="role_label" for="role_select">Роль:</label>
         <select id="role_select">
-            <option selected disabled>Выберите роль: ${user.role}</option>
-            <option>USER</option>
-            <option>ADMIN</option>
+            <option disabled id="choose">Выберите роль:</option>
+            <option id="user">USER</option>
+            <option id="admin">ADMIN</option>
         </select>
     </div>
 
