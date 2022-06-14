@@ -45,7 +45,7 @@
                         <tr>
                             <td>${activity.scannerHardwareNum}</td>
                             <td>${activity.enterActivity}</td>
-                            <td>${activity.user.surname} ${activity.user.name} ${activity.user.patronymic}</td>
+                            <td onclick="goTo('user/get/${activity.user.id}')">${activity.user.surname} ${activity.user.name} ${activity.user.patronymic}</td>
                         </tr>
                     </#list>
                     </tbody>
