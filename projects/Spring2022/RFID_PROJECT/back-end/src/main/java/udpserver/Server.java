@@ -22,18 +22,15 @@ public class Server implements Runnable {
 
     @Override
     public void run() {
-        File file = Path.of("src", "main", "java", "udpserver", "server_log.txt").toFile();
+        File file = Path.of("server_log.txt").toFile();
         try (DatagramSocket datagramSocket = new DatagramSocket(1234);
-             FileOutputStream outputStream = new FileOutputStream(file);) {
+             FileOutputStream outputStream = new FileOutputStream(file)) {
             while (true) {
                 DatagramPacket inputPacket = new DatagramPacket(receivingDataBuffer, receivingDataBuffer.length);
                 datagramSocket.receive(inputPacket);
                 InetAddress inetAddress = inputPacket.getAddress();
                 int port = inputPacket.getPort();
                 String requestFromCard = new String(inputPacket.getData(), 0, inputPacket.getLength());
-                /*
-                Распарсить две строки снищу
-                 */
                 String hardwareNumber = "hardwareNumber";
                 String cardId = "cardId";
                 boolean isAllowedToEnter = scannerService.verifyEnter(hardwareNumber, cardId);
