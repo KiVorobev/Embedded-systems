@@ -3,6 +3,7 @@ package entity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
@@ -15,6 +16,7 @@ public class EnterHistory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
+    @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime enterActivity;
 

@@ -50,7 +50,7 @@ public class ScannerService {
         User user = userService.getByCardId(cardId);
         if (user == null) return false;
         if (userService.getUserPriorityByCardId(user) >= getScannerPriority(scanner)) {
-            enterHistoryDAO.addActivity(new EnterHistory(LocalDateTime.now()), user.getId(), scanner);
+            enterHistoryDAO.addActivity(user.getId(), scanner);
             return true;
         } else return false;
     }
