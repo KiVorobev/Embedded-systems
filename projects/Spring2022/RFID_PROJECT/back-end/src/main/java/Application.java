@@ -43,7 +43,5 @@ public class Application {
         app.get("/*", context -> {
             context.redirect("/start");
         });
-
-
     }
 }
