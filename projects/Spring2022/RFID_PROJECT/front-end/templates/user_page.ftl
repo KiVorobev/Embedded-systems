@@ -13,18 +13,6 @@
     </style>
     <script>
         <#include "../scripts/navigator.js">
-        window.onload = function () {
-            let role = "${user.role}"
-            let finalRole
-            if (role === "USER") {
-                finalRole = "Пользователь"
-            } else if (role === "ADMIN") {
-                finalRole = "Админ"
-            } else {
-                finalRole = "Ошибка"
-            }
-            document.getElementById('role-block').innerHTML = finalRole
-        }
     </script>
 </head>
 <body>
@@ -44,7 +32,11 @@
         </div>
         <div id="role">
             <div class="topic">Роль:
-                <text id="role-block" class="content"></text>
+                <#if user.role == 'USER'>
+                    <text id="role-block" class="content">Пользователь</text>
+                <#else>
+                    <text id="role-block" class="content">Админ</text>
+                </#if>
             </div>
         </div>
         <div id="user_id">
