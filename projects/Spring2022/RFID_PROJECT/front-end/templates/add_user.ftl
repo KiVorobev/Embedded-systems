@@ -11,8 +11,8 @@
         <#include "../styles/header.css">
         <#include "../styles/add_user.css">
     </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
     <script>
-        <#include "../scripts/jquery-3.6.0.js">
         <#include "../scripts/navigator.js">
         <#include "../scripts/role_converter.js">
         <#include "../scripts/validator.js">
