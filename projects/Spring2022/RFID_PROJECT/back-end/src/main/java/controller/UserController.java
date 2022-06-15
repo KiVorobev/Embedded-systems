@@ -25,29 +25,29 @@ public class UserController {
     }
 
     public static void getUser(Context context) {
-        try {
-            User user = userService.getById(Long.parseLong(context.pathParam("id")));
-            UserModel userModel = UserModel.toModel(user);
-            Map<String, Object> model = ViewUtil.getBaseModel();
-            model.put("user", userModel);
-            model.put("activities", userModel.getEnterHistory());
-            context.render("templates/user_page.ftl", model);
-        } catch (Exception e) {
+        User user = userService.getById(Long.parseLong(context.pathParam("id")));
+        if (user == null) {
             context.status(404);
-            context.render("templates/error_page.ftl", ViewUtil.getBaseModel());
+            return;
         }
+        UserModel userModel = UserModel.toModel(user);
+        Map<String, Object> model = ViewUtil.getBaseModel();
+        model.put("user", userModel);
+        model.put("activities", userModel.getEnterHistory());
+        context.render("templates/user_page.ftl", model);
     }
 
     public static void getUserByCardId(Context context) {
-        try {
-            String cardId = context.formParam("cardId");
-            User user = userService.getByCardId(cardId);
-            context.header("userId", user.getId().toString());
-            context.status(200);
-        } catch (Exception e) {
+        String cardId = context.formParam("cardId");
+        User user = userService.getByCardId(cardId);
+        if (user == null) {
             context.status(404);
+            return;
         }
+        context.header("userId", user.getId().toString());
+        context.status(200);
     }
+
 
     public static void editUser(Context context) {
         try {
@@ -60,16 +60,6 @@ public class UserController {
         } catch (Exception e) {
             context.result(e.getMessage());
         }
-    }
-
-    public static void renderAddUserPage(Context context) {
-        Map<String, Object> model = ViewUtil.getBaseModel();
-        context.render("templates/add_user.ftl", model);
-    }
-
-    public static void renderSearchUserPage(Context context) {
-        Map<String, Object> model = ViewUtil.getBaseModel();
-        context.render("templates/search.ftl", model);
     }
 
     public static void deleteUser(Context context) {
@@ -90,5 +80,13 @@ public class UserController {
         }
     }
 
+    public static void renderAddUserPage(Context context) {
+        Map<String, Object> model = ViewUtil.getBaseModel();
+        context.render("templates/add_user.ftl", model);
+    }
 
+    public static void renderSearchUserPage(Context context) {
+        Map<String, Object> model = ViewUtil.getBaseModel();
+        context.render("templates/search.ftl", model);
+    }
 }
