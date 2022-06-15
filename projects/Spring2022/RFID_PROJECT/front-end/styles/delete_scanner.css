@@ -34,6 +34,7 @@ button {
     width: 44%;
     height: 10vh;
     border-radius: 10px 10px 10px 10px;
+    font-size: 3vmin;
     background-color: whitesmoke;
     transition: 300ms;
 }

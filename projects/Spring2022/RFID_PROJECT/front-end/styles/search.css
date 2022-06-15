@@ -24,7 +24,7 @@ main button {
     width: 40%;
     height: 10vh;
     border-radius: 10px 10px 10px 10px;
-    font-size: 6vmin;
+    font-size: 5vmin;
     background-color: whitesmoke;
     text-align: center;
     transition: 300ms;
