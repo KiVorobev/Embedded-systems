@@ -51,7 +51,21 @@ public class ScannerService {
         } else return false;
     }
 
+    public boolean verifyEnter(RfidRequest request) throws DoesntExistException {
+        String hwNumber = String.format("%d", request.hardwareNumber);
+        String keyId = toHexString(request.getRfidCardNumber());
+        return verifyEnter(hwNumber, keyId);
+    }
+
     public List<Scanner> getAllScanners() {
         return scannerDAO.getAllScanners();
+    }
+
+    private String toHexString(byte[] bytes) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (var b : bytes) {
+            stringBuilder.append(String.format("%02X ", b));
+        }
+        return  stringBuilder.toString();
     }
 }
