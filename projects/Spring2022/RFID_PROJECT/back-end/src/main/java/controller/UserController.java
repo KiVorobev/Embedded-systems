@@ -33,6 +33,7 @@ public class UserController {
             model.put("activities", userModel.getEnterHistory());
             context.render("templates/user_page.ftl", model);
         } catch (Exception e) {
+            context.status(404);
             context.render("templates/error_page.ftl", ViewUtil.getBaseModel());
         }
     }
@@ -41,11 +42,10 @@ public class UserController {
         try {
             String cardId = context.formParam("cardId");
             User user = userService.getByCardId(cardId);
-            UserModel userModel = UserModel.toModel(user);
+            context.header("userId", user.getId().toString());
             context.status(200);
-            context.result(user.getId().toString());
         } catch (Exception e) {
-            context.render("templates/error_page.ftl", ViewUtil.getBaseModel());
+            context.status(404);
         }
     }
 
