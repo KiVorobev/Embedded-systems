@@ -8,7 +8,6 @@ import entity.EnterHistory;
 import entity.Scanner;
 import entity.User;
 import enums.Role;
-import exception.DoesntExistException;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -38,20 +37,26 @@ public class ScannerService {
         scannerDAO.updateScanner(newRole, hardwareNumber);
     }
 
+    public List<Scanner> getAllScanners() {
+        return scannerDAO.getAllScanners();
+    }
+
     public Scanner findByHardwareNumber(String hardwareNumber) {
         return scannerDAO.findScannerByNumber(hardwareNumber);
     }
 
-    public boolean verifyEnter(String hardwareNumber, String cardId) throws DoesntExistException {
+    public boolean verifyEnter(String hardwareNumber, String cardId) {
         Scanner scanner = scannerDAO.findScannerByNumber(hardwareNumber);
         User user = userService.getByCardId(cardId);
-        if (user.getRole().priority >= scanner.getRole().priority) {
+        if (user == null) return false;
+        if (userService.getUserPriorityByCardId(user) >= getScannerPriority(scanner)) {
             enterHistoryDAO.addActivity(new EnterHistory(LocalDateTime.now()), user.getId(), scanner);
             return true;
         } else return false;
     }
 
-    public List<Scanner> getAllScanners() {
-        return scannerDAO.getAllScanners();
+    private int getScannerPriority(Scanner scanner) {
+        return scanner.getRole().priority;
     }
+
 }

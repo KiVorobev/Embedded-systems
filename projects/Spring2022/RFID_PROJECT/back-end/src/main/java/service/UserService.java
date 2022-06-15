@@ -3,7 +3,6 @@ package service;
 import dao.UserDAO;
 import dao.UserDAOImpl;
 import entity.User;
-import exception.DoesntExistException;
 import org.jetbrains.annotations.Nullable;
 
 public class UserService {
@@ -36,5 +35,9 @@ public class UserService {
     public User getByCardId(String cardId) {
         User user = userDAO.findByCardId(cardId);
         return user;
+    }
+
+    public int getUserPriorityByCardId(User user) {
+        return user.getRole().priority;
     }
 }
