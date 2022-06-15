@@ -4,7 +4,6 @@ import entity.User;
 import io.javalin.http.Context;
 import model.UserModel;
 import service.UserService;
-import util.PropertiesUtil;
 import util.ViewUtil;
 
 import java.util.Map;

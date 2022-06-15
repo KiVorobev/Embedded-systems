@@ -19,7 +19,6 @@ public class ScannerController {
         context.status(200);
     }
 
-
     public static void removeScannerByHardwareNumber(Context context) {
         String hardwareNumber = context.pathParam("hardwareNumber");
         scannerService.removeByHardwareNumber(hardwareNumber);
@@ -38,6 +37,11 @@ public class ScannerController {
         return scanner;
     }
 
+    public static void renderRemovePage(Context context) {
+        Map<String, Object> model = ViewUtil.getBaseModel();
+        context.render("templates/delete_scanner.ftl", model);
+    }
+
     public static void renderScannerPage(Context context) {
         Map<String, Object> model = ViewUtil.getBaseModel();
         List<Scanner> scannerList = scannerService.getAllScanners();
@@ -51,11 +55,4 @@ public class ScannerController {
         model.put("scanners", scannerList);
         context.render("templates/add_scanner.ftl", model);
     }
-
-    public static void renderRemovePage(Context context) {
-        Map<String, Object> model = ViewUtil.getBaseModel();
-        context.render("templates/delete_scanner.ftl" , model);
-    }
-
-
 }

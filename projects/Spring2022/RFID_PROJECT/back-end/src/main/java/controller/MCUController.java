@@ -1,6 +1,5 @@
 package controller;
 
-import dao.McuDAO;
 import entity.MCU;
 import io.javalin.http.Context;
 import service.MCUService;
