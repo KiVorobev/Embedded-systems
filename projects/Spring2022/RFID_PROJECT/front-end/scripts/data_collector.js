@@ -1,5 +1,5 @@
 function userEdit() {
-    let id = document.getElementById('user_id').value
+    let id = document.getElementById('user_id').innerHTML
     let surname = document.getElementById('surname').value
     let name = document.getElementById('name').value
     let patronymic = document.getElementById('patronymic').value
