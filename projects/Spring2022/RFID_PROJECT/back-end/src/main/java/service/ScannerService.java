@@ -8,7 +8,6 @@ import entity.EnterHistory;
 import entity.Scanner;
 import entity.User;
 import enums.Role;
-import exception.DoesntExistException;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -38,34 +37,26 @@ public class ScannerService {
         scannerDAO.updateScanner(newRole, hardwareNumber);
     }
 
-    public Scanner findByHardwareNumber(String hardwareNumber) {
-        return scannerDAO.findScannerByNumber(hardwareNumber);
-    }
-
-    public boolean verifyEnter(String hardwareNumber, String cardId) throws DoesntExistException {
-        Scanner scanner = scannerDAO.findScannerByNumber(hardwareNumber);
-        User user = userService.getByCardId(cardId);
-        if (user.getRole().priority >= scanner.getRole().priority) {
-            enterHistoryDAO.addActivity(new EnterHistory(LocalDateTime.now()), user.getId(), scanner);
-            return true;
-        } else return false;
-    }
-
-    public boolean verifyEnter(RfidRequest request) throws DoesntExistException {
-        String hwNumber = String.format("%d", request.hardwareNumber);
-        String keyId = toHexString(request.getRfidCardNumber());
-        return verifyEnter(hwNumber, keyId);
-    }
-
     public List<Scanner> getAllScanners() {
         return scannerDAO.getAllScanners();
     }
 
-    private String toHexString(byte[] bytes) {
-        StringBuilder stringBuilder = new StringBuilder();
-        for (var b : bytes) {
-            stringBuilder.append(String.format("%02X ", b));
-        }
-        return  stringBuilder.toString();
+    public Scanner findByHardwareNumber(String hardwareNumber) {
+        return scannerDAO.findScannerByNumber(hardwareNumber);
     }
+
+    public boolean verifyEnter(String hardwareNumber, String cardId) {
+        Scanner scanner = scannerDAO.findScannerByNumber(hardwareNumber);
+        User user = userService.getByCardId(cardId);
+        if (user == null) return false;
+        if (userService.getUserPriorityByCardId(user) >= getScannerPriority(scanner)) {
+            enterHistoryDAO.addActivity(user.getId(), scanner);
+            return true;
+        } else return false;
+    }
+
+    private int getScannerPriority(Scanner scanner) {
+        return scanner.getRole().priority;
+    }
+
 }

@@ -9,7 +9,6 @@ public interface ScannerDAO {
 
     void addScanner(Scanner scanner);
 
-
     void removeScannerByNumber(String hardwareNumber);
 
     void updateScanner(Role newRole, String hardwareNumber);

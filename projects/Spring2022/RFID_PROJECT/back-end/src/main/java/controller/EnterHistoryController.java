@@ -7,7 +7,6 @@ import model.UserModel;
 import service.EnterHistoryService;
 import util.ViewUtil;
 
-import java.net.PortUnreachableException;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -27,10 +26,8 @@ public class EnterHistoryController {
         context.render("templates/main_page.ftl", model);
     }
 
-    public static void deleteActivityList(Context context){
+    public static void deleteActivityList(Context context) {
         Long id = Long.parseLong(context.pathParam("id"));
         enterHistoryService.deleteActivityList(id);
     }
-
-
 }

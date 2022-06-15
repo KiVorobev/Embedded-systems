@@ -1,7 +1,6 @@
 package dao;
 
 import entity.User;
-import exception.DoesntExistException;
 import jakarta.persistence.Query;
 import org.hibernate.Session;
 import util.HibernateUtil;

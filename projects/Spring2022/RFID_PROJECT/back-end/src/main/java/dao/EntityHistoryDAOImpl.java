@@ -19,10 +19,11 @@ public class EntityHistoryDAOImpl implements EnterHistoryDAO {
 
 
     @Override
-    public void addActivity(EnterHistory enterHistory, Long personId, Scanner scanner) {
+    public void addActivity(Long personId, Scanner scanner) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.getTransaction().begin();
         User user = userDAO.findUserById(personId);
+        EnterHistory enterHistory = new EnterHistory();
         enterHistory.setUser(user);
         enterHistory.setScanner(scanner);
         session.persist(enterHistory);

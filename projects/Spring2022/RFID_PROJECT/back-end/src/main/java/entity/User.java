@@ -3,20 +3,15 @@ package entity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import enums.Role;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
 
 @Entity
 @Table(name = "users")
-@Setter
-@Getter
+@Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class User {
 
     @Id

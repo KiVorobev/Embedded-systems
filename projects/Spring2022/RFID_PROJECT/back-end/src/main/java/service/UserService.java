@@ -3,7 +3,7 @@ package service;
 import dao.UserDAO;
 import dao.UserDAOImpl;
 import entity.User;
-import exception.DoesntExistException;
+import org.jetbrains.annotations.Nullable;
 
 public class UserService {
 
@@ -17,12 +17,6 @@ public class UserService {
         userDAO.addUser(user);
     }
 
-    public User getById(Long id) throws DoesntExistException {
-        User user = userDAO.findUserById(id);
-        if (user==null) throw new DoesntExistException("There is no such user");
-        return user;
-    }
-
     public void deleteUser(Long id) {
         userDAO.removeUser(id);
     }
@@ -31,10 +25,19 @@ public class UserService {
         userDAO.updateUser(id, user);
     }
 
-    public User getByCardId(String cardId) throws DoesntExistException {
-        User user = userDAO.findByCardId(cardId);
-        if (user==null) throw new DoesntExistException("There is no such user");
+    @Nullable
+    public User getById(Long id) {
+        User user = userDAO.findUserById(id);
         return user;
     }
 
+    @Nullable
+    public User getByCardId(String cardId) {
+        User user = userDAO.findByCardId(cardId);
+        return user;
+    }
+
+    public int getUserPriorityByCardId(User user) {
+        return user.getRole().priority;
+    }
 }

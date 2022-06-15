@@ -6,10 +6,6 @@ import io.javalin.Javalin;
 import udpserver.Server;
 import util.PropertiesUtil;
 
-////TODO
-//-поиск пользователя по номеру карты
-//-доп поток, который на юдп просто слушает датаграм сокет
-
 public class Application {
 
     public static void main(String[] args) {
@@ -32,7 +28,7 @@ public class Application {
         app.delete("/user/delete/{id}", UserController::deleteUser);
         app.post("/user/update", UserController::updateUser);
         app.delete("/user/delete/activities/{id}", EnterHistoryController::deleteActivityList);
-        app.post("/user/search", UserController::getUserByCardId);
+        app.post("/search", UserController::getUserByCardId);
 
         app.get("/scanner/put", ScannerController::renderAddScannerPage);
         app.get("/scanner/remove", ScannerController::renderRemovePage);
@@ -44,12 +40,8 @@ public class Application {
         app.post("/mcu/add", MCUController::addMCU);
         app.get("/mcu/get/{address}", MCUController::findByAddress);
 
-
-
         app.get("/*", context -> {
             context.redirect("/start");
         });
-
-
     }
 }
