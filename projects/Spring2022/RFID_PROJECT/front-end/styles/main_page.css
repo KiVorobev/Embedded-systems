@@ -53,6 +53,14 @@ caption {
     background: bisque;
 }
 
+#scroll-table-body tbody tr:nth-child(even):hover td {
+    background: azure;
+}
+
+#scroll-table-body tbody tr:nth-child(odd):hover td {
+    background: cornsilk;
+}
+
 #scroll-table-body tbody tr td:nth-child(3):hover {
     color: deeppink;
 }

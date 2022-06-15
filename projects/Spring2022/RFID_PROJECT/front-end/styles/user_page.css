@@ -110,6 +110,14 @@ caption {
     background: bisque;
 }
 
+#scroll-table-body tbody tr:nth-child(even):hover td {
+    background: azure;
+}
+
+#scroll-table-body tbody tr:nth-child(odd):hover td {
+    background: cornsilk;
+}
+
 /* Стили для скролла */
 ::-webkit-scrollbar {
     width: 2px;
