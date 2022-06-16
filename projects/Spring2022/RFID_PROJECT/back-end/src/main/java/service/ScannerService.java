@@ -47,12 +47,27 @@ public class ScannerService {
 
     public boolean verifyEnter(String hardwareNumber, String cardId) {
         Scanner scanner = scannerDAO.findScannerByNumber(hardwareNumber);
+        if (scanner == null) return false;
         User user = userService.getByCardId(cardId);
         if (user == null) return false;
         if (userService.getUserPriorityByCardId(user) >= getScannerPriority(scanner)) {
             enterHistoryDAO.addActivity(user.getId(), scanner);
             return true;
         } else return false;
+    }
+
+    public boolean verifyEnter(RfidRequest request) {
+        String hwNumber = String.format("%d", request.hardwareNumber);
+        String keyId = toHexString(request.getRfidCardNumber());
+        return verifyEnter(hwNumber, keyId);
+    }
+
+    private String toHexString(byte[] bytes) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (var b : bytes) {
+            stringBuilder.append(String.format("%02X ", b));
+        }
+        return  stringBuilder.toString();
     }
 
     private int getScannerPriority(Scanner scanner) {

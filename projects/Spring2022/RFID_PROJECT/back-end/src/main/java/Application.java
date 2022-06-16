@@ -3,7 +3,7 @@ import controller.MCUController;
 import controller.ScannerController;
 import controller.UserController;
 import io.javalin.Javalin;
-import udpserver.Server;
+import network.UdpServer;
 import util.PropertiesUtil;
 
 public class Application {
@@ -13,7 +13,7 @@ public class Application {
             config.contextPath = "/";
             config.enableDevLogging();
         }).start(Integer.parseInt(PropertiesUtil.get("port")));
-        Thread serverThread = new Thread(new Server());
+        Thread serverThread = new Thread(new UdpServer());
         serverThread.start();
 
         app.get("/start", EnterHistoryController::getAllLastActivities);

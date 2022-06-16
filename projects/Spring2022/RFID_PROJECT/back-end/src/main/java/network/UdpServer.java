@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.*;
+import java.nio.ByteBuffer;
 import java.nio.file.Path;
 import java.util.logging.Logger;
 
@@ -50,7 +51,8 @@ public class UdpServer implements Runnable {
                 LOGGER.info("Message from Misha: " + rfidRequest.toString());
 
                 //todo Change number to sys properties
-                boolean isAllowedToEnter = (rfidRequest.getControlNumber() == 42);
+                boolean isAllowedToEnter = scannerService.verifyEnter(rfidRequest);
+                byte responseCode = isAllowedToEnter ? (byte)7 : (byte)13;
 
                 outputStream.write(rfidRequest.toString().getBytes());
                 outputStream.write(System.lineSeparator().getBytes());
@@ -58,11 +60,24 @@ public class UdpServer implements Runnable {
                 messageToCard.append((isAllowedToEnter) ? "good" : "bad");
 
                 int hash = hasher.hash(rfidRequest.getRfidCardNumber());
-                System.out.println(rfidRequest.getRfidCardNumber());
-                System.out.println(hash);
-                messageToCard.append(hash);
-                sendingDataBuffer = messageToCard.toString().getBytes();
-                DatagramPacket outputPacket = new DatagramPacket(sendingDataBuffer, sendingDataBuffer.length, inetAddress, port);
+                ByteBuffer buffer = ByteBuffer.allocate(4);
+                buffer.putInt(hash);
+//                buffer.put(responseCode);
+//                LOGGER.info("Hashed key: " + hash);
+//                System.out.println(rfidRequest.getRfidCardNumber());
+//                System.out.println(hash);
+//                messageToCard.append(hash);
+//                sendingDataBuffer = messageToCard.toString().getBytes();
+                buffer.flip();
+
+                ByteBuffer flippedByteBuffer = ByteBuffer.allocate(5);
+                for (int i = 3; i >= 0; i--) {
+                    flippedByteBuffer.put(buffer.get(i));
+                }
+                flippedByteBuffer.put(responseCode);
+                flippedByteBuffer.flip();
+
+                DatagramPacket outputPacket = new DatagramPacket(flippedByteBuffer.array(), 5, inetAddress, port);
                 datagramSocket.send(outputPacket);
             }
         } catch (IOException e) {
