@@ -43,7 +43,7 @@
                     <#list activities as activity>
                         <tr>
                             <td>${activity.scanner.hardwareNumber}</td>
-                            <td>${activity.enterActivity}</td>
+                            <td>${activity.formattedEnterActivity}</td>
                         </tr>
                     </#list>
                     </tbody>

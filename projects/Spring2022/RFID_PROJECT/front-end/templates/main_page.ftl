@@ -21,8 +21,8 @@
                     <#list activities as activity>
                         <tr>
                             <td>${activity.scannerHardwareNum}</td>
-                            <td>${activity.enterActivity}</td>
-                            <td onclick="goTo('user/get/${activity.user.id}')">${activity.user.surname} ${activity.user.name} ${activity.user.patronymic}</td>
+                            <td>${activity.formattedEnterActivity}</td>
+                            <td onclick="goTo('user/get/${activity.userId}')">${activity.user.surname} ${activity.user.name} ${activity.user.patronymic}</td>
                         </tr>
                     </#list>
                     </tbody>
