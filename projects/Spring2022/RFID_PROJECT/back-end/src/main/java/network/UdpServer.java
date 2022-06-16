@@ -4,25 +4,23 @@ import service.RfidRequest;
 import service.ScannerService;
 import service.hash.CustomHasher;
 import service.hash.Hasher;
+import service.network.BufferHandler;
 import service.network.Parser;
 import service.network.RfidMessageParser;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.*;
 import java.nio.ByteBuffer;
-import java.nio.file.Path;
-import java.util.logging.Logger;
 
 public class UdpServer implements Runnable {
 
-    private static final Logger LOGGER = Logger.getLogger(UdpServer.class.getName());
-
-    private byte[] receivingDataBuffer = new byte[256];
-    private byte[] sendingDataBuffer = new byte[256];
+    private final byte[] receivingDataBuffer = new byte[2048];
     private ScannerService scannerService;
     private Parser<RfidRequest> rfidRequestParser;
+    private BufferHandler bufferHandler;
+
+    private static final byte SUCCESS_CODE = 7;
+    private static final byte ERROR_CODE = 13;
 
     private Hasher hasher;
 
@@ -30,58 +28,37 @@ public class UdpServer implements Runnable {
         scannerService = new ScannerService();
         rfidRequestParser = new RfidMessageParser();
         hasher = new CustomHasher();
+        bufferHandler = new BufferHandler();
     }
 
     @Override
     public void run() {
-        File file = Path.of("txt.txt").toFile();
-        try (DatagramSocket datagramSocket = new DatagramSocket(1234);
-             FileOutputStream outputStream = new FileOutputStream(file);) {
+        try (DatagramSocket datagramSocket = new DatagramSocket(1234)) {
             while (true) {
                 DatagramPacket inputPacket = new DatagramPacket(receivingDataBuffer, receivingDataBuffer.length);
-                LOGGER.info("Waiting for reqeust!");
                 datagramSocket.receive(inputPacket);
-                LOGGER.info("Size: " + inputPacket.getLength());
-                LOGGER.info("Request done");
-                InetAddress inetAddress = inputPacket.getAddress();
-                int port = inputPacket.getPort();
 
                 RfidRequest rfidRequest = rfidRequestParser.parse(inputPacket.getData());
 
-                LOGGER.info("Message from Misha: " + rfidRequest.toString());
-
-                //todo Change number to sys properties
                 boolean isAllowedToEnter = scannerService.verifyEnter(rfidRequest);
-                byte responseCode = isAllowedToEnter ? (byte)7 : (byte)13;
-
-                outputStream.write(rfidRequest.toString().getBytes());
-                outputStream.write(System.lineSeparator().getBytes());
-                StringBuilder messageToCard = new StringBuilder();
-                messageToCard.append((isAllowedToEnter) ? "good" : "bad");
+                byte responseCode = isAllowedToEnter ? SUCCESS_CODE : ERROR_CODE;
 
                 int hash = hasher.hash(rfidRequest.getRfidCardNumber());
-                ByteBuffer buffer = ByteBuffer.allocate(4);
-                buffer.putInt(hash);
-//                buffer.put(responseCode);
-//                LOGGER.info("Hashed key: " + hash);
-//                System.out.println(rfidRequest.getRfidCardNumber());
-//                System.out.println(hash);
-//                messageToCard.append(hash);
-//                sendingDataBuffer = messageToCard.toString().getBytes();
-                buffer.flip();
 
-                ByteBuffer flippedByteBuffer = ByteBuffer.allocate(5);
-                for (int i = 3; i >= 0; i--) {
-                    flippedByteBuffer.put(buffer.get(i));
-                }
-                flippedByteBuffer.put(responseCode);
-                flippedByteBuffer.flip();
+                ByteBuffer responseBuffer = bufferHandler.createBufferWithHashAndResponse(hash, responseCode);
 
-                DatagramPacket outputPacket = new DatagramPacket(flippedByteBuffer.array(), 5, inetAddress, port);
+                DatagramPacket outputPacket = new DatagramPacket(
+                        responseBuffer.array(),
+                        5,
+                        fetchSocketAddress(inputPacket));
                 datagramSocket.send(outputPacket);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private SocketAddress fetchSocketAddress(DatagramPacket packet) {
+        return new InetSocketAddress(packet.getAddress(), packet.getPort());
     }
 }
