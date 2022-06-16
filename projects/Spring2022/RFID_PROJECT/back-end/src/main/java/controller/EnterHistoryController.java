@@ -3,13 +3,11 @@ package controller;
 import entity.EnterHistory;
 import io.javalin.http.Context;
 import model.EnterHistoryModel;
-import model.UserModel;
 import service.EnterHistoryService;
 import util.ViewUtil;
 
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 
 public class EnterHistoryController {
@@ -18,9 +16,7 @@ public class EnterHistoryController {
 
     public static void getAllLastActivities(Context context) {
         List<EnterHistory> activitiesList = enterHistoryService.getAllLastActivities();
-        List<EnterHistoryModel> activitiesModelList = activitiesList.stream()
-                .map(EnterHistoryModel::toModel)
-                .collect(Collectors.toList());
+        List<EnterHistoryModel> activitiesModelList = EnterHistoryModel.fromEntityListToModelList(activitiesList);
         Map<String, Object> model = ViewUtil.getBaseModel();
         model.put("activities", activitiesModelList);
         context.render("templates/main_page.ftl", model);
