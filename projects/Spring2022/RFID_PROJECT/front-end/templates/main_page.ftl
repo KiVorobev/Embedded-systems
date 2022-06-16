@@ -1,6 +1,9 @@
 <#include "main_template.ftl"/>
 
 <#macro content>
+    <script>
+        setInterval(goTo('start'), 1000);
+    </script>
     <ul>
         <div id="main_activity_table">
             <div id="scroll-table">
