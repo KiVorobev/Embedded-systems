@@ -5,6 +5,8 @@ import jakarta.persistence.Query;
 import org.hibernate.Session;
 import util.HibernateUtil;
 
+import java.util.List;
+
 
 public class UserDAOImpl implements UserDAO {
     @Override
@@ -56,7 +58,11 @@ public class UserDAOImpl implements UserDAO {
         session.getTransaction().begin();
         Query query = session.createQuery("from User where cardId=:CardIdParam");
         query.setParameter("CardIdParam", cardId);
-        User user = (User) query.getSingleResult();
+        List<User> resultList = query.getResultList();
+        User user;
+        if (resultList.isEmpty()) {
+            user = null;
+        } else user = (User) query.getSingleResult();
         session.getTransaction().commit();
         session.close();
         return user;

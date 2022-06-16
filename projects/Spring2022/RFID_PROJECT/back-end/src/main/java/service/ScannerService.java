@@ -4,12 +4,10 @@ import dao.EnterHistoryDAO;
 import dao.EntityHistoryDAOImpl;
 import dao.ScannerDAO;
 import dao.ScannerDAOImpl;
-import entity.EnterHistory;
 import entity.Scanner;
 import entity.User;
 import enums.Role;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 
@@ -47,6 +45,7 @@ public class ScannerService {
 
     public boolean verifyEnter(String hardwareNumber, String cardId) {
         Scanner scanner = scannerDAO.findScannerByNumber(hardwareNumber);
+        if (scanner == null) return false;
         User user = userService.getByCardId(cardId);
         if (user == null) return false;
         if (userService.getUserPriorityByCardId(user) >= getScannerPriority(scanner)) {

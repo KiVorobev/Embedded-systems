@@ -48,7 +48,11 @@ public class ScannerDAOImpl implements ScannerDAO {
         session.getTransaction().begin();
         Query query = session.createQuery("from Scanner where hardwareNumber=:hardwareNumberParam");
         query.setParameter("hardwareNumberParam", hardwareNumber);
-        Scanner scanner = (Scanner) query.getSingleResult();
+        List<Scanner> resultList = query.getResultList();
+        Scanner scanner;
+        if (resultList.isEmpty()) {
+            scanner = null;
+        } else scanner = (Scanner) resultList.get(0);
         session.getTransaction().commit();
         session.close();
         return scanner;
