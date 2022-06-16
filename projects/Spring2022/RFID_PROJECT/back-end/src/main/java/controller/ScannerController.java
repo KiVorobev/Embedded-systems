@@ -1,7 +1,6 @@
 package controller;
 
 import entity.Scanner;
-import extraclasses.RequestToEnter;
 import io.javalin.http.Context;
 import service.ScannerService;
 import util.ViewUtil;
