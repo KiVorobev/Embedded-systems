@@ -46,12 +46,14 @@ public class ScannerDAOImpl implements ScannerDAO {
     public Scanner findScannerByNumber(String hardwareNumber) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.getTransaction().begin();
-        Query query = session.createQuery("from Scanner where hardwareNumber=:hardwareNumberParam");
+        Query query = session.createQuery("Select a from Scanner a where hardwareNumber=:hardwareNumberParam");
         query.setParameter("hardwareNumberParam", hardwareNumber);
-        Scanner scanner = (Scanner) query.getSingleResult();
+        List<Scanner> scanner = (List<Scanner>) query.getResultList();
+        System.out.println(scanner.size());
         session.getTransaction().commit();
         session.close();
-        return scanner;
+        if (scanner.isEmpty()) return null;
+        return scanner.get(0);
     }
 
     @Override
