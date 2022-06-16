@@ -1,7 +1,5 @@
 package udpserver;
 
-import exception.DoesntExistException;
-import io.javalin.Javalin;
 import service.ScannerService;
 
 import java.io.File;
@@ -31,8 +29,8 @@ public class Server implements Runnable {
                 InetAddress inetAddress = inputPacket.getAddress();
                 int port = inputPacket.getPort();
                 String requestFromCard = new String(inputPacket.getData(), 0, inputPacket.getLength());
-                String hardwareNumber = "hardwareNumber";
-                String cardId = "cardId";
+                String hardwareNumber = "55";
+                String cardId = "456";
                 boolean isAllowedToEnter = scannerService.verifyEnter(hardwareNumber, cardId);
                 outputStream.write(requestFromCard.getBytes());
                 outputStream.write(System.lineSeparator().getBytes());
@@ -46,9 +44,6 @@ public class Server implements Runnable {
         } catch (UnknownHostException e) {
             e.printStackTrace();
         } catch (IOException e) {
-            e.printStackTrace();
-        } catch (DoesntExistException e) {
-            System.out.println("User doesn't exist");
             e.printStackTrace();
         }
     }

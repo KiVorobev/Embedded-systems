@@ -7,10 +7,9 @@ import lombok.*;
 
 import java.util.List;
 
+@Data
 @Entity
 @Table(name = "scanners")
-@Data
-@NoArgsConstructor
 public class Scanner {
 
     @Id

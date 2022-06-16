@@ -6,7 +6,6 @@ import lombok.*;
 @Entity
 @Table(name = "mcu")
 @Data
-@NoArgsConstructor
 public class MCU {
 
     @Id

@@ -7,11 +7,9 @@ import lombok.*;
 
 import java.util.List;
 
-
+@Data
 @Entity
 @Table(name = "users")
-@Data
-@NoArgsConstructor
 public class User {
 
     @Id
