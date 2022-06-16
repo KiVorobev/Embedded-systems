@@ -3,20 +3,14 @@ package model;
 import entity.EnterHistory;
 import entity.Scanner;
 import entity.User;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import util.TimeFormatter;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+@Data
 public class EnterHistoryModel {
 
     private String scannerHardwareNum;
