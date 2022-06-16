@@ -19,7 +19,7 @@ main input[type=text]:hover, main input[type=text]:focus {
     transform: scale(1.05);
 }
 
-main button {
+button {
     margin-top: 5vh;
     width: 40%;
     height: 10vh;
@@ -30,13 +30,13 @@ main button {
     transition: 300ms;
 }
 
-main button:hover {
+button:hover {
     transition: 300ms;
     box-shadow: 0 0 5px 10px whitesmoke;
     transform: scale(1.1);
 }
 
-main button:active {
+button:active {
     transition: 300ms;
     box-shadow: 0 0 5px 10px greenyellow;
     transform: scale(1.1);
