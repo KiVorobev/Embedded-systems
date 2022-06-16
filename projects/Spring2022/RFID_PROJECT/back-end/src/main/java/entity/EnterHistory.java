@@ -7,10 +7,9 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
+@Data
 @Entity
 @Table(name = "enter_history")
-@Data
-@NoArgsConstructor
 public class EnterHistory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,7 +28,4 @@ public class EnterHistory {
     @JoinColumn(name = "scanner_id")
     private Scanner scanner;
 
-    public EnterHistory(LocalDateTime enterActivity) {
-        this.enterActivity = enterActivity;
-    }
 }

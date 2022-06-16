@@ -4,12 +4,10 @@ import dao.EnterHistoryDAO;
 import dao.EntityHistoryDAOImpl;
 import dao.ScannerDAO;
 import dao.ScannerDAOImpl;
-import entity.EnterHistory;
 import entity.Scanner;
 import entity.User;
 import enums.Role;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 

@@ -58,10 +58,13 @@ public class UserDAOImpl implements UserDAO {
         session.getTransaction().begin();
         Query query = session.createQuery("from User where cardId=:CardIdParam");
         query.setParameter("CardIdParam", cardId);
-        List<User> user = (List<User>) query.getResultList();
+        List<User> resultList = query.getResultList();
+        User user;
+        if (resultList.isEmpty()) {
+            user = null;
+        } else user = (User) query.getSingleResult();
         session.getTransaction().commit();
         session.close();
-        if (user.isEmpty()) return null;
-        return user.get(0);
+        return user;
     }
 }

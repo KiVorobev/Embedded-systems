@@ -2,10 +2,12 @@ package controller;
 
 import entity.User;
 import io.javalin.http.Context;
+import model.EnterHistoryModel;
 import model.UserModel;
 import service.UserService;
 import util.ViewUtil;
 
+import java.util.List;
 import java.util.Map;
 
 
@@ -30,9 +32,10 @@ public class UserController {
             return;
         }
         UserModel userModel = UserModel.toModel(user);
+        List<EnterHistoryModel> enterHistoryModel = EnterHistoryModel.fromEntityListToModelList(userModel.getEnterHistory());
         Map<String, Object> model = ViewUtil.getBaseModel();
         model.put("user", userModel);
-        model.put("activities", userModel.getEnterHistory());
+        model.put("activities", enterHistoryModel);
         context.render("templates/user_page.ftl", model);
     }
 
