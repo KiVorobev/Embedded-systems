@@ -1,0 +1,26 @@
+@import "../template_styles/table.css";
+@import "../template_styles/button.css";
+
+main {
+    display: flex;
+}
+
+#scroll-table-body {
+    height: 40vh;
+}
+
+button {
+    width: 44%;
+    height: 7vh;
+    font-size: 3.8vmin;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+#buttons {
+    margin-top: 2vh;
+    width: 70%;
+    margin-left: 15%;
+}

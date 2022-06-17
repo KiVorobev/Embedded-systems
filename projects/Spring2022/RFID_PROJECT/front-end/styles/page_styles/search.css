@@ -1,0 +1,43 @@
+main {
+    text-align: center;
+}
+
+main input[type=text] {
+    margin-top: 27vh;
+    width: 80%;
+    border-radius: 10px 10px 10px 10px;
+    height: 10vh;
+    font-size: 6vmin;
+    background-color: whitesmoke;
+    text-align: center;
+    transition: 300ms;
+}
+
+main input[type=text]:hover, main input[type=text]:focus {
+    transition: 300ms;
+    box-shadow: 0 0 5px 10px whitesmoke;
+    transform: scale(1.05);
+}
+
+button {
+    margin-top: 5vh;
+    width: 40%;
+    height: 10vh;
+    border-radius: 10px 10px 10px 10px;
+    font-size: 5vmin;
+    background-color: whitesmoke;
+    text-align: center;
+    transition: 300ms;
+}
+
+button:hover {
+    transition: 300ms;
+    box-shadow: 0 0 5px 10px whitesmoke;
+    transform: scale(1.1);
+}
+
+button:active {
+    transition: 300ms;
+    box-shadow: 0 0 5px 10px greenyellow;
+    transform: scale(1.1);
+}

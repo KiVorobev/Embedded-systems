@@ -1,0 +1,64 @@
+@import "../template_styles/button.css";
+
+main input[type=text], main select {
+    display: inline-block;
+    margin-top: 10vh;
+    border-radius: 10px 10px 10px 10px;
+    height: 10vh;
+    font-size: 6vmin;
+    background-color: whitesmoke;
+    text-align: center;
+    transition: 300ms;
+}
+
+main input[type=text] {
+    width: 74.5%;
+}
+
+main select {
+    width: 75.2%;
+}
+
+main input[type=text]:hover, main input[type=text]:focus, main select:hover, main select:active {
+    transition: 300ms;
+    box-shadow: 0 0 5px 8px whitesmoke;
+}
+
+#id-block, #role-block {
+    width: 80%;
+    text-align: right;
+}
+
+option {
+    background-color: whitesmoke;
+}
+
+#id_label {
+    margin-left: 18%;
+    font-size: 6vmin;
+}
+
+#role_label {
+    margin-left: 14.3%;
+    font-size: 6vmin;
+}
+
+#buttons {
+    width: 100%;
+    margin-top: 10vh;
+    text-align: center;
+}
+
+button {
+    width: 27.5%;
+    height: 10vh;
+    font-size: 3vmin;
+}
+
+button:hover {
+    transform: scale(1.2);
+}
+
+#right_button {
+    margin-left: 5%;
+}

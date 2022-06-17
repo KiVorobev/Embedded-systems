@@ -1,0 +1,77 @@
+@import "../template_styles/table.css";
+
+main {
+    display: flex;
+}
+
+#left {
+    display: inline-block;
+    width: 30%;
+}
+
+#right {
+    display: inline-block;
+    margin-left: 5%;
+    width: 60%;
+}
+
+#name {
+    margin-top: 5vh;
+    margin-left: 15%;
+    background-color: whitesmoke;
+    width: 80%;
+    height: 18vh;
+    text-align: center;
+    border: black solid 1px;
+}
+
+#role, #user_id {
+    margin-top: 3vh;
+    margin-left: 15%;
+    background-color: whitesmoke;
+    width: 80%;
+    height: 7vh;
+    border: black solid 1px;
+    text-align: center;
+}
+
+#left div.topic {
+    background-color: whitesmoke;
+    font-size: 3vmin;
+    font-weight: bold;
+}
+
+#left div:not(:first-child) > div:first-child {
+    margin-top: 3%;
+}
+
+#left text.content {
+    background-color: whitesmoke;
+    font-size: 3vmin;
+    font-weight: initial;
+}
+
+#scroll-table-body {
+    height: 60vh;
+}
+
+button {
+    margin-top: 3vh;
+    margin-left: 15%;
+    background-color: whitesmoke;
+    width: 80%;
+    height: 9vh;
+    font-size: 3vmin;
+    border: black solid 1px;
+    transition: 300ms;
+}
+
+button:hover {
+    transition: 300ms;
+    box-shadow: 0 0 5px 3px whitesmoke;
+}
+
+button:active {
+    transition: 300ms;
+    box-shadow: 0 0 5px 3px greenyellow;
+}

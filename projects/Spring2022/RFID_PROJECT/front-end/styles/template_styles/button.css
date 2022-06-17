@@ -1,0 +1,19 @@
+button {
+    border-radius: 10px 10px 10px 10px;
+    background-color: whitesmoke;
+    transition: 300ms
+}
+
+button:hover {
+    transition: 300ms;
+    box-shadow: 0 0 5px 3px whitesmoke;
+}
+
+button:active {
+    transition: 300ms;
+    box-shadow: 0 0 5px 3px greenyellow;
+}
+
+#right_button {
+    margin-left: 10%;
+}

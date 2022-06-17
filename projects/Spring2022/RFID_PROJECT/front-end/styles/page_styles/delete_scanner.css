@@ -1,0 +1,44 @@
+@import "../template_styles/button.css";
+
+main input[type=text] {
+    margin-top: 20vh;
+    width: 70%;
+    border-radius: 10px 10px 10px 10px;
+    height: 10vh;
+    font-size: 6vmin;
+    background-color: whitesmoke;
+    text-align: center;
+    transition: 300ms;
+}
+
+main input[type=text]:hover, main input[type=text]:focus {
+    transition: 300ms;
+    box-shadow: 0 0 5px 8px whitesmoke;
+}
+
+#input-block {
+    text-align: right;
+    width: 82%;
+}
+
+label {
+    margin-left: 19%;
+    font-size: 6vmin;
+}
+
+#buttons {
+    text-align: center;
+    width: 65%;
+    margin-top: 20vh;
+    margin-left: 20%;
+}
+
+button {
+    width: 44%;
+    height: 10vh;
+    font-size: 3vmin;
+}
+
+button:hover {
+    transform: scale(1.2);
+}
