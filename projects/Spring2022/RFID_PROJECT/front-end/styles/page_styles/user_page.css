@@ -51,6 +51,10 @@ main {
     font-weight: initial;
 }
 
+#scroll-table-body {
+    height: 60vh;
+}
+
 button {
     margin-top: 3vh;
     margin-left: 15%;

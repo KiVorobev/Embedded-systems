@@ -22,6 +22,7 @@
         setInterval(goTo('start'), 1000);
     </script>
     <@table caption="Последняя активность"/>
+    <button onclick="goTo('rejected')">Отклоненные запросы</button>
 </#macro>
 
 <@main page="main_page"/>

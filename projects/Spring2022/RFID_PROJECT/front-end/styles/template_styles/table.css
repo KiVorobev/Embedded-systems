@@ -35,7 +35,7 @@ caption {
 
 #scroll-table-body {
     width: 100%;
-    height: 60vh;
+    height: 55vh;
     overflow-x: auto;
     table-layout: fixed;
     word-wrap: break-word;

@@ -1,7 +1,14 @@
 @import "../template_styles/table.css";
+@import "../template_styles/button.css";
 
 main {
     text-align: center;
+}
+
+button {
+    width: 44%;
+    height: 7vh;
+    font-size: 3.8vmin;
 }
 
 #scroll-table-body tbody tr td:nth-child(3):hover {
