@@ -1,4 +1,4 @@
-<#include "main_template.ftl"/>
+<#include "../templates/main_template.ftl"/>
 
 <#macro content>
     <input type="text" id="search_input" placeholder="Введите ID карты"/>

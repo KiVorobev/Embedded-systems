@@ -1,4 +1,4 @@
-<#include "main_template.ftl"/>
+<#include "../templates/main_template.ftl"/>
 
 <#macro content>
     <div id="left">

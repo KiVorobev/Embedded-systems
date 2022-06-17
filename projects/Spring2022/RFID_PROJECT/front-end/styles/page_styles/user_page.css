@@ -1,3 +1,5 @@
+@import "../template_styles/table.css";
+
 main {
     display: flex;
 }
@@ -68,65 +70,4 @@ button:hover {
 button:active {
     transition: 300ms;
     box-shadow: 0 0 5px 3px greenyellow;
-}
-
-caption {
-    font-size: 4vmin;
-}
-
-#scroll-table table, #scroll-table-body table {
-    width: 100%;
-    table-layout: fixed;
-    text-align: center;
-}
-
-#scroll-table thead th {
-    font-weight: bold;
-    text-align: center;
-    border: 1px solid black;
-    height: 5vh;
-    background: whitesmoke;
-    font-size: 4vmin;
-}
-
-#scroll-table-body {
-    width: 100%;
-    height: 60vh;
-    overflow-x: auto;
-    table-layout: fixed;
-    word-wrap: break-word;
-}
-
-#scroll-table-body tbody td {
-    height: 5vh;
-    font-size: 3vmin;
-}
-
-#scroll-table-body tbody tr:nth-child(even) td {
-    background: whitesmoke;
-}
-
-#scroll-table-body tbody tr:nth-child(odd) td {
-    background: bisque;
-}
-
-#scroll-table-body tbody tr:nth-child(even):hover td {
-    background: azure;
-}
-
-#scroll-table-body tbody tr:nth-child(odd):hover td {
-    background: cornsilk;
-}
-
-/* Стили для скролла */
-::-webkit-scrollbar {
-    width: 2px;
-}
-
-::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-
-::-webkit-scrollbar-thumb {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }

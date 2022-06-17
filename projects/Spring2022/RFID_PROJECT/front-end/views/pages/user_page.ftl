@@ -1,4 +1,19 @@
-<#include "main_template.ftl"/>
+<#include "../templates/main_template.ftl"/>
+<#include "../templates/table.ftl"/>
+
+<#macro thead>
+    <th>№ считывателя</th>
+    <th>Дата и время</th>
+</#macro>
+
+<#macro tbody>
+    <#list activities as activity>
+        <tr>
+            <td>${activity.scanner.hardwareNumber}</td>
+            <td>${activity.formattedEnterActivity}</td>
+        </tr>
+    </#list>
+</#macro>
 
 <#macro content>
     <script>
@@ -28,31 +43,7 @@
         <button onclick=goTo('user/edit/${user.userId}')>Редактировать профиль</button>
     </div>
     <div id="right">
-        <ul>
-            <div id="scroll-table">
-                <table>
-                    <caption>Последняя активность:</caption>
-                    <thead>
-                    <tr>
-                        <th>№ считывателя</th>
-                        <th>Дата и время</th>
-                    </tr>
-                    </thead>
-                </table>
-            </div>
-            <div id="scroll-table-body">
-                <table>
-                    <tbody>
-                    <#list activities as activity>
-                        <tr>
-                            <td>${activity.scanner.hardwareNumber}</td>
-                            <td>${activity.formattedEnterActivity}</td>
-                        </tr>
-                    </#list>
-                    </tbody>
-                </table>
-            </div>
-        </ul>
+        <@table caption="Последняя активность"/>
     </div>
 </#macro>
 

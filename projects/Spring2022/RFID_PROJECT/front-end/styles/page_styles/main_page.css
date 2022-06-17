@@ -1,0 +1,9 @@
+@import "../template_styles/table.css";
+
+main {
+    text-align: center;
+}
+
+#scroll-table-body tbody tr td:nth-child(3):hover {
+    color: deeppink;
+}

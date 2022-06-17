@@ -1,71 +1,44 @@
-main {
-    display: flex;
-}
-
-button {
-    width:44%;
-    height: 7vh;
-    background-color: whitesmoke;
-    border-radius: 10px 10px 10px 10px;
-    font-size: 3.8vmin;
-    transition: 300ms;
-}
-
-button:hover {
-    transition: 300ms;
-    box-shadow: 0 0 5px 3px whitesmoke;
-    transform: scale(1.05);
-}
-
-button:active {
-    transition: 300ms;
-    box-shadow: 0 0 5px 3px greenyellow;
-}
-
-#delete_scanner {
-    margin-left: 10%;
-}
-
-#scanner_buttons {
-    margin-top: 2vh;
-    width: 70%;
-    margin-left: 15%;
-}
-
 caption {
     font-size: 4vmin;
     margin-bottom: 2vh;
 }
 
 #main_activity_table {
-    width: 96%;
-    margin-left: 2%;
+    margin-top: 3vh;
+    width: 90%;
+    margin-left: 5%;
 }
 
-#scroll-table table, #scroll-table-body table {
+#scroll-table table {
     width: 100%;
     table-layout: fixed;
-    text-align: center;
 }
 
 #scroll-table thead th {
+    min-width: 33.33%;
+    max-width: 33.33%;
     font-weight: bold;
+    text-align: center;
     border: 1px solid black;
     height: 5vh;
     background: whitesmoke;
     font-size: 4vmin;
 }
 
-#scroll-table-body {
-    width: 100%;
-    height: 44vh;
-    overflow-x: auto;
-    word-wrap: break-word;
-}
-
 #scroll-table-body tbody td {
+    text-align: center;
     height: 5vh;
     font-size: 3vmin;
+    vertical-align: center;
+    width: 30vw;
+}
+
+#scroll-table-body {
+    width: 100%;
+    height: 60vh;
+    overflow-x: auto;
+    table-layout: fixed;
+    word-wrap: break-word;
 }
 
 #scroll-table-body tbody tr:nth-child(even) td {
