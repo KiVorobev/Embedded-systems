@@ -20,7 +20,7 @@
 
 <#macro content>
     <@table caption="Считыватели"/>
-    <@buttons leftFunction="goTo('scanners/put')" rightFunction="goTo('scanner/remove')"
+    <@buttons leftFunction="goTo('scanner/put')" rightFunction="goTo('scanner/remove')"
     leftName="Добавить считыватель" rightName="Удалить считыватель"/>
 </#macro>
 

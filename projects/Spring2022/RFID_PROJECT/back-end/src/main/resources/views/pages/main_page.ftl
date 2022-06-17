@@ -12,15 +12,15 @@
         <tr>
             <td>${activity.scannerHardwareNum}</td>
             <td>${activity.formattedEnterActivity}</td>
-            <td onclick="goTo('user/get/${activity.userId}')">${activity.user.surname} ${activity.user.name} ${activity.user.patronymic}</td>
+            <td onclick="goTo('user/get/${activity.user.userId}')">${activity.user.surname} ${activity.user.name} ${activity.user.patronymic}</td>
         </tr>
     </#list>
 </#macro>
 
 <#macro content>
-    <script>
-        setInterval(goTo('start'), 1000);
-    </script>
+<#--    <script>-->
+<#--        setInterval(goTo('start'), 5000);-->
+<#--    </script>-->
     <@table caption="Последняя активность"/>
     <button onclick="goTo('rejected')">Отклоненные запросы</button>
 </#macro>

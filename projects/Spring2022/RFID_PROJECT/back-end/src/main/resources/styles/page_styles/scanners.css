@@ -1,9 +1,9 @@
 @import "../template_styles/table.css";
 @import "../template_styles/button.css";
 
-main {
-    display: flex;
-}
+/*main {*/
+/*    display: flex;*/
+/*}*/
 
 #scroll-table-body {
     height: 40vh;
