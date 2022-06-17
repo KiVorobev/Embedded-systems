@@ -1,3 +1,5 @@
+@import "../template_styles/button.css";
+
 main input[type=text] {
     margin-top: 20vh;
     width: 70%;
@@ -24,7 +26,8 @@ label {
     font-size: 6vmin;
 }
 
-#delete_scanner_buttons {
+#buttons {
+    text-align: center;
     width: 65%;
     margin-top: 20vh;
     margin-left: 20%;
@@ -33,27 +36,9 @@ label {
 button {
     width: 44%;
     height: 10vh;
-    border-radius: 10px 10px 10px 10px;
     font-size: 3vmin;
-    background-color: whitesmoke;
-    transition: 300ms;
 }
 
 button:hover {
-    transition: 300ms;
-    box-shadow: 0 0 5px 3px whitesmoke;
     transform: scale(1.2);
-}
-
-button:active {
-    transition: 300ms;
-    box-shadow: 0 0 5px 3px greenyellow;
-}
-
-#delete_scanner_buttons {
-    text-align: center;
-}
-
-#delete_scanner_button {
-    margin-left: 10%;
 }

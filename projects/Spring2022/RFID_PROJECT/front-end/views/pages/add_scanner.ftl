@@ -1,4 +1,5 @@
 <#include "../templates/main_template.ftl"/>
+<#include "../templates/buttons.ftl"/>
 
 <#macro content>
     <div id="id-block">
@@ -15,10 +16,7 @@
         </select>
     </div>
 
-    <div id="add_scanner_buttons">
-        <button onclick=goTo('scanners')>Отмена</button>
-        <button id="add_scanner_button" onclick="addScanner()">Добавить</button>
-    </div>
+    <@buttons leftFunction="goTo('scanners')" rightFunction="addScanner()" leftName="Отмена" rightName="Добавить"/>
 </#macro>
 
 <@main page="add_scanner"/>

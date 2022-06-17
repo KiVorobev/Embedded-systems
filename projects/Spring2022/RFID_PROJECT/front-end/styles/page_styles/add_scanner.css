@@ -1,3 +1,5 @@
+@import "../template_styles/button.css";
+
 main input[type=text], main select {
     display: inline-block;
     margin-top: 10vh;
@@ -41,7 +43,7 @@ option {
     font-size: 6vmin;
 }
 
-#add_scanner_buttons {
+#buttons {
     width: 100%;
     margin-top: 10vh;
     text-align: center;
@@ -50,23 +52,13 @@ option {
 button {
     width: 27.5%;
     height: 10vh;
-    border-radius: 10px 10px 10px 10px;
     font-size: 3vmin;
-    background-color: whitesmoke;
-    transition: 300ms;
 }
 
 button:hover {
-    transition: 300ms;
-    box-shadow: 0 0 5px 3px whitesmoke;
     transform: scale(1.2);
 }
 
-button:active {
-    transition: 300ms;
-    box-shadow: 0 0 5px 3px greenyellow;
-}
-
-#add_scanner_button {
+#right_button {
     margin-left: 5%;
 }

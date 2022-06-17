@@ -1,5 +1,6 @@
 <#include "../templates/main_template.ftl"/>
 <#include "../templates/table.ftl"/>
+<#include "../templates/buttons.ftl"/>
 
 <#macro thead>
     <th>№ считывателя</th>
@@ -19,6 +20,8 @@
 
 <#macro content>
     <@table caption="Считыватели"/>
+    <@buttons leftFunction="goTo('scanners/put')" rightFunction="goTo('scanner/remove')"
+    leftName="Добавить считыватель" rightName="Удалить считыватель"/>
 </#macro>
 
 <@main page="scanners"/>

@@ -1,5 +1,7 @@
 <#include "../templates/main_template.ftl"/>
 <#include "../templates/full_name_form.ftl"/>
+<#include "../templates/buttons.ftl"/>
+
 
 <#macro content>
     <div id="left">
@@ -19,10 +21,7 @@
 
         <@form/>
 
-        <div id="add_user_buttons">
-            <button onclick="goTo('start')">Отмена</button>
-            <button id="add_user_button" onclick="addUser()">Сохранить</button>
-        </div>
+        <@buttons leftFunction="goTo('start')" rightFunction="addUser()" leftName="Отмена" rightName="Сохранить"/>
     </div>
 </#macro>
 

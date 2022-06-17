@@ -1,14 +1,12 @@
 <#include "../templates/main_template.ftl"/>
+<#include "../templates/buttons.ftl"/>
 
 <#macro content>
     <div id="input-block">
         <label for="delete_scanner_input">ID:</label><input id="delete_scanner_input" type="text"/>
     </div>
 
-    <div id="delete_scanner_buttons">
-        <button onclick=goTo('scanners')>Отмена</button>
-        <button id="delete_scanner_button" onclick=deleteScanner()>Удалить</button>
-    </div>
+    <@buttons leftFunction="goTo('scanners')" rightFunction="deleteScanner()" leftName="Отмена" rightName="Удалить"/>
 </#macro>
 
 <@main page="delete_scanner"/>

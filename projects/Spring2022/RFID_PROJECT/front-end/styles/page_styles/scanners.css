@@ -1,4 +1,5 @@
 @import "../template_styles/table.css";
+@import "../template_styles/button.css";
 
 main {
     display: flex;
@@ -9,30 +10,16 @@ main {
 }
 
 button {
-    width:44%;
+    width: 44%;
     height: 7vh;
-    background-color: whitesmoke;
-    border-radius: 10px 10px 10px 10px;
     font-size: 3.8vmin;
-    transition: 300ms;
 }
 
 button:hover {
-    transition: 300ms;
-    box-shadow: 0 0 5px 3px whitesmoke;
     transform: scale(1.05);
 }
 
-button:active {
-    transition: 300ms;
-    box-shadow: 0 0 5px 3px greenyellow;
-}
-
-#delete_scanner {
-    margin-left: 10%;
-}
-
-#scanner_buttons {
+#buttons {
     margin-top: 2vh;
     width: 70%;
     margin-left: 15%;

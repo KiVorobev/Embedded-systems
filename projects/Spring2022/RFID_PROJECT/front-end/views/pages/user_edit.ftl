@@ -1,5 +1,6 @@
 <#include "../templates/main_template.ftl"/>
 <#include "../templates/full_name_form.ftl"/>
+<#include "../templates/buttons.ftl"/>
 
 <#macro content>
     <div id="left">
@@ -28,10 +29,8 @@
 
         <button id="delete_user" onclick="deleteUser()">Удалить пользователя</button>
 
-        <div id="edit_user_buttons">
-            <button onclick="goTo('start')">Отмена</button>
-            <button id="edit_user_button" onclick="userEdit()">Сохранить</button>
-        </div>
+        <@buttons leftFunction="goTo('user/get/${user.userId}')" rightFunction="userEdit()"
+        leftName="Отмена" rightName="Сохранить"/>
     </div>
 </#macro>
 
