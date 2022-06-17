@@ -16,9 +16,6 @@
 </#macro>
 
 <#macro content>
-    <script>
-        setInterval(goTo('user/get/${user.userId}'), 1000);
-    </script>
     <div id="left">
         <div id="name">
             <div class="topic">ФИО:
@@ -47,4 +44,4 @@
     </div>
 </#macro>
 
-<@main page="search"/>
+<@main page="user_page"/>
