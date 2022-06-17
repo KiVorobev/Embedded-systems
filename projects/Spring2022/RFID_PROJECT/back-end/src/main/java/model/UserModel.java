@@ -17,6 +17,7 @@ public class UserModel {
     private String patronymic;
     private Role role;
     private List<EnterHistory> enterHistory;
+    private String cardId;
 
     public static UserModel toModel(User user) {
         UserModel userModel = new UserModel();
@@ -26,6 +27,7 @@ public class UserModel {
         userModel.setPatronymic(user.getPatronymic());
         userModel.setRole(user.getRole());
         userModel.setEnterHistory(user.getEnterHistory());
+        userModel.setCardId(user.getCardId());
         return userModel;
     }
 

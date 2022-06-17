@@ -1,7 +1,4 @@
-import controller.EnterHistoryController;
-import controller.MCUController;
-import controller.ScannerController;
-import controller.UserController;
+import controller.*;
 import io.javalin.Javalin;
 import network.UdpServer;
 import util.PropertiesUtil;
@@ -20,6 +17,7 @@ public class Application {
         app.get("/scanners", ScannerController::renderScannerPage);
         app.get("/user/put", UserController::renderAddUserPage);
         app.get("/user/search", UserController::renderSearchUserPage);
+        app.get("/rejected", DismissedEnterHistoryController::renderAllLastActivityPage);
 
 
         app.get("/user/get/{id}", UserController::getUser);
