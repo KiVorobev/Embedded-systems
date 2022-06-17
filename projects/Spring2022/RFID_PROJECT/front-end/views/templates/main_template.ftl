@@ -10,9 +10,13 @@
         <style type="text/css">
             <#include "../../styles/template_styles/index.css">
             <#include "../../styles/template_styles/header.css">
+            <#include "../../styles/template_styles/button.css">
+            <#include "../../styles/template_styles/table.css">
             <#include "../styles/${page}.css">
         </style>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
         <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
         <script>
             <#include "../../scripts/navigator.js">
             <#include "../../scripts/role_converter.js">
