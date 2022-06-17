@@ -1,5 +1,4 @@
 <#include "../templates/main_template.ftl"/>
-<#include "../templates/full_name_form.ftl"/>
 <#include "../templates/buttons.ftl"/>
 
 
@@ -19,7 +18,20 @@
             <input id="card_id" type="text" placeholder="Введите ID карты"/>
         </div>
 
-        <@form/>
+        <div class="inputs">
+            <label id="surname_label" for="surname">Фамилия:</label>
+            <input id="surname" type="text" placeholder="Введите фамилию"/>
+        </div>
+
+        <div class="inputs">
+            <label id="name_label" for="name">Имя:</label>
+            <input id="name" type="text" placeholder="Введите имя"/>
+        </div>
+
+        <div class="inputs">
+            <label id="patronymic_label" for="patronymic">Отчество:</label>
+            <input id="patronymic" type="text" placeholder="Введите отчество"/>
+        </div>
 
         <@buttons leftFunction="goTo('start')" rightFunction="addUser()" leftName="Отмена" rightName="Сохранить"/>
     </div>
