@@ -1,3 +1,21 @@
+toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "300000000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+}
+
 function sendUserEdit(id, surname, name, patronymic, role) {
     $.ajax({
         url: "http://localhost:" + getPort() + "/user/update",
@@ -12,10 +30,10 @@ function sendUserEdit(id, surname, name, patronymic, role) {
             role: role,
         }),
         success: function () {
-            alert("Пользователь обновлен!");
+            toastr.success('Пользователь успешно обновлен')
         },
         error: function (response) {
-            alert(response);
+            toastr.error(response)
         }
     });
 }
@@ -31,10 +49,10 @@ function sendAddScanner(id, role) {
             role: role,
         }),
         success: function () {
-            console.log('OK');
+            toastr.success('Считыватель успешно добавлен')
         },
         error: function (response) {
-            alert(response);
+            toastr.error(response)
         }
     });
 }
@@ -53,10 +71,10 @@ function sendAddUser(cardId, surname, name, patronymic, role) {
             role: role,
         }),
         success: function () {
-            alert("Пользователь добавлен!");
+            toastr.success('Пользователь успешно добавлен')
         },
         error: function (response) {
-            alert(response);
+            toastr.error(response)
         }
     });
 }
@@ -66,10 +84,10 @@ function sendDeleteScanner(id) {
         url: "http://localhost:" + getPort() + "/scanner/delete/" + id,
         type: "DELETE",
         success: function () {
-            console.log('OK');
+            toastr.success('Считыватель успешно удален')
         },
         error: function (response) {
-            alert(response);
+            toastr.error(response)
         }
     });
 }
@@ -79,10 +97,10 @@ function sendClearActivityHistory(id) {
         url: "http://localhost:" + getPort() + "/user/delete/activities/" + id,
         type: "DELETE",
         success: function () {
-            console.log('OK');
+            toastr.success('История активности успешно очищена')
         },
         error: function (response) {
-            alert(response);
+            toastr.error(response)
         }
     });
 }
@@ -92,11 +110,11 @@ function sendDeleteUser(id) {
         url: "http://localhost:" + getPort() + "/user/delete/" + id,
         type: "DELETE",
         success: function () {
-            console.log('OK');
+            // нужен редирект на стартовую страницу
+            toastr.success('Пользователь успешно удален')
         },
         error: function (response) {
-            console.log(this.url)
-            alert(response);
+            toastr.error(response)
         }
     });
 }
@@ -110,11 +128,12 @@ function sendSearch(cardId) {
         data: JSON.stringify({
             cardId: cardId,
         }),
-        success: function () {
-            console.log('OK');
+        success: function (output, status, xhr) {
+            let userId = xhr.getResponseHeader("userId");
+            goTo('user/get/' + userId);
         },
         error: function (response) {
-            alert(response);
+            toastr.error(response)
         }
     });
 }
