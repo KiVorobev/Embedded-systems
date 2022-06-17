@@ -1,5 +1,4 @@
 <#include "../templates/main_template.ftl"/>
-<#include "../templates/full_name_form.ftl"/>
 <#include "../templates/buttons.ftl"/>
 
 <#macro content>
@@ -23,7 +22,20 @@
     </div>
 
     <div id="right">
-        <@form/>
+        <div class="inputs">
+            <label id="surname_label" for="surname">Фамилия:</label>
+            <input id="surname" type="text" placeholder="Введите фамилию" value="${user.surname}"/>
+        </div>
+
+        <div class="inputs">
+            <label id="name_label" for="name">Имя:</label>
+            <input id="name" type="text" placeholder="Введите имя" value="${user.name}/>
+        </div>
+
+        <div class="inputs">
+            <label id="patronymic_label" for="patronymic">Отчество:</label>
+            <input id="patronymic" type="text" placeholder="Введите отчество" value="${user.patronymic}/>
+        </div>
 
         <button id="clear_history_button" onclick=clearActivityHistory()>Очистить историю активности</button>
 
