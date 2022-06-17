@@ -7,9 +7,11 @@
 Мы храним нашу базу данных в Docker контейнере
 
 1. Установить [Docker CE](https://docs.docker.com/engine/install/ubuntu/) и [Docker Compose](https://docs.docker.com/compose/install/)
-2. Git clone `docker-config`
-3. `cd ~/IdeaProjects/ticon-config/local/`
-4. `docker-compose up -d` чтобы поднять БД
+2. Запустить следующие команды:
+```sh
+cd docker-config
+docker-compose up -d
+```
 
 ## Сборка
 

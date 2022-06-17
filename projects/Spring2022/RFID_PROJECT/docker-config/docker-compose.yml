@@ -1,0 +1,25 @@
+version: '3.7'
+services:
+  postgres:
+    image: pgrouting/pgrouting:12-3.0-2.6.3
+    restart: always
+    ports:
+      - "54321:5432"
+    networks:
+      - test
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespw
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      # - /mnt/data1TB/postgresql_data:/var/lib/postgresql/data
+      # Uncomment for SQL-like initialization
+      # - ./init.sql:/docker-entrypoint-initdb.d/ainit.sql
+      # - ./postgres/init.sh:/docker-entrypoint-initdb.d/init.sh
+
+volumes:
+  postgres_data:
+
+networks:
+  test:
+    driver: bridge
