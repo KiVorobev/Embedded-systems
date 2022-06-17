@@ -1,9 +1,6 @@
 package service;
 
-import dao.EnterHistoryDAO;
-import dao.EntityHistoryDAOImpl;
-import dao.ScannerDAO;
-import dao.ScannerDAOImpl;
+import dao.*;
 import entity.Scanner;
 import entity.User;
 import enums.Role;
@@ -16,11 +13,13 @@ public class ScannerService {
     private ScannerDAO scannerDAO;
     private UserService userService;
     private EnterHistoryDAO enterHistoryDAO;
+    private DismissedEnterHistoryService dismissedEnterHistoryService;
 
     public ScannerService() {
         scannerDAO = new ScannerDAOImpl();
         userService = new UserService();
         enterHistoryDAO = new EntityHistoryDAOImpl();
+        dismissedEnterHistoryService = new DismissedEnterHistoryService();
     }
 
     public void add(Scanner scanner) {
@@ -51,7 +50,10 @@ public class ScannerService {
         if (userService.getUserPriorityByCardId(user) >= getScannerPriority(scanner)) {
             enterHistoryDAO.addActivity(user.getId(), scanner);
             return true;
-        } else return false;
+        } else {
+            dismissedEnterHistoryService.addDismissedActivity(user.getId(), scanner);
+            return false;
+        }
     }
 
     public boolean verifyEnter(RfidRequest request) {
@@ -65,7 +67,7 @@ public class ScannerService {
         for (var b : bytes) {
             stringBuilder.append(String.format("%02X ", b));
         }
-        return  stringBuilder.toString();
+        return stringBuilder.toString();
     }
 
     private int getScannerPriority(Scanner scanner) {
