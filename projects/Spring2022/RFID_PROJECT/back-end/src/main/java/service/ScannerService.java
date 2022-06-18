@@ -70,6 +70,7 @@ public class ScannerService {
         for (var b : bytes) {
             stringBuilder.append(String.format("%02X ", b));
         }
+        stringBuilder.setLength(stringBuilder.length() - 1);
         return stringBuilder.toString();
     }
 
