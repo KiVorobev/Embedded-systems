@@ -19,6 +19,6 @@ public class DismissedEnterHistoryController {
         List<DismissedEnterHistoryModel> dismissedEnterHistoryModelList = DismissedEnterHistoryModel.fromEntityListToModelList(dismissedEnterHistoryList);
         Map<String, Object> model = ViewUtil.getBaseModel();
         model.put("activities", dismissedEnterHistoryModelList);
-        context.render("templates/rejected_requests.ftl", model);
+        context.render("views/pages/rejected_requests.ftl", model);
     }
 }

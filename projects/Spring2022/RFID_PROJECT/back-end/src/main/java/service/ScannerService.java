@@ -46,12 +46,15 @@ public class ScannerService {
         Scanner scanner = scannerDAO.findScannerByNumber(hardwareNumber);
         if (scanner == null) return false;
         User user = userService.getByCardId(cardId);
-        if (user == null) return false;
+        if (user == null) {
+            dismissedEnterHistoryService.addDismissedActivity(scanner, cardId);
+            return false;
+        }
         if (userService.getUserPriorityByCardId(user) >= getScannerPriority(scanner)) {
             enterHistoryDAO.addActivity(user.getId(), scanner);
             return true;
         } else {
-            dismissedEnterHistoryService.addDismissedActivity(user.getId(), scanner);
+            dismissedEnterHistoryService.addDismissedActivity(scanner, cardId);
             return false;
         }
     }

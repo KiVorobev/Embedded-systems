@@ -19,12 +19,11 @@ public class DismissedEnterHistoryDAOImpl implements DismissedEnterHistoryDAO {
     }
 
     @Override
-    public void addDismissedActivity(Long personId, Scanner scanner) {
+    public void addDismissedActivity(Scanner scanner, String cardId) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.getTransaction().begin();
-        User user = userDAO.findUserById(personId);
         DismissedEnterHistory dismissedEnterHistory = new DismissedEnterHistory();
-        dismissedEnterHistory.setUser(user);
+        dismissedEnterHistory.setCardId(cardId);
         dismissedEnterHistory.setScanner(scanner);
         session.persist(dismissedEnterHistory);
         session.getTransaction().commit();
