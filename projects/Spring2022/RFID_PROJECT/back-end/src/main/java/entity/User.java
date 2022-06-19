@@ -31,6 +31,7 @@ public class User {
     @Column(name = "card_id", unique = true)
     private String cardId;
 
+    @ToString.Exclude
     @JsonIgnoreProperties("user")
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.EAGER)
     private List<EnterHistory> enterHistory;

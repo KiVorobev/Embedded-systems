@@ -1,4 +1,22 @@
-function sendUserEdit(id, surname, name, patronymic, role) {
+toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "300000000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+}
+
+function sendUserEdit(id, surname, name, patronymic, role, cardId) {
     $.ajax({
         url: "http://localhost:" + getPort() + "/user/update",
         type: "POST",
@@ -10,14 +28,15 @@ function sendUserEdit(id, surname, name, patronymic, role) {
             name: name,
             patronymic: patronymic,
             role: role,
+            cardId: cardId
         }),
         success: function () {
-            alert("Пользователь обновлен!");
+            toastr.success('Пользователь успешно обновлен')
         },
-        error: function (response) {
-            alert(response);
+        error: function () {
+            toastr.error('Произошла ошибка')
         }
-    });
+    })
 }
 
 function sendAddScanner(id, role) {
@@ -31,12 +50,13 @@ function sendAddScanner(id, role) {
             role: role,
         }),
         success: function () {
-            console.log('OK');
+            toastr.success('Сканнер успешно добавлен')
+            setTimeout(() => goTo('scanners'), 700)
         },
-        error: function (response) {
-            alert(response);
+        error: function () {
+            toastr.error('Произошла ошибка')
         }
-    });
+    })
 }
 
 function sendAddUser(cardId, surname, name, patronymic, role) {
@@ -52,13 +72,15 @@ function sendAddUser(cardId, surname, name, patronymic, role) {
             patronymic: patronymic,
             role: role,
         }),
-        success: function () {
-            alert("Пользователь добавлен!");
+        success: function (output, status, xhr) {
+            toastr.success('Пользователь успешно добавлен')
+            let userId = xhr.getResponseHeader("userId")
+            setTimeout(() => goTo('user/get/' + userId), 700)
         },
-        error: function (response) {
-            alert(response);
+        error: function () {
+            toastr.error('Произошла ошибка')
         }
-    });
+    })
 }
 
 function sendDeleteScanner(id) {
@@ -66,12 +88,13 @@ function sendDeleteScanner(id) {
         url: "http://localhost:" + getPort() + "/scanner/delete/" + id,
         type: "DELETE",
         success: function () {
-            console.log('OK');
+            toastr.success('Считыватель успешно удален')
+            setTimeout(() => goTo('scanners'), 700)
         },
-        error: function (response) {
-            alert(response);
+        error: function () {
+            toastr.error('Произошла ошибка')
         }
-    });
+    })
 }
 
 function sendClearActivityHistory(id) {
@@ -79,12 +102,12 @@ function sendClearActivityHistory(id) {
         url: "http://localhost:" + getPort() + "/user/delete/activities/" + id,
         type: "DELETE",
         success: function () {
-            console.log('OK');
+            toastr.success('История активности очищена')
         },
-        error: function (response) {
-            alert(response);
+        error: function () {
+            toastr.error('Произошла ошибка')
         }
-    });
+    })
 }
 
 function sendDeleteUser(id) {
@@ -92,29 +115,29 @@ function sendDeleteUser(id) {
         url: "http://localhost:" + getPort() + "/user/delete/" + id,
         type: "DELETE",
         success: function () {
-            console.log('OK');
+            toastr.success('Пользователь успешно удален')
+            setTimeout(() => goTo('start'), 700)
         },
-        error: function (response) {
-            console.log(this.url)
-            alert(response);
+        error: function () {
+            toastr.error('Произошла ошибка')
         }
-    });
+    })
 }
 
 function sendSearch(cardId) {
     $.ajax({
         url: "http://localhost:" + getPort() + "/user/search/",
         type: "POST",
-        dataType: "json",
         contentType: "application/json;charset=utf-8",
-        data: JSON.stringify({
+        data: ({
             cardId: cardId,
         }),
-        success: function () {
-            console.log('OK');
+        success: function (output, status, xhr) {
+            let userId = xhr.getResponseHeader("userId")
+            goTo('user/get/' + userId)
         },
-        error: function (response) {
-            alert(response);
+        error: function () {
+            toastr.error('Пользователь не найден!')
         }
-    });
+    })
 }

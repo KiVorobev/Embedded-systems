@@ -40,6 +40,11 @@
                 <text class="content">${user.userId}</text>
             </div>
         </div>
+        <div id="user_card_id">
+            <div class="topic">Card ID:
+                <text class="content">${user.cardId}</text>
+            </div>
+        </div>
         <button onclick=goTo('user/edit/${user.userId}')>Редактировать профиль</button>
     </div>
     <div id="right">

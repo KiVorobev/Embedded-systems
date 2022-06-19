@@ -22,6 +22,7 @@ public class Scanner {
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    @ToString.Exclude
     @JsonIgnoreProperties("scanner")
     @OneToMany(mappedBy = "scanner", fetch = FetchType.EAGER , cascade = CascadeType.ALL)
     private List<EnterHistory> activities;
