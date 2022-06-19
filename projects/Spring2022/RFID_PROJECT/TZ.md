@@ -145,5 +145,5 @@
 ###### Наши компоненты:
 7. [RFID карта](https://shop.reallifeonline.ru/rfid-karty/karty-rfid-125-khz/rfid-karta-125-kgc-em-em4100-4102-pvh.html)
 8. [RFID модуль](https://amperka.ru/product/troyka-rfid-nfc-1356)
-9. [Raspberry pi 3 контроллер](https://ru.dhgate.com/product/freeshiping-rs-raspberry-pi-3-model-b-arm/401995487.html?d1_page_num=1&dspm=pcru.sp.list.3.RoPIJnCdX0wfUIiKtm51&resource_id=401995487&scm_id=search.LIST...BPRU%7C0%7Cnewes.pcru_sp_searclick_1_xVhx2oJGTUhtJFXpP6G8&resource_id=#s1-2-1;searl%7C3269776838:3)
+9. [NUCLEO-F429ZI](https://www.empastore.com/Data/EditorFiles/2-NUCLEO-F429ZI.pdf)
 10. [Блок питания](https://www.promelec.ru/product/357085/)
