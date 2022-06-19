@@ -126,7 +126,7 @@ function sendDeleteUser(id) {
 
 function sendSearch(cardId) {
     $.ajax({
-        url: "http://localhost:" + getPort() + "/user/search/",
+        url: "http://localhost:" + getPort() + "/search/",
         type: "POST",
         contentType: "application/json;charset=utf-8",
         data: ({
