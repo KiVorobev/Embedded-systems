@@ -19,7 +19,9 @@ public class UserController {
         try {
             User user = context.bodyAsClass(User.class);
             userService.add(user);
+            context.header("userId", user.getId().toString());
             context.json(user);
+
         } catch (Exception e) {
             context.result("Номер карты один для каждого пользователя!");
         }
@@ -36,7 +38,7 @@ public class UserController {
         Map<String, Object> model = ViewUtil.getBaseModel();
         model.put("user", userModel);
         model.put("activities", enterHistoryModel);
-        context.render("templates/user_page.ftl", model);
+        context.render("views/pages/user_page.ftl", model);
     }
 
     public static void getUserByCardId(Context context) {
@@ -46,7 +48,8 @@ public class UserController {
             context.status(404);
             return;
         }
-        context.header("userId", user.getId().toString());
+        UserModel userModel = UserModel.toModel(user);
+        context.header("userId", userModel.getUserId().toString());
         context.status(200);
     }
 
@@ -58,7 +61,7 @@ public class UserController {
             Map<String, Object> model = ViewUtil.getBaseModel();
             model.put("user", userModel);
             model.put("activities", userModel.getEnterHistory());
-            context.render("templates/user_edit.ftl", model);
+            context.render("views/pages/user_edit.ftl", model);
         } catch (Exception e) {
             context.result(e.getMessage());
         }
@@ -84,11 +87,11 @@ public class UserController {
 
     public static void renderAddUserPage(Context context) {
         Map<String, Object> model = ViewUtil.getBaseModel();
-        context.render("templates/add_user.ftl", model);
+        context.render("views/pages/add_user.ftl", model);
     }
 
     public static void renderSearchUserPage(Context context) {
         Map<String, Object> model = ViewUtil.getBaseModel();
-        context.render("templates/search.ftl", model);
+        context.render("views/pages/search.ftl", model);
     }
 }

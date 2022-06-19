@@ -56,9 +56,9 @@
 --- | --- | --- | ---
 1 | Сканер RFID/NFC 13,56 МГц (Troyka-модуль) | 2 | 2 290
 2 | Электронная карта RFID 125кГц с кодом | 1 | 30
-3 | Raspberry Pi 3 Model B | 1 | 23 961
+3 | NUCLEO-F429ZI | 1 | 9 380
 4 | Блок питания | 1 | 2 170
- | | |Итоговая стоимость: | 30 741 руб.
+ | | |Итоговая стоимость: | 13 870 руб.
 
 При серийном производстве товары будут закупаться оптом, вследствие этого стоимость разрабатываемого нами продукта будет снижена.
 
@@ -68,9 +68,9 @@
 --- | --- | --- | ---
 1 | Сканер RFID/NFC 13,56 МГц (Troyka-модуль) | 2 | 1 788
 2 | Электронная карта RFID 125кГц с кодом | 1 | 24
-3 | Raspberry Pi 3 Model B | 1 | 20 109
+3 | NUCLEO-F429ZI | 1 | 8 350
 4 | Блок питания | 1 | 1 710
- | | |Итоговая стоимость: | 25 419 руб.
+ | | |Итоговая стоимость: | 11 872 руб.
 
 ## Cтадии и этапы разработки
 
@@ -145,5 +145,5 @@
 ###### Наши компоненты:
 7. [RFID карта](https://shop.reallifeonline.ru/rfid-karty/karty-rfid-125-khz/rfid-karta-125-kgc-em-em4100-4102-pvh.html)
 8. [RFID модуль](https://amperka.ru/product/troyka-rfid-nfc-1356)
-9. [Raspberry pi 3 контроллер](https://ru.dhgate.com/product/freeshiping-rs-raspberry-pi-3-model-b-arm/401995487.html?d1_page_num=1&dspm=pcru.sp.list.3.RoPIJnCdX0wfUIiKtm51&resource_id=401995487&scm_id=search.LIST...BPRU%7C0%7Cnewes.pcru_sp_searclick_1_xVhx2oJGTUhtJFXpP6G8&resource_id=#s1-2-1;searl%7C3269776838:3)
+9. [NUCLEO-F429ZI](https://www.empastore.com/Data/EditorFiles/2-NUCLEO-F429ZI.pdf)
 10. [Блок питания](https://www.promelec.ru/product/357085/)

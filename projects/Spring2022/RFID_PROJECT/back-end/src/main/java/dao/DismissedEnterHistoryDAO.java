@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface DismissedEnterHistoryDAO {
 
-    void addDismissedActivity(Long personId, Scanner scanner);
+    void addDismissedActivity(Scanner scanner, String cardId);
 
     List<DismissedEnterHistory> getLastTwentyRows();
 }

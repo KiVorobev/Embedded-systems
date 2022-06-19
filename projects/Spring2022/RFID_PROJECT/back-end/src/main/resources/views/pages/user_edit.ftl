@@ -23,6 +23,11 @@
 
     <div id="right">
         <div class="inputs">
+            <label id="card_id_label" for="card_id">Card ID:</label>
+            <input id="card_id" type="text" placeholder="Введите ID карты:" value="${user.cardId}"/>
+        </div>
+
+        <div class="inputs">
             <label id="surname_label" for="surname">Фамилия:</label>
             <input id="surname" type="text" placeholder="Введите фамилию" value="${user.surname}"/>
         </div>

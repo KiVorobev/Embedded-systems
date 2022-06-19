@@ -19,8 +19,8 @@ public class DismissedEnterHistoryService {
         return dismissedEnterHistoryDAO.getLastTwentyRows();
     }
 
-    public void addDismissedActivity(Long personId, Scanner scanner) {
-        dismissedEnterHistoryDAO.addDismissedActivity(personId, scanner);
+    public void addDismissedActivity(Scanner scanner, String cardId) {
+        dismissedEnterHistoryDAO.addDismissedActivity(scanner, cardId);
     }
 
 }

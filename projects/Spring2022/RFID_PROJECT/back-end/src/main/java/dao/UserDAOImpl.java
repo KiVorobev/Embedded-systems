@@ -32,11 +32,12 @@ public class UserDAOImpl implements UserDAO {
     public void updateUser(Long id, User user) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.getTransaction().begin();
-        Query query = session.createQuery("update User set name=:nameParam ,surname=:surnameParam , patronymic=:patronymicParam , role=:roleParam where id=:ID");
+        Query query = session.createQuery("update User set name=:nameParam ,surname=:surnameParam , patronymic=:patronymicParam , role=:roleParam , cardId=:cardIdParam where id=:ID");
         query.setParameter("nameParam", user.getName());
         query.setParameter("surnameParam", user.getSurname());
         query.setParameter("patronymicParam", user.getPatronymic());
         query.setParameter("roleParam", user.getRole());
+        query.setParameter("cardIdParam", user.getCardId());
         query.setParameter("ID", id);
         query.executeUpdate();
         session.close();

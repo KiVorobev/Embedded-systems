@@ -38,20 +38,20 @@ public class ScannerController {
 
     public static void renderRemovePage(Context context) {
         Map<String, Object> model = ViewUtil.getBaseModel();
-        context.render("templates/delete_scanner.ftl", model);
+        context.render("views/pages/delete_scanner.ftl", model);
     }
 
     public static void renderScannerPage(Context context) {
         Map<String, Object> model = ViewUtil.getBaseModel();
         List<Scanner> scannerList = scannerService.getAllScanners();
         model.put("scanners", scannerList);
-        context.render("templates/scanners.ftl", model);
+        context.render("views/pages/scanners.ftl", model);
     }
 
     public static void renderAddScannerPage(Context context) {
         Map<String, Object> model = ViewUtil.getBaseModel();
         List<Scanner> scannerList = scannerService.getAllScanners();
         model.put("scanners", scannerList);
-        context.render("templates/add_scanner.ftl", model);
+        context.render("views/pages/add_scanner.ftl", model);
     }
 }

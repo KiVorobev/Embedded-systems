@@ -8,7 +8,7 @@
 </#macro>
 
 <#macro tbody>
-    <#list activities as activity>
+        <#list activities as activity>
         <tr>
             <td>${activity.scannerHardwareNum}</td>
             <td>${activity.formattedEnterActivity}</td>
@@ -18,9 +18,9 @@
 </#macro>
 
 <#macro content>
-<#--    <script>-->
-<#--        setInterval(goTo('start'), 5000);-->
-<#--    </script>-->
+    <script>
+        setInterval(() => goTo('start') , 3000)
+    </script>
     <@table caption="Последняя активность"/>
     <button onclick="goTo('rejected')">Отклоненные запросы</button>
 </#macro>

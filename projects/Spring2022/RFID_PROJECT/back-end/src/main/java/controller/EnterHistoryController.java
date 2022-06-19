@@ -19,7 +19,7 @@ public class EnterHistoryController {
         List<EnterHistoryModel> activitiesModelList = EnterHistoryModel.fromEntityListToModelList(activitiesList);
         Map<String, Object> model = ViewUtil.getBaseModel();
         model.put("activities", activitiesModelList);
-        context.render("templates/main_page.ftl", model);
+        context.render("views/pages/main_page.ftl", model);
     }
 
     public static void deleteActivityList(Context context) {

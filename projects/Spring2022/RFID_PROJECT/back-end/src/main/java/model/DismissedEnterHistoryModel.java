@@ -15,17 +15,17 @@ public class DismissedEnterHistoryModel {
 
     private String scannerHardwareNum;
     private LocalDateTime dismissedEnterActivity;
-    private UserModel user;
     private String formattedDismissedEnterActivity;
     private Scanner scanner;
+    private String cardId;
 
     public static DismissedEnterHistoryModel toModel(DismissedEnterHistory dismissedEnterHistory) {
         DismissedEnterHistoryModel dismissedEnterHistoryModel = new DismissedEnterHistoryModel();
         dismissedEnterHistoryModel.setDismissedEnterActivity(dismissedEnterHistory.getEnterActivity());
         dismissedEnterHistoryModel.setScanner(dismissedEnterHistory.getScanner());
-        dismissedEnterHistoryModel.setUser(UserModel.toModel(dismissedEnterHistory.getUser()));
         dismissedEnterHistoryModel.setScannerHardwareNum(dismissedEnterHistory.getScanner().getHardwareNumber());
         dismissedEnterHistoryModel.setFormattedDismissedEnterActivity(TimeFormatter.formatToString(dismissedEnterHistory));
+        dismissedEnterHistoryModel.setCardId(dismissedEnterHistory.getCardId());
         return dismissedEnterHistoryModel;
     }
 

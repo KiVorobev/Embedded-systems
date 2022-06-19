@@ -3,6 +3,8 @@ package entity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
@@ -20,10 +22,8 @@ public class DismissedEnterHistory {
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime enterActivity;
 
-    @JsonIgnoreProperties("enterHistory")
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "user_id")
-    private User user;
+    @Column(name = "card_id")
+    private String cardId;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "scanner_id")

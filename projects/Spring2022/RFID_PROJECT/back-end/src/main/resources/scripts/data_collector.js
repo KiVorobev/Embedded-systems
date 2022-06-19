@@ -1,11 +1,12 @@
 function userEdit() {
-    let id = document.getElementById('user_id').innerHTML
+    let id = document.getElementById('idText').innerHTML
     let surname = document.getElementById('surname').value
     let name = document.getElementById('name').value
     let patronymic = document.getElementById('patronymic').value
     let role = convertRole(document.getElementById('role_select').value)
+    let cardId = document.getElementById('card_id').value
     if (userEditValidation(surname, name, role)) {
-        sendUserEdit(id, surname, name, patronymic, role)
+        sendUserEdit(id, surname, name, patronymic, role, cardId)
     }
 }
 
@@ -25,12 +26,12 @@ function deleteScanner() {
 }
 
 function clearActivityHistory() {
-    let id = document.getElementById('user_id').innerHTML
+    let id = document.getElementById('idText').innerHTML
     sendClearActivityHistory(id)
 }
 
 function deleteUser() {
-    let id = document.getElementById('user_id').innerHTML
+    let id = document.getElementById('idText').innerHTML
     sendDeleteUser(id)
 }
 

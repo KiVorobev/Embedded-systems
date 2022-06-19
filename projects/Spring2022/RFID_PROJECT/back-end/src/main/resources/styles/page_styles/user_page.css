@@ -1,5 +1,3 @@
-@import "../template_styles/table.css";
-
 main {
     display: flex;
 }
@@ -25,7 +23,7 @@ main {
     border: black solid 1px;
 }
 
-#role, #user_id {
+#role, #user_id, #user_card_id {
     margin-top: 3vh;
     margin-left: 15%;
     background-color: whitesmoke;
@@ -38,7 +36,6 @@ main {
 #left div.topic {
     background-color: whitesmoke;
     font-size: 3vmin;
-    font-weight: bold;
 }
 
 #left div:not(:first-child) > div:first-child {
