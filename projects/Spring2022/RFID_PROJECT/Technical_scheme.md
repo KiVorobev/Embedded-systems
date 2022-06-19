@@ -2,7 +2,7 @@
 
 ## Систему можно разделить на серверную и встраиваемую части.
 
-![alt text](Resources/Architecture_Scheme.png)
+![alt text](Resources/Architecture_Scheme.jpg)
 
 
 
